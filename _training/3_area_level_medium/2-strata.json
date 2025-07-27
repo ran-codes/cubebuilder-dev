@@ -1,0 +1,17 @@
+[
+  {
+    "dataset_id": "3_area_level_medium",
+    "dataset_instance": "3_area_level_medium_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "strata_1_name": "",
+    "strata_1_raw": "",
+    "strata_1_value": "",
+    "strata_2_name": "",
+    "strata_2_raw": "",
+    "strata_2_value": "",
+    "strata_id": "",
+    "var_name": "LEMEDIAN",
+    "var_name_raw": "LE_MEDIAN"
+  }
+]

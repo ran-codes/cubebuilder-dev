@@ -1,0 +1,2 @@
+dataset_id,dataset_instance,dataset_version,schema_version,strata_1_name,strata_1_raw,strata_1_value,strata_2_name,strata_2_raw,strata_2_value,strata_id,var_name,var_name_raw
+3_area_level_medium,3_area_level_medium_v1,v1,v2,"","","","","","","",LEMEDIAN,LE_MEDIAN
