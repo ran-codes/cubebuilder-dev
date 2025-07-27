@@ -1,0 +1,10 @@
+[
+  {
+    "file": "dummy_L1AD_LE_MEDIAN.csv",
+    "path": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/3_dummy_dataset_medium_area/dummy_L1AD_LE_MEDIAN.csv",
+    "size": 1484,
+    "size_mb": 0.0015,
+    "file_name": "dummy_L1AD_LE_MEDIAN",
+    "freeze_parquet_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/3_area_level_medium/3_area_level_medium_v1-schema-v2/dummy_L1AD_LE_MEDIAN.parquet"
+  }
+]
