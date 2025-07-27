@@ -1,0 +1,26 @@
+[
+  {
+    "file": "dummy_L1AD_daily_sample.csv",
+    "path": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/1_dummy_dataset_simple_area/dummy_L1AD_daily_sample.csv",
+    "size": 510,
+    "size_mb": 0.0005,
+    "file_name": "dummy_L1AD_daily_sample",
+    "freeze_parquet_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/1_area_level_simple/1_area_level_simple_v1-schema-v2/dummy_L1AD_daily_sample.parquet"
+  },
+  {
+    "file": "dummy_L2_BR_daily_sample.csv",
+    "path": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/1_dummy_dataset_simple_area/dummy_L2_BR_daily_sample.csv",
+    "size": 1016,
+    "size_mb": 0.001,
+    "file_name": "dummy_L2_BR_daily_sample",
+    "freeze_parquet_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/1_area_level_simple/1_area_level_simple_v1-schema-v2/dummy_L2_BR_daily_sample.parquet"
+  },
+  {
+    "file": "dummy_L2_MX_daily_sample.csv",
+    "path": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/1_dummy_dataset_simple_area/dummy_L2_MX_daily_sample.csv",
+    "size": 959,
+    "size_mb": 0.001,
+    "file_name": "dummy_L2_MX_daily_sample",
+    "freeze_parquet_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/1_area_level_simple/1_area_level_simple_v1-schema-v2/dummy_L2_MX_daily_sample.parquet"
+  }
+]
