@@ -1,0 +1,18 @@
+[
+  {
+    "file": "dummy_MX_health_survey_2015.csv",
+    "path": "//files.drexel.edu/colleges/SOPH/Shared/UHC/Projects/Wellcome_Trust/Data Methods Core//Dashboards/_training/_training__2_record_level_simple/dummy_MX_health_survey_2015.csv",
+    "size": 1272,
+    "size_mb": 0.0013,
+    "file_name": "dummy_MX_health_survey_2015",
+    "freeze_parquet_path": "//files.drexel.edu/colleges/SOPH/Shared/UHC/Projects/Wellcome_Trust/Data Methods Core//Dashboards/etl/freeze/_training__2_record_level_simple/_training__2_record_level_simple_v1-schema-v2/dummy_MX_health_survey_2015.parquet"
+  },
+  {
+    "file": "dummy_MX_health_survey_2019.csv",
+    "path": "//files.drexel.edu/colleges/SOPH/Shared/UHC/Projects/Wellcome_Trust/Data Methods Core//Dashboards/_training/_training__2_record_level_simple/dummy_MX_health_survey_2019.csv",
+    "size": 1275,
+    "size_mb": 0.0013,
+    "file_name": "dummy_MX_health_survey_2019",
+    "freeze_parquet_path": "//files.drexel.edu/colleges/SOPH/Shared/UHC/Projects/Wellcome_Trust/Data Methods Core//Dashboards/etl/freeze/_training__2_record_level_simple/_training__2_record_level_simple_v1-schema-v2/dummy_MX_health_survey_2019.parquet"
+  }
+]

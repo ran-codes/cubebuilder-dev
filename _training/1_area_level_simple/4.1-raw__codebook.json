@@ -1,0 +1,59 @@
+{
+  "by_dataset": [
+    {
+      "dataset_id": "_training__1_area_level_simple",
+      "dataset_notes": "Simple Area Level Dataset",
+      "domain": "Physical and Natural Environment",
+      "subdomain": "Air Pollution",
+      "variable_origin": "",
+      "source": "Downscaler",
+      "limitations": "Something something",
+      "acknowledgements": "This was prepared by CEC",
+      "file_codebook": "codebook_dummy.xlsx",
+      "longitudinal": "1",
+      "public": "0"
+    }
+  ],
+  "by_var": [
+    {
+      "var_name": "NO2MEAN",
+      "var_name_raw": "NO2_MEAN_L1AD;NO2_MEAN_L2",
+      "var_label": "Nitrogen Dioxide Mean Concentration",
+      "var_def": "Daily mean concentration of nitrogen dioxide (NO2) measured at monitoring stations within the geographic area",
+      "value_type": "continuous",
+      "units": "µg/m³",
+      "coding": "Measured concentration values in micrograms per cubic meter",
+      "strata_description": ""
+    },
+    {
+      "var_name": "O3MEAN",
+      "var_name_raw": "O3_MEAN_L1AD;O3_MEAN_L2",
+      "var_label": "Ozone Mean Concentration",
+      "var_def": "Daily mean concentration of ground-level ozone (O3) measured at monitoring stations within the geographic area",
+      "value_type": "continuous",
+      "units": "µg/m³",
+      "coding": "Measured concentration values in micrograms per cubic meter",
+      "strata_description": ""
+    },
+    {
+      "var_name": "PM10MEAN",
+      "var_name_raw": "PM10_MEAN_L1AD;PM10_MEAN_L2",
+      "var_label": "PM10 Mean Concentration",
+      "var_def": "Daily mean concentration of particulate matter with diameter ≤10 micrometers (PM10) measured at monitoring stations within the geographic area",
+      "value_type": "continuous",
+      "units": "µg/m³",
+      "coding": "Measured concentration values in micrograms per cubic meter",
+      "strata_description": ""
+    },
+    {
+      "var_name": "PM25MEAN",
+      "var_name_raw": "PM25_MEAN_L1AD;PM25_MEAN_L2",
+      "var_label": "PM2.5 Mean Concentration",
+      "var_def": "Daily mean concentration of fine particulate matter with diameter ≤2.5 micrometers (PM2.5) measured at monitoring stations within the geographic area",
+      "value_type": "continuous",
+      "units": "µg/m³",
+      "coding": "Measured concentration values in micrograms per cubic meter",
+      "strata_description": ""
+    }
+  ]
+}

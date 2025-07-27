@@ -1,0 +1,45 @@
+## R project stuff
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+*.parquet
+**/global_context.rds
+
+## In general ignore all data
+*.parquet
+
+# But allow these specific metadata files
+!*lock.parquet
+!*loading.parquet
+
+## Keep all Metadata inventory items
+!clean/2-processed/*.parquet
+!_shared_storage/0_schema/*.parquet
+
+# Exclude specific Parquet files
+clean/2-processed/df_cube_olap.parquet
+clean/2-processed/df_cube_data.parquet
+.env
+clean/4-salurbal-hub/2-city-profiles/city_profile_metrics_data.json
+!code/salurbal production/products/**/*.parquet
+!code/salurbal production/products/**/*.rds
+!code/salurbal production/products/**/*.csv
+!code/salurbal production/products/**/*.json
+
+# Keep all parquet files in metadata_cache folders
+!**/metadata_cache/**/*.parquet
+
+# Any .tmp folders (for overflow files)
+.tmp/
+
+# Temporary Excel files
+**/~$*.xlsx
+**/~$*.xls
+**/~$*.xlsm
+**/~$*.xlsb
+datasets/record-level/VitalStatsRecords_DIN/v1.0/_processing/tmp.duckdb
+*.html
+.vscode/settings.json
+clean/global_context.rds

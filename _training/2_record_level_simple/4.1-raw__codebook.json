@@ -1,0 +1,137 @@
+{
+  "by_dataset": [
+    {
+      "dataset_id": "_training__2_record_level_simple",
+      "dataset_notes": "Training dataset for record-level renovation workflow using simulated health survey data from Mexico (2015, 2019).",
+      "variable_origin": "Training simulation",
+      "source": "Simulated data for SALURBAL training purposes",
+      "limitations": "Simulated data - not real survey responses",
+      "acknowledgements": "SALURBAL",
+      "file_codebook": "",
+      "longitudinal": "",
+      "public": "0"
+    }
+  ],
+  "by_var": [
+    {
+      "var_name": "_training__2_record_level_simple_AGE",
+      "var_name_raw": "AGE",
+      "domain": "Demographics",
+      "subdomain": "Person",
+      "var_label": "Age",
+      "var_def": "Age of survey respondent in years",
+      "value_type": "Numeric",
+      "units": "Years",
+      "coding": "Continuous variable representing age in completed years",
+      "strata_description": ""
+    },
+    {
+      "var_name": "_training__2_record_level_simple_BMI",
+      "var_name_raw": "BMI",
+      "domain": "Health Risk Factors",
+      "subdomain": "Adult Biomedical Risk Factors",
+      "var_label": "Body Mass Index",
+      "var_def": "Body Mass Index calculated from height and weight measurements",
+      "value_type": "Numeric",
+      "units": "kg/m²",
+      "coding": "Continuous variable; BMI = weight(kg)/height(m)²",
+      "strata_description": ""
+    },
+    {
+      "var_name": "_training__2_record_level_simple_EDUCATION",
+      "var_name_raw": "EDUCATION",
+      "domain": "Social, Economic, and Services Environment",
+      "subdomain": "Education",
+      "var_label": "Education Level",
+      "var_def": "Highest level of education completed by respondent",
+      "value_type": "Categorical",
+      "units": "Level",
+      "coding": "1=Primary or less; 2=Secondary incomplete; 3=Secondary complete; 4=University or higher",
+      "strata_description": ""
+    },
+    {
+      "var_name": "_training__2_record_level_simple_HEALTHSTATUS",
+      "var_name_raw": "HEALTH_STATUS",
+      "domain": "Health Risk Factors",
+      "subdomain": "Adult General and Mental Health",
+      "var_label": "Self-reported Health Status",
+      "var_def": "Respondent's self-assessment of overall health status",
+      "value_type": "Categorical",
+      "units": "Level",
+      "coding": "1=Excellent; 2=Good; 3=Fair; 4=Poor",
+      "strata_description": ""
+    },
+    {
+      "var_name": "_training__2_record_level_simple_INCOMELEVEL",
+      "var_name_raw": "INCOME_LEVEL",
+      "domain": "Social, Economic, and Services Environment",
+      "subdomain": "Income/Poverty",
+      "var_label": "Household Income Level",
+      "var_def": "Household income tertile classification",
+      "value_type": "Categorical",
+      "units": "Tertile",
+      "coding": "1=Low (bottom tertile); 2=Middle (middle tertile); 3=High (top tertile)",
+      "strata_description": ""
+    },
+    {
+      "var_name": "_training__2_record_level_simple_PHYSICALACTIVITY",
+      "var_name_raw": "PHYSICAL_ACTIVITY",
+      "domain": "Health Risk Factors",
+      "subdomain": "Adult Behavioral Risk Factors",
+      "var_label": "Physical Activity Level",
+      "var_def": "Weekly physical activity meeting recommended guidelines",
+      "value_type": "Binary",
+      "units": "Category",
+      "coding": "0=Inactive (less than 150 min/week); 1=Active (150+ min/week moderate activity)",
+      "strata_description": ""
+    },
+    {
+      "var_name": "_training__2_record_level_simple_SALID1",
+      "var_name_raw": "SALID1",
+      "domain": "Identifiers",
+      "subdomain": "City Population",
+      "var_label": "SALURBAL L1 Geographic ID",
+      "var_def": "SALURBAL Level 1 geographic identifier (metropolitan area)",
+      "value_type": "Categorical",
+      "units": "ID",
+      "coding": "Numeric code identifying metropolitan area in SALURBAL hierarchy",
+      "strata_description": ""
+    },
+    {
+      "var_name": "_training__2_record_level_simple_SALID2",
+      "var_name_raw": "SALID2",
+      "domain": "Identifiers",
+      "subdomain": "Subcity (Identifier)",
+      "var_label": "SALURBAL L2 Geographic ID",
+      "var_def": "SALURBAL Level 2 geographic identifier (sub-city)",
+      "value_type": "Categorical",
+      "units": "ID",
+      "coding": "Numeric code identifying sub-city area in SALURBAL hierarchy",
+      "strata_description": ""
+    },
+    {
+      "var_name": "_training__2_record_level_simple_SEX",
+      "var_name_raw": "SEX",
+      "domain": "Demographics",
+      "subdomain": "Person",
+      "var_label": "Sex",
+      "var_def": "Biological sex of respondent",
+      "value_type": "Binary",
+      "units": "Category",
+      "coding": "0=Female; 1=Male",
+      "strata_description": ""
+    },
+    {
+      "var_name": "_training__2_record_level_simple_SMOKING",
+      "var_name_raw": "SMOKING",
+      "domain": "Health Risk Factors",
+      "subdomain": "Adult Behavioral Risk Factors",
+      "var_label": "Current Smoking Status",
+      "var_def": "Current tobacco smoking behavior",
+      "value_type": "Binary",
+      "units": "Category",
+      "coding": "0=Non-smoker; 1=Current smoker",
+      "strata_description": ""
+    }
+  ]
+}

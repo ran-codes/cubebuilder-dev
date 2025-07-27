@@ -1,0 +1,47 @@
+name,desc,type,never_empty,in_variable_table,in_strata_table,default_metadata
+acknowledgements,Any acklowdgements for this variable,metadata,FALSE,FALSE,FALSE,TRUE
+coding,This is an optional internal field that describes in details the measurement,metadata,FALSE,FALSE,FALSE,TRUE
+dataset_id,dataset id  e.g. APSL1AD. This should just be the name of the folder on the UHC server (minus the date appendix),composite key,TRUE,TRUE,TRUE,FALSE
+dataset_instance,concatenation of  | {dataset_id}_{version} | ; usefule intermediate variable that currently is a required composite key (this requirement may be relax).,composite key,TRUE,TRUE,TRUE,FALSE
+dataset_notes,Any additional information can be added here. For example some dataset or file specific notes could be added here.,metadata,FALSE,FALSE,FALSE,TRUE
+day,Day as string,composite key,FALSE,FALSE,FALSE,FALSE
+domain,Highest level of variable categorization. A list of these can be found at https://data.lacurbanhealth.org/data/about.,metadata,TRUE,FALSE,FALSE,TRUE
+estimate_type,"This is a internal utility variable that determines if a data point is an estimate, iteration, actual value … etc. Need better docemntaiton here with OBT EDA.",intermediate,FALSE,FALSE,FALSE,FALSE
+file_codebook,File name of the codebook file used for this dataset,metadata,FALSE,FALSE,FALSE,TRUE
+file_data,"File where data came from. Note that this is only found in the data and not codebooks, so lets keep it as a data attribute that every data point will have. ",data,TRUE,FALSE,FALSE,FALSE
+geo,"What geographic level the observation is at (L1, L2 … etc). Note this is a required variable for area level data but should be empty for all other observation types.",composite key,FALSE,FALSE,FALSE,FALSE
+has_confidence_interval,Utility indicator that is true for values with CI and false when only point data is available.,intermediate,FALSE,FALSE,FALSE,FALSE
+iso2,lower case ISO2 country code.,composite key,TRUE,FALSE,FALSE,FALSE
+limitations,Place to describe any limitaitons for this variable.,metadata,FALSE,FALSE,FALSE,TRUE
+longitudinal,Is this variable qualified for longitudinal analysis or visualizations?,metadata,FALSE,FALSE,FALSE,TRUE
+month,Month as numeric string (1-12),composite key,FALSE,FALSE,FALSE,FALSE
+observation_id,Unique SALURBAL Observation identifier,composite key,TRUE,FALSE,FALSE,FALSE
+observation_type,Category of SALURBAL Observation Type,composite key,TRUE,FALSE,FALSE,FALSE
+public,"Categorical indicator for whether accessibility status for this data point (e.g. public, private … various shades of grey).",metadata,TRUE,FALSE,FALSE,TRUE
+source,Data source,metadata,TRUE,FALSE,FALSE,TRUE
+source_URL,URL Associated with the data source,metadata,FALSE,FALSE,FALSE,FALSE
+source_terms_of_use_URL,The terms of use of the origin data source. ,metadata,FALSE,FALSE,FALSE,FALSE
+strata_1_name,The name of the the first population strata (e.g. Sex).,strata.csv,FALSE,FALSE,TRUE,FALSE
+strata_1_raw,"The raw value of the first population strata for the specific data point. (e.g. ""1"" or ""0"")",strata.csv,FALSE,FALSE,TRUE,FALSE
+strata_1_value,"Recoding of the raw strata_1_raw into a human-readable value (e.g., ""Male"" or  ""Female"")",strata.csv,FALSE,FALSE,TRUE,FALSE
+strata_2_name,The name of the the second population strata (e.g. Standard population).,strata.csv,FALSE,FALSE,TRUE,FALSE
+strata_2_raw,"The raw value of the second population strata for the specific data point. (e.g. ""City""  )",strata.csv,FALSE,FALSE,TRUE,FALSE
+strata_2_value,"Recoding of the raw strata_1_raw into a human-readable value (e.g. ""City specific"")",strata.csv,FALSE,FALSE,TRUE,FALSE
+strata_description,This should describe in detail what strata are available for this variable. Please include details about each strata if applicable.,metadata,FALSE,FALSE,FALSE,TRUE
+strata_id,Unique identifier for strata within a variable. ,composite key,FALSE,FALSE,TRUE,FALSE
+subdomain,Lower level of variable categorization. A list of these can be found at https://data.lacurbanhealth.org/data/about.,metadata,TRUE,FALSE,FALSE,TRUE
+tags,An optional metadata field that can used as a flexible tag that exists outside the normal domain/subdomain structure. This came from tags raw ‘Domains’ in the health survey records dataset. It should just be a semicolan seperate string for now. ,metadata,FALSE,FALSE,FALSE,FALSE
+time_resolution_type,Represents the scale of time for this data point. ,intermediate,FALSE,FALSE,FALSE,FALSE
+units,This is the short label to be appended to the data value. It will be used for annotating text or visualizations with a unit label (e.g. cases per 100k).,metadata,FALSE,FALSE,FALSE,TRUE
+value,Value for this particular data point.,data,TRUE,FALSE,FALSE,FALSE
+value_iteration,This is an attribute associated with sampled data (think model predictions or simiulations that have many iterations).,data,FALSE,FALSE,FALSE,FALSE
+value_lci,"This is the Lower Confidence Interval (LCI) for the associated variable. The LCI representing the lower limit of the confidence range for the primary 'value'. This value indicates the lowest possible accurate value within the confidence range, considering statistical uncertainty.",data,FALSE,FALSE,FALSE,FALSE
+value_type,What type of data is the value.,metadata,TRUE,FALSE,FALSE,TRUE
+value_uci,"This is the Upper Confidence Interval (UCI) for the associated variable.The UCI indicates the upper limit of the confidence range for the primary 'value'. This estimate provides an understanding of the statistical uncertainty surrounding the primary value, suggesting the highest possible accurate value.",data,FALSE,FALSE,FALSE,FALSE
+var_def,Details definition of what the variable is about. If categorical include coding here.,metadata,TRUE,FALSE,FALSE,TRUE
+var_label,Short human readable variable label.,metadata,TRUE,FALSE,FALSE,TRUE
+var_name,SALURBAL system harmonized variable name.,composite key,TRUE,TRUE,FALSE,FALSE
+var_name_raw,Original variable name in the source or pre-renovated SALURBAL dataset.,data,TRUE,TRUE,FALSE,FALSE
+variable_origin,A list of SALURBAL var_name used to operationalize this variable.,metadata,FALSE,FALSE,FALSE,TRUE
+version,version of the data point,composite key,TRUE,TRUE,TRUE,FALSE
+year,Year of the particular observation. This could be a single year or a range; we have an intermediate variable  | time_resolution_type |  which is a categorization of the type of value  | year |  is. ,composite key,TRUE,FALSE,FALSE,FALSE

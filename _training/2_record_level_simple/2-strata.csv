@@ -1,0 +1,11 @@
+dataset_id,dataset_instance,dataset_version,schema_version,strata_1_name,strata_1_raw,strata_1_value,strata_2_name,strata_2_raw,strata_2_value,strata_id,var_name,var_name_raw
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_AGE,AGE
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_BMI,BMI
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_EDUCATION,EDUCATION
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_HEALTHSTATUS,HEALTH_STATUS
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_INCOMELEVEL,INCOME_LEVEL
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_PHYSICALACTIVITY,PHYSICAL_ACTIVITY
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_SALID1,SALID1
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_SALID2,SALID2
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_SEX,SEX
+_training__2_record_level_simple,_training__2_record_level_simple_v1,v1,v2,"","","","","","","",_training__2_record_level_simple_SMOKING,SMOKING

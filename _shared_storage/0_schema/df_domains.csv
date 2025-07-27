@@ -1,0 +1,7 @@
+domain,desc
+Demographics,"Demographics are characteristics of the population of the area. These include overall number of people living in the area, age and sex of the population, birth rates, and migration rates."
+Environmental Impact,Environmental impact captures the effect of human activity on the environment and climate. This includes carbon emissions.
+Health Risk Factors,Health risk factors include health conditions and behavioral risk factors that can affect overall well-being.
+Mortality,The mortality domain includes measures of the rate at which people die as well as measures of life expectancy.
+Physical and Natural Environment,The physical and natural environment domain captures hazardous environmental exposures as well as features of built environments and natural environments.
+"Social, Economic, and Services Environment","The social, economic, and services environment are factors that influence the social and economic opportunities and access to health care available to residents."

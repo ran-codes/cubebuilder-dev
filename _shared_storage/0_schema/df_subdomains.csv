@@ -1,0 +1,26 @@
+domain,subdomain,desc
+Demographics,Birth/Fertility,Includes the number of children born to women in the area as well as adolescent birth rates.
+Demographics,Migration,Migration includes indicators of the number of persons moving into a city from within the same country and the number of persons living in the city who were born in another country.
+Demographics,Population,"Population measures are the counts of the total number of people living in an area as well as percentages or people in certain age groups (>=65 years of age, <5 years of age)."
+Environmental Impact,Carbon Footprint,Carbon footprint is the total amount of greenhouse gases generated within an area. Measures include total carbon emissions
+Health Risk Factors,Adult Behavioral Risk Factors,"Health behaviors are actions people can take that affect their health. This includes behaviors that can improve health such as physical activity and a healthy diet, and behaviors that can negatively affect health such as smoking and drinking alcohol."
+Health Risk Factors,Adult Biomedical Risk Factors,"Adult biomedical risk factors include chronic diseases and conditions such as diabetes, obesity, and hypertension among adults aged 18 years and older."
+Health Risk Factors,Adult General and Mental Health,Adult general and mental health includes indicators related to psychological well-being and how a person perceives their own health. This includes self-rated health and depression.
+Health Risk Factors,Childhood Biomedical Risk Factors,Childhood biomedical risk factors include obesity among children less than 18 years of age.
+Mortality,Childhood Mortality,Childhood mortality measures the number of children who die before they are 5 years old per total children born in the area.
+Mortality,Infant Mortality,Infant mortality measures the number of infants under 1 year of age who die per total live births.
+Mortality,Life Expectancy,Life expectancy measures how long people can expect to live if mortality rates remain the same.
+Mortality,Mortality Rates,Mortality rates measure the number of people who die in an area over a year per total population. This includes all-cause mortality rates as well as cause-specific mortality rates (with causes defined based on xxx).
+Physical and Natural Environment,Air Pollution,These include particulate matter less than 2.5 microns (PM2.5) and nitrogen dioxide (NO2).
+Physical and Natural Environment,Climate,Climate indicators include measures of temperature and extreme heat days.
+Physical and Natural Environment,Natural Environment and Parks,"Includes measures of green space, blue space, and parks."
+Physical and Natural Environment,Street Design,Includes measures of intersection density and length of streets.
+Physical and Natural Environment,Transportation,"Transportation includes indicators that measure access to public transportation options, vehicle ownership, and traffic congestion."
+Physical and Natural Environment,Urban Landscape,Urban landscape refers to the ….
+"Social, Economic, and Services Environment",Economy,Economy includes indicators that measure the economic activity of an area such as gross domestic product and labor force participation.
+"Social, Economic, and Services Environment",Education,"Education includes indicators measuring the educational attainment of the community. This includes completing primary, high school (or equivalent), and college education."
+"Social, Economic, and Services Environment",Gender Equity,Gender equity refers to indicators that measure equity of resources and opportunities for women and men. This includes a gender inequality index (GII) and ratios of women vs. men educational attainment and labor force participation .
+"Social, Economic, and Services Environment",Health Care Access,"Health care access includes indicators measuring a person’s access to medical services, such as the number of primary care doctors, insurance coverage, and cancer screenings."
+"Social, Economic, and Services Environment",Housing and Infrastructure,"Includes measures of the quality of housing, such as the material used for walls and floors, connection to sewage and water networks, and overcrowding within the home."
+"Social, Economic, and Services Environment",Income/Poverty,Includes measures of the percent of persons living in poverty in an area as defined by each country.
+"Social, Economic, and Services Environment",Inequality,"Inequality refers to the unequal distribution of persons, resources and opportunities in a geographic area. This includes income inequality (Gini index), educational inequality, and racial segregation."

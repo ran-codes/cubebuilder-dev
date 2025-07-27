@@ -1,0 +1,13 @@
+table,keys
+data,dataset_id;var_name; var_name_raw;iso2; strata_id;year;geo;salid
+by_dataset,dataset_id
+by_dataset_iso2,dataset_id;iso2
+by_dataset_iso2_salid1,dataset_id;iso2; salid1
+by_dataset_iso2_year,dataset_id;iso2; year
+by_var,var_name; var_name_raw
+by_var_iso2,var_name; var_name_raw; iso2
+by_var_iso2_year,var_name; var_name_raw; iso2; year
+by_var_strata,var_name; var_name_raw; strata_id
+by_var_salid1,var_name; var_name_raw; salid1
+by_iso2,iso2
+by_iso2_year,iso2;year

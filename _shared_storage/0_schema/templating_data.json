@@ -1,0 +1,3193 @@
+{
+  "by_key": [
+    {
+      "key": "uci",
+      "public_value": "",
+      "source_value": "",
+      "acknowledgements_value": "",
+      "value": "This is the Upper Confidence Interval (UCI) for the associated variable.The UCI indicates the upper limit of the confidence range for the primary 'value'. This estimate provides an understanding of the statistical uncertainty surrounding the primary value, suggesting the highest possible accurate value.",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "lci",
+      "public_value": "",
+      "source_value": "",
+      "acknowledgements_value": "",
+      "value": "This is the Lower Confidence Interval (LCI) for the associated variable. The LCI representing the lower limit of the confidence range for the primary 'value'. This value indicates the lowest possible accurate value within the confidence range, considering statistical uncertainty.",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "freq_uci",
+      "public_value": "",
+      "source_value": "",
+      "acknowledgements_value": "",
+      "value": "This is the upper limit of the 95% confidence interval for the associated variable.",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "freq_lci",
+      "public_value": "",
+      "source_value": "",
+      "acknowledgements_value": "",
+      "value": "This is the lower limit of the 95% confidence interval for the associated variable.",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{BRT}}",
+      "public_value": "1",
+      "source_value": "BRTData",
+      "acknowledgements_value": "BRTData https://brtdata.org",
+      "value": "",
+      "source_URL_value": "https://brtdata.org",
+      "source_terms_of_use_URL_value": "https://brtdata.org/info/terms"
+    },
+    {
+      "key": "{{GlobalSurfaceWater}}",
+      "public_value": "1",
+      "source_value": "Global Surface Water Explorer",
+      "acknowledgements_value": "Pekel, JF., Cottam, A., Gorelick, N. et al. High-resolution mapping of global surface water and its long-term changes. Nature 540, 418–422 (2016). https://doi.org/10.1038/nature20584",
+      "value": "",
+      "source_URL_value": "https://global-surface-water.appspot.com/",
+      "source_terms_of_use_URL_value": "https://european-union.europa.eu/contact-eu/write-us/europe-direct-data-protection-privacy-statement_en"
+    },
+    {
+      "key": "{{MinWage}}",
+      "public_value": "1",
+      "source_value": "Salario Minimo",
+      "acknowledgements_value": "Salario Minimo, April 2018 http://salariominimo.com.mx/comparativa-salario-minimo-latinoamerica/",
+      "value": "",
+      "source_URL_value": "http://salariominimo.com.mx/comparativa-salario-minimo-latinoamerica/",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{OpenStreetMap}}",
+      "public_value": "1",
+      "source_value": "OpenStreetMap",
+      "acknowledgements_value": "OpenStreetMap https://www.openstreetmap.org/copyright",
+      "value": "",
+      "source_URL_value": "https://www.openstreetmap.org/#map=4/38.01/-95.84",
+      "source_terms_of_use_URL_value": "https://www.openstreetmap.org/copyright"
+    },
+    {
+      "key": "{{Coastline}}",
+      "public_value": "1",
+      "source_value": "Global Self-consistent, Hierarchical, High-resolution Geography Database (GSHHG)",
+      "acknowledgements_value": "Wessel, P., and W. H. F. Smith (1996), A global, self-consistent, hierarchical, high-resolution shoreline database, J. Geophys. Res., 101(B4), 8741–8743, doi:10.1029/96JB00104",
+      "value": "",
+      "source_URL_value": "https://www.ngdc.noaa.gov/mgg/shorelines/",
+      "source_terms_of_use_URL_value": "https://www.gnu.org/licenses/lgpl-3.0.html"
+    },
+    {
+      "key": "{{GGMCF}}",
+      "public_value": "1",
+      "source_value": "Gridded Global Model of City Footprints (GGMCF) ",
+      "acknowledgements_value": "Moran, D., Kanemoto K; Jiborn, M., Wood, R., Többen, J., and Seto, K.C. (2018) Carbon footprints of 13,000 cities. Environmental Research Letters DOI: 10.1088/1748-9326/aac72a.",
+      "value": "",
+      "source_URL_value": "http://citycarbonfootprints.info",
+      "source_terms_of_use_URL_value": "https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "key": "{{NDVI}}",
+      "public_value": "1",
+      "source_value": "Normalized difference vegetation index (NDVI)",
+      "acknowledgements_value": "NASA Earth Observatory. (2000, August 30). Measuring Vegetation (NDVI & EVI). Retrieved April 2, 2019, from https://earthobservatory.nasa.gov/features/MeasuringVegetation/measuring_vegetation_2.php",
+      "value": "",
+      "source_URL_value": "https://modis.gsfc.nasa.gov/data/dataprod/mod13.php",
+      "source_terms_of_use_URL_value": "https://lpdaac.usgs.gov/data/data-citation-and-policies/"
+    },
+    {
+      "key": "{{sentinel}}",
+      "public_value": "1",
+      "source_value": "Sentinel-2",
+      "acknowledgements_value": "Sentinel-2 https://cloud.google.com/storage/docs/public-datasets/sentinel-2",
+      "value": "",
+      "source_URL_value": "https://developers.google.com/earth-engine/datasets/catalog/sentinel-2",
+      "source_terms_of_use_URL_value": "https://scihub.copernicus.eu/twiki/pub/SciHubWebPortal/TermsConditions/Sentinel_Data_Terms_and_Conditions.pdf"
+    },
+    {
+      "key": "{{Wikipedia}}",
+      "public_value": "1",
+      "source_value": "Wikipedia",
+      "acknowledgements_value": "Wikipedia",
+      "value": "",
+      "source_URL_value": "www.wikipedia.org",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{EncycBrit}}",
+      "public_value": "1",
+      "source_value": "Encyclopedia Britannica",
+      "acknowledgements_value": "Encyclopedia Britannica",
+      "value": "",
+      "source_URL_value": "https://www.britannica.com/",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{GoogleMap}}",
+      "public_value": "1",
+      "source_value": "Google Maps",
+      "acknowledgements_value": "Google Maps",
+      "value": "",
+      "source_URL_value": "https://www.google.com/maps",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{Google-Park}}",
+      "public_value": "9",
+      "source_value": "Google Cloud collaborators database",
+      "acknowledgements_value": "",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": "https://cloud.google.com/terms"
+    },
+    {
+      "key": "{{Google-Distance}}",
+      "public_value": "9",
+      "source_value": "Google Maps Distance Matrix API",
+      "acknowledgements_value": "",
+      "value": "",
+      "source_URL_value": "https://developers.google.com/maps/documentation/distance-matrix/overview",
+      "source_terms_of_use_URL_value": "https://developers.google.com/terms/site-policies"
+    },
+    {
+      "key": "{{SRTM}}",
+      "public_value": "1",
+      "source_value": "Shuttle Radar Topography Mission (SRTM)",
+      "acknowledgements_value": "Farr, T. G., et al. (2007), The Shuttle Radar Topography Mission, Rev. Geophys., 45, RG2004, doi:10.1029/2005RG000183.",
+      "value": "",
+      "source_URL_value": "https://www.earthdata.nasa.gov/sensors/srtm",
+      "source_terms_of_use_URL_value": "https://lpdaac.usgs.gov/data/data-citation-and-policies/"
+    },
+    {
+      "key": "{{SurfaceWater}}",
+      "public_value": "1",
+      "source_value": "European Joint Research Council (JRC) Yearly Water Classification History",
+      "acknowledgements_value": "Pekel, J., Cottam, A., Gorelick, N. and Belward, A., Global Surface Water - Data Access, Nature, 2016, doi:10.1038/nature20584, JRC109054.",
+      "value": "",
+      "source_URL_value": "https://data.jrc.ec.europa.eu/dataset/jrc-gswe-global-surface-water-explorer-v1",
+      "source_terms_of_use_URL_value": "https://data.jrc.ec.europa.eu/access-rights/no-limitations"
+    },
+    {
+      "key": "{{FB-PopDensity}}",
+      "public_value": "1",
+      "source_value": "Facebook’s Population Density Maps",
+      "acknowledgements_value": "Facebook’s Population Density Maps https://dataforgood.facebook.com/dfg/tools/high-resolution-population-density-maps#resources",
+      "value": "",
+      "source_URL_value": "https://dataforgood.facebook.com/dfg/tools/high-resolution-population-density-maps#resources",
+      "source_terms_of_use_URL_value": "https://www.facebook.com/terms.php"
+    },
+    {
+      "key": "{{spatial-l3-PA-2010}}",
+      "public_value": "",
+      "source_value": "Shapefiles for the Panama Census 2010  from Instituto Nacional de Estadistica y Censos (INEC)",
+      "acknowledgements_value": "Data can only be shared with SALURBAL investigators with approved proposals",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-GT-2002}}",
+      "public_value": "",
+      "source_value": "Guatemala Boundaries - 2002  from Instituto National  de Estadistica (INE)",
+      "acknowledgements_value": "Instituto National  de Estadistica (INE)",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-AR-2010}}",
+      "public_value": "",
+      "source_value": "Argentina Secretaria de Energia Radios Censales  from Argentina Ministerio de Energía y Minería.Secretaría de Coordinación de Planeamiento Energético.Dirección Nacional de Información Energética.Tecnología de la Información.",
+      "acknowledgements_value": "Creative Commons Attribution",
+      "value": "",
+      "source_URL_value": "http://datos.minem.gob.ar/dataset/informacion-socioeconomica-indec-radios-censales",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-MX-2020}}",
+      "public_value": "",
+      "source_value": "Mexico Marco Geoestadistico. Censo de Poblacion y Vivienda 2020 AGEB Urban  from Instituto Nacional de Estadistica, Geografia e Informatica (INEGI)",
+      "acknowledgements_value": "Instituto Nacional de Estadistica, Geografia e Informatica (INEGI),2020",
+      "value": "",
+      "source_URL_value": "http://en.www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-MX-2000}}",
+      "public_value": "",
+      "source_value": "Mexico Administrative Boundaries  2000  from Instituto Nacional de Estadistica, Geografia e Informatica (INEGI)",
+      "acknowledgements_value": "Instituto Nacional de Estadistica, Geografia e Informatica (INEGI),2000",
+      "value": "",
+      "source_URL_value": "http://en.www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-MX-2010}}",
+      "public_value": "",
+      "source_value": "Mexico Administrative Boundaries 2010v5  from Instituto Nacional de Estadistica, Geografia e Informatica (INEGI)",
+      "acknowledgements_value": "Instituto Nacional de Estadistica, Geografia e Informatica (INEGI),2010",
+      "value": "",
+      "source_URL_value": "http://en.www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-MX-2018}}",
+      "public_value": "",
+      "source_value": "Mexico Marco Geoestadistico. Censo de Poblacion y Vivienda 2018 (Municipio)  from Instituto Nacional de Estadistica, Geografia e Informatica (INEGI)",
+      "acknowledgements_value": "Instituto Nacional de Estadistica, Geografia e Informatica (INEGI),2018",
+      "value": "",
+      "source_URL_value": "http://en.www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-BR-2010-setor-censitario}}",
+      "public_value": "",
+      "source_value": "Brazil 2010 setor censitario boundaries aligned with 2019 boundaries for 12 cities  from Instituto Brasileiro de Geografia e Estatística (IBGE)",
+      "acknowledgements_value": "",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-MX-2019}}",
+      "public_value": "",
+      "source_value": "Mexico Marco Geoestadistico. Censo de Poblacion y Vivienda 2019 AGEB Urban  from Instituto Nacional de Estadistica, Geografia e Informatica (INEGI)",
+      "acknowledgements_value": "Instituto Nacional de Estadistica, Geografia e Informatica (INEGI),2019",
+      "value": "",
+      "source_URL_value": "http://en.www.inegi.org.mx/app/biblioteca/ficha.html?upc=889463776079",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-CR-2014}}",
+      "public_value": "",
+      "source_value": "Costa Rica Distritos 2014  from SNIT-Costa Rica via INCAP",
+      "acknowledgements_value": "Sistema Nacional de Informacion Territorial (SNIT) Infraestructura Nacional de Datos Espaciales de Costa Rica",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-BR-2010-areas-de-ponderacao}}",
+      "public_value": "",
+      "source_value": "Brazil areas de ponderacao - 2010  from Instituto Brasileiro de Geografía e Estatística (IBGE)",
+      "acknowledgements_value": "",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-GT-2018}}",
+      "public_value": "",
+      "source_value": "Guatemala, Census 2018, geographic data  from Instituto Nacional de Estadística (INE)",
+      "acknowledgements_value": "",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-PE-2017}}",
+      "public_value": "",
+      "source_value": "Peru Zona Censal Boundaries - 2017  from Instituto Nacional de Estadistica y Informatica (INEI)",
+      "acknowledgements_value": "",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-PA-2010-github}}",
+      "public_value": "",
+      "source_value": "Panama, boundary data, 2010 from github",
+      "acknowledgements_value": "",
+      "value": "",
+      "source_URL_value": "https://github.com/justinelliotmeyers/official_panama_administrative_boundary_shapefile",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-CR-2000}}",
+      "public_value": "",
+      "source_value": "Costa Rica, Census 2000, spatial data  from Instituto Nacional de Estadistica y Censos (INEC) via INCAP",
+      "acknowledgements_value": "",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-CO-2012}}",
+      "public_value": "",
+      "source_value": "Colombia Sectores Urbanos 2012  from Sistema de Informacion Geografica Para La Paneaciony El Ordenamiento Territorial (SIG-OT)",
+      "acknowledgements_value": "Sistema de Informacion Geografica Para La Paneaciony El Ordenamiento Territorial (SIG-OT)",
+      "value": "",
+      "source_URL_value": "https://geoportal.dane.gov.co/",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-CO-2018}}",
+      "public_value": "",
+      "source_value": "Colombia Sectores Urbanos 2018  from Sistema de Informacion Geografica Para La Paneaciony El Ordenamiento Territorial (SIG-OT)",
+      "acknowledgements_value": "Sistema de Informacion Geografica Para La Paneaciony El Ordenamiento Territorial (SIG-OT)",
+      "value": "",
+      "source_URL_value": "https://geoportal.dane.gov.co/",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-CO-2005}}",
+      "public_value": "",
+      "source_value": "Colombia Sectores Urbanos 2005  from Sistema de Informacion Geografica Para La Paneaciony El Ordenamiento Territorial (SIG-OT)",
+      "acknowledgements_value": "Sistema de Informacion Geografica Para La Paneaciony El Ordenamiento Territorial (SIG-OT)",
+      "value": "",
+      "source_URL_value": "https://geoportal.dane.gov.co/",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-CL-2016}}",
+      "public_value": "",
+      "source_value": "Chile administrative boundaries by region 2016  from Infraestructura de Datos Geoespaciales (IDE), Ministerio de Bienes Nacionales",
+      "acknowledgements_value": "Ministerio de Bienes Nacionales Infrestructura de Datos Geospaciales (IDE)",
+      "value": "",
+      "source_URL_value": "https://www.geoportal.cl/geoportal/catalog?categories%5B%5D=boundaries&action=search",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-CL-2017}}",
+      "public_value": "",
+      "source_value": "Chile administrative boundaries by region 2017  from Infraestructura de Datos Geoespaciales (IDE), Ministerio de Bienes Nacionales",
+      "acknowledgements_value": "Ministerio de Bienes Nacionales Infrestructura de Datos Geospaciales (IDE)",
+      "value": "",
+      "source_URL_value": "https://www.geoportal.cl/geoportal/catalog?categories%5B%5D=boundaries&action=search",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{spatial-l3-CR-2024}}",
+      "public_value": "",
+      "source_value": "Costa Rica Distrito Boundaries 2024  from Sistema Nacional de Informacion Territorial (SNIT)",
+      "acknowledgements_value": "Sistema Nacional de Informacion Territorial (SNIT)",
+      "value": "",
+      "source_URL_value": "https://www.snitcr.go.cr/Visor/visor?p=cHJveWVjdG86OmxpbWl0ZXM=",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{temperature}}",
+      "public_value": "1",
+      "source_value": "ERA5-LAND reanalysis data https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview",
+      "acknowledgements_value": "The results contain modified Copernicus Climate Change Service information 2020. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains. J. Muñoz-Sabater, Dutra, E., Agustí-Panareda, A., Albergel, C., Arduini, G., Balsamo, G., Boussetta, S., Choulga, M., Harrigan, S., Hersbach, H., Martens, B., Miralles, D. G., Piles, M., Rodríguez-Fernández, N. J., Zsoter, E., Buontempo, C., and Thépaut, J.-N.: ERA5-Land: A state-of-the-art global reanalysis dataset for land applications, Earth Syst. Sci. Data,13, 4349–4383, 2021. https://doi.org/10.5194/essd-13-4349-2021.",
+      "value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{urban-footprint-guf}}",
+      "public_value": "1",
+      "source_value": "Global Urban Footprint (GUF), 2012",
+      "acknowledgements_value": "Global Urban Footprint (GUF) 2012, Land Portal, https://www.landportal.org/voc/layer/global-urban-footprint-guf",
+      "value": "",
+      "source_URL_value": "https://www.landportal.org/voc/layer/global-urban-footprint-guf",
+      "source_terms_of_use_URL_value": "https://www.landportal.org/about/terms-and-conditions-use"
+    },
+    {
+      "key": "{{urban-footprint-change}}",
+      "public_value": "1",
+      "source_value": "High spatiotemporal resolution mapping of global urban change from 1985 to 2015",
+      "acknowledgements_value": "Huang, Yinghuai (2020). High spatiotemporal resolution mapping of global urban change from 1985 to 2015. figshare. Dataset. https://doi.org/10.6084/m9.figshare.11513178.v1",
+      "value": "",
+      "source_URL_value": "https://figshare.com/articles/dataset/High_spatiotemporal_resolution_mapping_of_global_urban_change_from_1985_to_2015/11513178/1",
+      "source_terms_of_use_URL_value": "https://figshare.com/articles/dataset/High_spatiotemporal_resolution_mapping_of_global_urban_change_from_1985_to_2015/11513178/1"
+    }
+  ],
+  "by_key_dataset_iso2": [
+    {
+      "key": "{{population}}",
+      "iso2": "AR",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "BR",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": "Ministério da Saúde, Brazil"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CL",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Instituto Nacional de Estadística (INE), Chile",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Chile"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CO",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CR",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "GT",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Guatemala"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "MX",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PA",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panama",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censo (INEC), Panama"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PE",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Instituto Nacional de Estadística y Informática (INEI), Peru",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Informática (INEI), Peru"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "SV",
+      "dataset_id": "PRJS",
+      "public_value": "0",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "AR",
+      "dataset_id": "PRJ",
+      "public_value": "9",
+      "source_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "AR",
+      "dataset_id": "PRJG",
+      "public_value": "9",
+      "source_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "AR",
+      "dataset_id": "PRJT",
+      "public_value": "9",
+      "source_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "BR",
+      "dataset_id": "PRJ",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": "Ministério da Saúde, Brazil"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "BR",
+      "dataset_id": "PRJG",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": "Ministério da Saúde, Brazil"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "BR",
+      "dataset_id": "PRJT",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": "Ministério da Saúde, Brazil"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CL",
+      "dataset_id": "PRJ",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Chile",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Chile"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CL",
+      "dataset_id": "PRJG",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Chile",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Chile"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CL",
+      "dataset_id": "PRJT",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Chile",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Chile"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CO",
+      "dataset_id": "PRJ",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CO",
+      "dataset_id": "PRJG",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CO",
+      "dataset_id": "PRJT",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CR",
+      "dataset_id": "PRJ",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CR",
+      "dataset_id": "PRJG",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CR",
+      "dataset_id": "PRJT",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "GT",
+      "dataset_id": "PRJ",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Guatemala"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "GT",
+      "dataset_id": "PRJG",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Guatemala"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "GT",
+      "dataset_id": "PRJT",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Guatemala"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "MX",
+      "dataset_id": "PRJ",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "MX",
+      "dataset_id": "PRJG",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "MX",
+      "dataset_id": "PRJT",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PA",
+      "dataset_id": "PRJ",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panama",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censo (INEC), Panama"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PA",
+      "dataset_id": "PRJG",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panama",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censo (INEC), Panama"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PA",
+      "dataset_id": "PRJT",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panama",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censo (INEC), Panama"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PE",
+      "dataset_id": "PRJ",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Informática (INEI), Peru",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Informática (INEI), Peru"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PE",
+      "dataset_id": "PRJG",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Informática (INEI), Peru",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Informática (INEI), Peru"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PE",
+      "dataset_id": "PRJT",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Informática (INEI), Peru",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Informática (INEI), Peru"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "SV",
+      "dataset_id": "PRJ",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "SV",
+      "dataset_id": "PRJG",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador"
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "SV",
+      "dataset_id": "PRJT",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador"
+    }
+  ],
+  "by_key_iso2": [
+    {
+      "key": "{{GasPrice}}",
+      "iso2": "AR",
+      "public_value": "1",
+      "source_value": "Secretaría de Energía",
+      "acknowledgements_value": "Secretaría de Energía",
+      "source_URL_value": "http://res1104.se.gob.ar/consultaprecios.eess.php",
+      "source_terms_of_use_URL_value": "http://res1104.se.gob.ar/consultaprecios.eess.php"
+    },
+    {
+      "key": "{{GasPrice}}",
+      "iso2": "BR",
+      "public_value": "1",
+      "source_value": "Sistema de Levantamento de Preços, Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)",
+      "acknowledgements_value": "Sistema de Levantamento de Preços, Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)",
+      "source_URL_value": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{GasPrice}}",
+      "iso2": "CL",
+      "public_value": "1",
+      "source_value": "Bencina en linea, Comision Nacional de Energia",
+      "acknowledgements_value": "Bencina en linea, Comision Nacional de Energia",
+      "source_URL_value": "https://bencinaenlinea.cl/",
+      "source_terms_of_use_URL_value": "https://www.portaltransparencia.cl/PortalPdT/web/guest/directorio-de-organismos-regulados?p_p_id=pdtorganismos_WAR_pdtorganismosportlet&orgcode=a942a447899166524fa704416037fb2a"
+    },
+    {
+      "key": "{{GasPrice}}",
+      "iso2": "CO",
+      "public_value": "0",
+      "source_value": "El Tiempo",
+      "acknowledgements_value": "",
+      "source_URL_value": "https://www.eltiempo.com/economia/finanzas-personales/precio-de-la-gasolina-en-mayo-del-2017",
+      "source_terms_of_use_URL_value": "https://www.eltiempo.com/terminos-condiciones"
+    },
+    {
+      "key": "{{GasPrice}}",
+      "iso2": "GT",
+      "public_value": "1",
+      "source_value": "U.S. Energy Information Administration",
+      "acknowledgements_value": "U.S. Energy Information Administration",
+      "source_URL_value": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
+      "source_terms_of_use_URL_value": "https://www.eia.gov/about/copyrights_reuse.php"
+    },
+    {
+      "key": "{{GasPrice}}",
+      "iso2": "MX",
+      "public_value": "1",
+      "source_value": "Gobierno de México",
+      "acknowledgements_value": "Gobierno de México",
+      "source_URL_value": "https://datos.gob.mx/busca/dataset/estaciones-de-servicio-gasolineras-y-precios-finales-de-gasolina-y-diesel ",
+      "source_terms_of_use_URL_value": "https://opendefinition.org/od/2.1/es/"
+    },
+    {
+      "key": "{{GasPrice}}",
+      "iso2": "PE",
+      "public_value": "1",
+      "source_value": "Organismo Supervisor de la Inversion en Energia y Mineria",
+      "acknowledgements_value": "Organismo Supervisor de la Inversion en Energia y Mineria",
+      "source_URL_value": "http://www.facilito.gob.pe/facilito/pages/facilito/menuPrecios.jsp ",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "AR",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "BR",
+      "public_value": "1",
+      "source_value": "Instituto Brasileiro de Geografia e Estatística (IBGE), Brazil",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "CL",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadísticas (INE), Chile",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "CO",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "CR",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "GT",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "MX",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "PA",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "PE",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística e Informática (INEI), Peru",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "NI",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadísticas y Censos (INIDE), Nicaragua",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "SV",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "AR",
+      "public_value": "1",
+      "source_value": "WorldPop 2010 population estimates, https://www.worldpop.org",
+      "acknowledgements_value": "WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). https://dx.doi.org/10.5258/SOTON/WP00651",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "BR",
+      "public_value": "1",
+      "source_value": "WorldPop 2010 population estimates, https://www.worldpop.org",
+      "acknowledgements_value": "WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). https://dx.doi.org/10.5258/SOTON/WP00652",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "CL",
+      "public_value": "1",
+      "source_value": "WorldPop 2010 population estimates, https://www.worldpop.org",
+      "acknowledgements_value": "WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). https://dx.doi.org/10.5258/SOTON/WP00653",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "CO",
+      "public_value": "1",
+      "source_value": "WorldPop 2010 population estimates, https://www.worldpop.org",
+      "acknowledgements_value": "WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). https://dx.doi.org/10.5258/SOTON/WP00654",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "CR",
+      "public_value": "1",
+      "source_value": "WorldPop 2010 population estimates, https://www.worldpop.org",
+      "acknowledgements_value": "WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). https://dx.doi.org/10.5258/SOTON/WP00655",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "GT",
+      "public_value": "1",
+      "source_value": "WorldPop 2010 population estimates, https://www.worldpop.org",
+      "acknowledgements_value": "WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). https://dx.doi.org/10.5258/SOTON/WP00656",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "MX",
+      "public_value": "1",
+      "source_value": "WorldPop 2010 population estimates, https://www.worldpop.org",
+      "acknowledgements_value": "WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). https://dx.doi.org/10.5258/SOTON/WP00657",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "PA",
+      "public_value": "1",
+      "source_value": "Global Urban Footprint Population estimates, https://www.un-spider.org/node/11424",
+      "acknowledgements_value": "Esch, T., Taubenböck, H., Roth, A., Heldens, W., Felbier, A., Thiel, M., Schmidt, M., Müller, A., Dech, S. (2012): TanDEM-X mission-new perspectives for the inventory and monitoring of global settlement patterns. Journal of Applied Remote Sensing, vol. 6, issue 1, 061702 (October 04, 2012); 21 pp., doi: 10.1117/1.JRS.6.061702.; Esch, T., Marconcini, M., Felbier, A., Roth, A., Heldens, W., Huber, M., Schwinger, M., Taubenböck, H., Müller, A., Dech, S. (2013) Urban Footprint Processor – Fully Automated Processing Chain Generating Settlement Masks from Global Data of the TanDEM-X Mission. IEEE Geoscience and Remote Sensing Letters, Vol. 10, No. 6, November 2013. Pp. 1617-1621. ISSN 1545-598X, DOI 10.1109/LGRS.2013.2272953.",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "PE",
+      "public_value": "1",
+      "source_value": "Global Urban Footprint Population estimates, https://www.un-spider.org/node/11424",
+      "acknowledgements_value": "Esch, T., Taubenböck, H., Roth, A., Heldens, W., Felbier, A., Thiel, M., Schmidt, M., Müller, A., Dech, S. (2012): TanDEM-X mission-new perspectives for the inventory and monitoring of global settlement patterns. Journal of Applied Remote Sensing, vol. 6, issue 1, 061702 (October 04, 2012); 21 pp., doi: 10.1117/1.JRS.6.061702.; Esch, T., Marconcini, M., Felbier, A., Roth, A., Heldens, W., Huber, M., Schwinger, M., Taubenböck, H., Müller, A., Dech, S. (2013) Urban Footprint Processor – Fully Automated Processing Chain Generating Settlement Masks from Global Data of the TanDEM-X Mission. IEEE Geoscience and Remote Sensing Letters, Vol. 10, No. 6, November 2013. Pp. 1617-1621. ISSN 1545-598X, DOI 10.1109/LGRS.2013.2272953.",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "NI",
+      "public_value": "1",
+      "source_value": "WorldPop 2010 population estimates, https://www.worldpop.org",
+      "acknowledgements_value": "WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). https://dx.doi.org/10.5258/SOTON/WP00660",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population-BEC}}",
+      "iso2": "SV",
+      "public_value": "1",
+      "source_value": "WorldPop 2010 population estimates, https://www.worldpop.org",
+      "acknowledgements_value": "WorldPop (www.worldpop.org - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). https://dx.doi.org/10.5258/SOTON/WP00661",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "AR",
+      "public_value": "0",
+      "source_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "BR",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": "Ministério da Saúde, Brazil",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CL",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Chile",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Chile",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CO",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "CR",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "GT",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "MX",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Geografía (INEGI), Mexico",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PA",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panama",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Censo (INEC), Panama",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "PE",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Informática (INEI), Peru",
+      "acknowledgements_value": "Instituto Nacional de Estadística y Informática (INEI), Peru",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{population}}",
+      "iso2": "SV",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{vehicle-registration}}",
+      "iso2": "BR",
+      "public_value": "",
+      "source_value": "Departamento Nacional de Transito (SENATRAN) https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-frota-de-veiculos-senatran",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{vehicle-registration}}",
+      "iso2": "CL",
+      "public_value": "",
+      "source_value": "Instituto Nacional de Estadística (INE) https://www.ine.cl/estadisticas/economia/transporte-y-comunicaciones/permiso-de-circulacion/parque-de-vehiculos ",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{vehicle-registration}}",
+      "iso2": "CO",
+      "public_value": "",
+      "source_value": "Municipal-level vehicle registrations are collected by ANSV (Agencia Nacional de Seguridad Víal) and were made available upon request to the agency.",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    },
+    {
+      "key": "{{vehicle-registration}}",
+      "iso2": "MX",
+      "public_value": "",
+      "source_value": "Instituto Nacional de Estadistica y Geografia (INEGI) https://www.inegi.org.mx/programas/vehiculosmotor/",
+      "acknowledgements_value": "",
+      "source_URL_value": "",
+      "source_terms_of_use_URL_value": ""
+    }
+  ],
+  "by_key_iso2_year": [
+    {
+      "key": "{{census}}",
+      "iso2": "AR",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "AR",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INDEC), Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "BR",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Instituto Brasileiro de Geografia e Estatística (IBGE), Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "BR",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Instituto Brasileiro de Geografia e Estatística (IBGE), Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "CL",
+      "year": "2002",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadísticas (INE), Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "CL",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadísticas (INE), Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "CO",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "CO",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "CR",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "CR",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "GT",
+      "year": "2002",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "GT",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "MX",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "MX",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "MX",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "MX",
+      "year": "2020",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "PA",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "PE",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística e Informática (INEI), Peru",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "PE",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística e Informática (INEI), Peru",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "NI",
+      "year": "2005",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadísticas y Censos (INIDE), Nicaragua",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{census}}",
+      "iso2": "SV",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{employment-survey}}",
+      "iso2": "BR",
+      "year": "2017",
+      "public_value": "",
+      "source_value": "Pesquisa Nacional de Amostra de Domicilios (PNAD)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{employment-survey}}",
+      "iso2": "BR",
+      "year": "2018",
+      "public_value": "",
+      "source_value": "Pesquisa Nacional de Amostra de Domicilios (PNAD)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{employment-survey}}",
+      "iso2": "GT",
+      "year": "2016",
+      "public_value": "",
+      "source_value": "Encuesta Nacional de Ingresos y Empleo 2016",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{employment-survey}}",
+      "iso2": "MX",
+      "year": "2017",
+      "public_value": "",
+      "source_value": "Encuesta Nacional de Ocu-pacion y Empleo (ENOE) 2017",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "AR",
+      "year": "2005",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Factores de Riesgo (ENFR)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "AR",
+      "year": "2009",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Factores de Riesgo (ENFR)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "AR",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Factores de Riesgo (ENFR)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "BR",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Nacional de Saúde (PNS) ",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "BR",
+      "year": "2019",
+      "public_value": "1",
+      "source_value": "Nacional de Saúde (PNS) ",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "CL",
+      "year": "2003",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud (ENS) ",
+      "acknowledgements_value": "Department of Epidemiology, Ministry of Health of Chile, Encuesta Nacional De Salud, 2009-2010. In case the study is published, the publication or working document must attach the following paragraph in the introduction or initial section of the document: This research used information from the Health Surveys for epidemiological surveillance of the Undersecretariat of Public Health. The author thanks the Ministry of Health of Chile for allowing him to have the database. All the results obtained from the study or research are the responsibility of the author and in no way commit said institution."
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "CL",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud (ENS) ",
+      "acknowledgements_value": "Department of Epidemiology, Ministry of Health of Chile, Encuesta Nacional De Salud, 2009-2010. In case the study is published, the publication or working document must attach the following paragraph in the introduction or initial section of the document: This research used information from the Health Surveys for epidemiological surveillance of the Undersecretariat of Public Health. The author thanks the Ministry of Health of Chile for allowing him to have the database. All the results obtained from the study or research are the responsibility of the author and in no way commit said institution."
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "CL",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud (ENS) ",
+      "acknowledgements_value": "Department of Epidemiology, Ministry of Health of Chile, Encuesta Nacional De Salud, 2009-2010. In case the study is published, the publication or working document must attach the following paragraph in the introduction or initial section of the document: This research used information from the Health Surveys for epidemiological surveillance of the Undersecretariat of Public Health. The author thanks the Ministry of Health of Chile for allowing him to have the database. All the results obtained from the study or research are the responsibility of the author and in no way commit said institution."
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "CO",
+      "year": "2007",
+      "public_value": "3",
+      "source_value": "Encuesta Nacional de Salud (ENS) ",
+      "acknowledgements_value": "Ministerio de Salud (MINSALUD)"
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "CO",
+      "year": "2005",
+      "public_value": "3",
+      "source_value": "Encuesta Nacional de la Situation Nutricional en Colombia (ENSIN)",
+      "acknowledgements_value": "Instituto Colombiano de Bienestar Familiar (ICBF)"
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "CO",
+      "year": "2010",
+      "public_value": "3",
+      "source_value": "Encuesta Nacional de la Situation Nutricional en Colombia (ENSIN)",
+      "acknowledgements_value": "Instituto Colombiano de Bienestar Familiar (ICBF)"
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "CO",
+      "year": "2015",
+      "public_value": "3",
+      "source_value": "Encuesta Nacional de la Situation Nutricional en Colombia (ENSIN)",
+      "acknowledgements_value": "Instituto Colombiano de Bienestar Familiar (ICBF)"
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "CR",
+      "year": "2005",
+      "public_value": "3",
+      "source_value": "Encuesta Multinacional de Diabetes mellitus y Factores de Riesgo (CAMDI)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "GT",
+      "year": "2002",
+      "public_value": "3",
+      "source_value": "Encuesta Multinacional de Diabetes mellitus y Factores de Riesgo (CAMDI)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "GT",
+      "year": "2015",
+      "public_value": "2",
+      "source_value": "Demographic and Health Survey (DHS)",
+      "acknowledgements_value": "All data users are required to submit an electronic copy (pdf) of any reports/publications resulting from using the DHS data files to: references@dhsprogram.com"
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "MX",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Encuesta National de Salud (ENSA)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "MX",
+      "year": "2006",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud y Nutricion (ENSANUT)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "MX",
+      "year": "2012",
+      "public_value": "2",
+      "source_value": "Encuesta Nacional de Salud y Nutricion (ENSANUT)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "MX",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud y Nutricion (ENSANUT)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "MX",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud y Nutricion (ENSANUT)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "NI",
+      "year": "2003",
+      "public_value": "3",
+      "source_value": "Encuesta Multinacional de Diabetes mellitus y Factores de Riesgo (CAMDI)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "PA",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud y Calidad de Vida (ENSCAVI)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "PE",
+      "year": "2016",
+      "public_value": "3",
+      "source_value": "Encuesta Nacional de Demografia y Salud (ENDES)",
+      "acknowledgements_value": "Instituto Nacional de Estadística e Informática - Encuesta Demográfica y de Salud Familiar 2016"
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "SV",
+      "year": "2004",
+      "public_value": "3",
+      "source_value": "Encuesta Multinacional de Diabetes mellitus y Factores de Riesgo (CAMDI)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "SV",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud Familiar (FESAL)",
+      "acknowledgements_value": "Asociación Demográfica Salvadoreña (ADS), Division of Reproductive Health-Centers for Disease Control and Prevention (CDC). (2009) El Salvador Reproductive Health Survey 2008. San Salvador, El Salvador: ADS."
+    },
+    {
+      "key": "{{health-survey-adult}}",
+      "iso2": "SV",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Enfermedades Cronicas no transmisibles en Poblacion Adulta de El Salvador (ENECA)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "CL",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Encuesta Longitudinal de Primera Infancia (ELPI)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "CO",
+      "year": "2005",
+      "public_value": "3",
+      "source_value": "Encuesta Nacional de la Situation Nutricional en Colombia (ENSIN)",
+      "acknowledgements_value": "Instituto Colombiano de Bienestar Familiar (ICBF)"
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "CO",
+      "year": "2010",
+      "public_value": "3",
+      "source_value": "Encuesta Nacional de la Situation Nutricional en Colombia (ENSIN)",
+      "acknowledgements_value": "Instituto Colombiano de Bienestar Familiar (ICBF)"
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "CO",
+      "year": "2015",
+      "public_value": "3",
+      "source_value": "Encuesta Nacional de la Situation Nutricional en Colombia (ENSIN)",
+      "acknowledgements_value": "Instituto Colombiano de Bienestar Familiar (ICBF)"
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "GT",
+      "year": "2015",
+      "public_value": "2",
+      "source_value": "Demographic and Health Survey (DHS)",
+      "acknowledgements_value": "All data users are required to submit an electronic copy (pdf) of any reports/publications resulting from using the DHS data files to: references@dhsprogram.com"
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "MX",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Encuesta National de Salud (ENSA)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "MX",
+      "year": "2006",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud y Nutricion (ENSANUT)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "MX",
+      "year": "2012",
+      "public_value": "2",
+      "source_value": "Encuesta Nacional de Salud y Nutricion (ENSANUT)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "MX",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud y Nutricion (ENSANUT)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "MX",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud y Nutricion (ENSANUT)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "PE",
+      "year": "2016",
+      "public_value": "3",
+      "source_value": "Encuesta Nacional de Demografia y Salud (ENDES)",
+      "acknowledgements_value": "Instituto Nacional de Estadística e Informática - Encuesta Demográfica y de Salud Familiar 2016"
+    },
+    {
+      "key": "{{health-survey-child}}",
+      "iso2": "SV",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Encuesta Nacional de Salud Familiar (FESAL)",
+      "acknowledgements_value": "Asociación Demográfica Salvadoreña (ADS), Division of Reproductive Health-Centers for Disease Control and Prevention (CDC). (2009) El Salvador Reproductive Health Survey 2008. San Salvador, El Salvador: ADS."
+    },
+    {
+      "key": "{{household-survey}}",
+      "iso2": "AR",
+      "year": "2017",
+      "public_value": "",
+      "source_value": "Encuesta Permanente de Hogares (EPH) ",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{household-survey}}",
+      "iso2": "CL",
+      "year": "2015",
+      "public_value": "",
+      "source_value": "Instituto Nacional de Estadistica (INE)  ",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{household-survey}}",
+      "iso2": "CO",
+      "year": "2017",
+      "public_value": "",
+      "source_value": "Gran Encuesta Integrada de Hogares (GEIH)  ",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{household-survey}}",
+      "iso2": "SV",
+      "year": "2016",
+      "public_value": "",
+      "source_value": "Encuesta de Hogares de Propositos Multiples (EHPM) 2016 ",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{household-survey}}",
+      "iso2": "MX",
+      "year": "2010",
+      "public_value": "",
+      "source_value": "Encuesta (bienal) Nacional de Ingreso y Gasto en los Hogares (ENIGH 2010)  ",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{household-survey}}",
+      "iso2": "PA",
+      "year": "2015",
+      "public_value": "",
+      "source_value": "Encuesta de Propositos Multiples (EPM2015) ",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{household-survey}}",
+      "iso2": "PE",
+      "year": "2009",
+      "public_value": "",
+      "source_value": "Encuesta Nacional de Hogares (ENAHO) ",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "AR",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Ministerio del Interior, Secretaría de Municipios, Subsecretaría de Relaciones Municipales (https://datos.mininterior.gob.ar/dataset/informacion-sobre-las-autoridades-ubicacion-geografica-datos-institucionales-y-contacto)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "AR",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Ministerio del Interior, Secretaría de Municipios, Subsecretaría de Relaciones Municipales (https://datos.mininterior.gob.ar/dataset/informacion-sobre-las-autoridades-ubicacion-geografica-datos-institucionales-y-contacto)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "BR",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Brazil Electoral Tribunal (https://www.tse.jus.br/eleicoes/estatisticas/repositorio-de-dados-eleitorais-1/repositorio-de-dados-eleitorais)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "CL",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Chile Electoral Tribunal (https://www.servel.cl/elecciones-municipales-resultados-concejales-2004-2012-2/)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "CO",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Colombia Electoral Observation Mission - MOE  (https://www.datoselectorales.org/datos-y-resultados-electorales/)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "CR",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "El Financiero Costa Rica (https://www.elfinancierocr.com/economia-y-politica/repase-quien-era-el-alcalde-de-su-canton-entre/L5KY2X7UFNHW5BO5GSWDWIMJWY/story/)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "GT",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Guatemala Electoral Tribunal (https://www.tse.org.gt/memoria-electoral-2011.pdf)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "MX",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "National system of municipal information (http://www.snim.rami.gob.mx/)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "MX",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "National system of municipal information (http://www.snim.rami.gob.mx/)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "MX",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "National system of municipal information (http://www.snim.rami.gob.mx/)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "MX",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "National system of municipal information (http://www.snim.rami.gob.mx/)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "NI",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Nicaragua Electoral Tribunal (http://legislacion.asamblea.gob.ni/normaweb.nsf/0/391ede514bbd681a062584a20057bcb3/$FILE/CANDIDATOS%20ELECTOS.pd)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "PA",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Panama Electoral Tribunal (https://www.tribunal-electoral.gob.pa/eventos-electorales/elecciones-generales-1994-2019/elecciones-2009/resultados-electorales-2009/2/)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "PE",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Jury of National Elections (https://solicitudinformacionpublica.jne.gob.pe/wf_SolicitudAcceso.aspx)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{political-participation}}",
+      "iso2": "SV",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Municipal Corporation of El Salvador (https://www.comures.org.sv/html/agremiados/listado_2009.html)",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2005",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2006",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2007",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2008",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2009",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2010",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2011",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2012",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2013",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2014",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2015",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2016",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2017",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2018",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2019",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "AR",
+      "year": "2020",
+      "public_value": "9",
+      "source_value": "Ministerio de Salud, Argentina",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2001",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2002",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2003",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2004",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2005",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2006",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2009",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2019",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "BR",
+      "year": "2020",
+      "public_value": "1",
+      "source_value": "Ministério da Saúde, Brazil",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2001",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2002",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2003",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2004",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2005",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2006",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2009",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CL",
+      "year": "2019",
+      "public_value": "1",
+      "source_value": "Ministerio de Salud, Chile",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "1997",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "1998",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "1999",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2001",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2002",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2003",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2004",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2005",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2006",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2009",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2019",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2020",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CO",
+      "year": "2021",
+      "public_value": "1",
+      "source_value": "Departamento Administrativo Nacional de Estadística (DANE), Colombia",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2001",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2002",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2003",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2004",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2005",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2006",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2009",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2019",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "CR",
+      "year": "2020",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censos (INEC), Costa Rica",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2009",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2019",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "GT",
+      "year": "2020",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística (INE), Guatemala",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2000",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2001",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2002",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2003",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2004",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2005",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2006",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2009",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2019",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "MX",
+      "year": "2020",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Geografía (INEGI), México",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2002",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2003",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2004",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2005",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2006",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2009",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2019",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "PA",
+      "year": "2020",
+      "public_value": "1",
+      "source_value": "Instituto Nacional de Estadística y Censo (INEC), Panamá",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2001",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2002",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2003",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2004",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2005",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2006",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2007",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2008",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2009",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2010",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2011",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2012",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2013",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2014",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2015",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2016",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2017",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2018",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2019",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    },
+    {
+      "key": "{{vital-registration}}",
+      "iso2": "SV",
+      "year": "2020",
+      "public_value": "1",
+      "source_value": "Dirección General de Estadística y Censos (DIGESTYC), El Salvador",
+      "acknowledgements_value": ""
+    }
+  ]
+}

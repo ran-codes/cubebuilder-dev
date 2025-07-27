@@ -1,0 +1,407 @@
+---
+title: '_training__2_record_level_simple'
+author: 
+  - name: Renovator Name
+date: last-modified
+format: 
+  html:
+    toc: true
+    toc-expand: true
+    self-contained: true
+    code-fold: false
+    df-print: kable
+    code-tools: true
+    code-block-border-left: '#39b69d'
+    code-block-bg: '#ebf0ef'
+comments:
+  hypothesis: 
+    theme: clean
+editor: source
+execute:  
+  warning: false
+  message: false
+  eval: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# 0. Codebook Template
+
+## 0.1 Setup
+
+We first fill out the configurations here. 
+
+```{r}
+#| code-summary: 'Setup'
+#| code-fold: true
+
+{ ## 'Global Setup (For any notebook)'
+  
+  # Add location where files for the current dataset version will be written to. Example: 'datasets/area-level/LE_L1/v1.0'
+  setwd(here::here('code/renovations/_training/_training__2_record_level_simple'))
+
+  #### Configure relative path
+  path_global_setup_function = here::here('R/setup/global_setup.R')
+  
+  #### Generic global setup code (Do not change!)
+  source(path_global_setup_function)
+  setup = global_setup(path_global_setup_function)
+  invisible(list2env(setup$sourced_objects, envir = .GlobalEnv))
+  global_context = setup$global_context
+}
+
+{ ## Renovation notebook specific setup
+  
+  #### Configurations for each renovation (Change!)
+  local_config = lst(
+    ## Composite keys (Required)
+    dataset_id_tmp = "_training__2_record_level_simple", # Dataset ID name. Example: 'LE_L1'
+    dataset_version_tmp = 'v1', # Dataset version. Example: 'v1.0'
+    observation_type_tmp = 'record-level',
+    schema_version_tmp = 'v2', # Schema version. Example: 'v2'
+    ## Processing info (Required)
+    raw_dataset_dir = 'Dashboards/_training/_training__2_record_level_simple', # Unencrypted server data location. Example: 'Data/Mortality Data/Life Expectancy/'
+    vec__var_names_to_remove = c(''), # Optional, leave empty if not needed. Variables to exclude from data operationalization.
+    file_list_tmp = c("dummy_MX_health_survey_2015.csv",
+                      "dummy_MX_health_survey_2019.csv") %>% # List all data files to be operationalized. Example: 'LE_L1_20200824.csv'
+      list(),
+    ## Renovation metadata (Required)
+    dataset_renovation_maintainer = 'User', # Maintainer name
+    dataset_renovation_context_contributor = '', # Context Contributer name
+    dataset_renovation_flags = c("") # ?????
+  )
+  
+  ## Develop data freeze files (Create a frozen copy of data files)
+  file.path(global_context$path_server_dmc, local_config$raw_dataset_dir) %>%
+      list.files() %>% 
+      discard(~str_detect(.x, 'Codebook_')) # Specify the prefix for codebooks. This excludes codebook(s) from being frozen.
+  
+  #### Generic renovation notebook setup code (Do not change!)
+  local_context = get_renovation_notebook_context(local_config, global_context) 
+  
+}
+
+```
+
+If all is well then get_renovation_notebook_context() will set things up the renovation infrastructure for you:
+
+- Folder Setup: setups a server fodler for this renovation
+- Dependencies: imports all libraries and functions you will need
+- Raw data: freezes raw data into long term stable storage and compiles raw data into `local_context$raw_data`
+- Logs: It has recorded all of the actions taken in JSON logs for version control (check you diff)
+
+Now we are ready to renovate. Let's first examine the raw data.
+
+```{r}
+#| code-summary: 'Brain - Raw data preview'
+#| code-fold: true
+
+## Preview raw data
+dfa = local_context$raw_data %>% 
+  collect() %>% 
+  as_tibble()
+
+glimpse(dfa)
+```
+
+Looks like a typical SALURBAL record level dataset. Let's start tidying.
+## 0.2 Declare Variables
+
+This is a record-level dataset so the goal is to turn this into one row per data point (remember: one row per data point, not one row per record). Here we conceptualize a data point as any single piece of data attached to a particular person-visit.
+
+For example, if respondent MX2019001 has two visits and we measure AGE, BMI, SMOKING, that creates 6 data points total.
+
+Here we specify what variables are in the dataset, removing composite keys (including RESPONDENT_ID, SURVEY_YEAR, SURVEY_MONTH, SURVEY_DAY) and redundant administrative variables. The final structure is one row per original variable name with a standardized variable name.
+
+**Key observations from the data:**
+- Multiple survey files with consistent variable structure
+- Some variables need specific recoding (survey date components)
+- Geographic identifiers (SALID1, SALID2) are kept as regular variables, not composite keys
+- Individual characteristics become variables rather than stratification categories
+
+**Record-level specifics:**
+- `observation_id` will be derived from RESPONDENT_ID (unique person-visit identifier)
+- `geo` composite key remains empty (record-level datasets are never geo-aggregated)
+- Survey timing (year/month/day) becomes part of the temporal composite keys
+- All health/demographic variables become standardized with dataset prefix
+
+
+```{r}
+#| code-summary: 'Brain - Variables processing'
+## Declare the variables (remove compist)
+df_var_name = tibble(var_name_raw = local_context$raw_data %>% 
+                       select(-all_of(
+                         c('RESPONDENT_ID','SURVEY_YEAR','SURVEY_MONTH','SURVEY_DAY',
+                           'file_data','dataset_version',
+                           'schema_version','observation_type',
+                           'dataset_instance','dataset_id'))) %>% 
+                       names() ) %>% 
+  rowwise() %>% 
+  mutate(
+    var_name = paste0(local_context$dataset_id_tmp, '_', sanitize_codebook_var(var_name_raw)),
+    dataset_id = local_context$dataset_id_tmp,
+    dataset_version = local_context$dataset_version_tmp,
+    dataset_instance = local_context$dataset_instance_tmp,
+    observation_type = local_context$observation_type_tmp,
+    schema_version = local_context$schema_version_tmp
+  ) %>% 
+  ungroup() %>% 
+  select(all_of(local_context$vec__admin_variable_definition_table_columns)) %>% 
+  arrange(var_name)
+
+## Preview
+salurbal_renovation_reactable(df_var_name)
+```
+
+Here we have a validation function that checks the structure and will give you tips if its not right.
+
+```{r}
+#| code-summary: 'Automated - QC'
+
+# Check for UTF8 encoding, valid dataset variables, valid primary key, unique var_name, etc.
+process_variable_table(df_var_name, local_context)
+```
+
+Looks good. This also generate JSON logs so we can track changes in our git diffs; this is a good place to commit your work. 
+
+
+## 0.3 Declare Strata
+
+For record-level renovations, df_strata is always empty because individual characteristics like sex and age are captured as regular variables rather than stratification groups for aggregation.
+
+```{r}
+#| code-summary: 'Brain - Strata processing'
+df_strata = generate_empty_df_strata(df_var_name, local_context)
+salurbal_renovation_reactable(df_strata)
+```
+
+Let's run validations on the strata table.
+
+```{r}
+#| code-summary: 'Automated - QC'
+process_strata_table(df_strata, local_context)
+```
+
+
+## 0.4 Data Cube
+
+### Processing
+
+Here we tidy the raw data into a data cube. This is one of the main steps of the renovations. Template code can be modified to tidy. Tip: if you are using AI provide: 1) code template below 2) var_name.json 3) strata.json 4) glimpse(df_data_raw) results; usually you get very good results. Tip2: use glimpse() throughout your pipeline!
+
+```{r}
+if (!file.exists(local_context$path_cache_int_data)){
+  
+  df_data_raw = local_context$raw_data %>% collect() %>% as_tibble()
+  glimpse(df_data_raw)
+  
+  df_data_int = df_data_raw %>%  
+    mutate_all(~as.character(.x)) %>% 
+    mutate(observation_id = RESPONDENT_ID) %>% 
+    ## Operational composite keys
+    mutate(
+      iso2 = str_sub(RESPONDENT_ID, 0, 1), 
+      geo = '', ## geo is area-level only composite key - empty for record-level
+      year = SURVEY_YEAR,
+      month = SURVEY_MONTH, 
+      day = SURVEY_DAY
+    ) %>% 
+    pivot_longer(
+      -c(
+        'observation_type','schema_version', 'observation_id', 
+        'dataset_id', 'dataset_version', 'dataset_instance',
+        'iso2','geo', 'day', 'year', 'month',
+        'file_data'),
+      names_to = 'var_name_raw') %>% 
+    filter(!is.na(value),
+           var_name_raw %in% df_var_name$var_name_raw) %>%
+    ## merges
+    left_join(df_var_name) %>% 
+    left_join(df_strata) %>% 
+    mutate_all(~as.character(.x)) %>% 
+    ## selections
+    select(
+      all_of(local_context$vec__admin_composite_keys_all),
+      all_of(local_context$vec__admin_data_columns_never_empty),
+      any_of(local_context$vec__admin_data_columns_all)
+    )
+  
+  ## Cache preliminary results to enable out-of-memory work
+  df_data_int %>% write_parquet(local_context$path_cache_int_data)
+  rm(df_data_int)
+  gc()
+  
+} 
+
+```
+
+### Validation
+
+No we run through our validation funciton that checks for consistency and the correct structure.
+
+```{r}
+if (file.exists(local_context$path_cache_staged_data)) {
+  final_data_cube = open_dataset(local_context$path_cache_staged_data)
+} else {
+  
+  ## Validate
+  df_data_int = local_context$path_cache_int_data %>% 
+    open_dataset() %>% 
+    collect()
+  validated_int_data_cube = df_data_int %>% 
+    validate_final_admin_data_cube(., local_context)
+  gc()
+  
+  ## Process 
+  final_data_cube = validated_int_data_cube %>% 
+    process_final_admin_data_cube(., local_context)
+  gc()
+    
+}
+
+```
+
+Graet now this data cube is validated. Let's move on to the metadata.
+
+## 0.5 Metadata Template
+
+The complexity of SALURBAL is that there are different types of rleationships between data points and metadata fields. For the SALURBAL renovaiton the first step of metadata is to clearly for each field define what composite keys are used to link the metadata to the data points.
+
+Please open linkage.csv and enter this information. In our case this is a really simple dataset
+
+- Most of the metadata exists at a dataset level
+- only a few fields are existing at a variable level:
+    - var_label
+    - var_def
+    - value_type
+    - units
+    - coding
+- Luckily metadata does not differ by any other composite keys either such as country, strata or year
+   
+### Standard processing
+
+Once the linkage.csv is clearly defined. We can use the linkage.csv to generate a metadata template that is compatible with the data cube and is as noramlized as possible for ease of metadata entry. 
+
+```{r}
+## Process
+template_metadata_cube = process_linkage_table(local_context)
+
+## Preview
+salurbal_renovation_reactable(template_metadata_cube)
+```
+
+Great now our tempalte is set up. We can see a few new files in our folder: 
+
+- template__codebook files are the tempalte for metadata entry. This is jsut a backup of the original tmeplate for reference.
+- raw__codebook. this is the template htat renovators first fill out before it is processed and reviewed. 
+
+Let's commit here to git so we can track changes to the metadata sheets as renovators fill things in. This is often the hand off between data standardization and metadata standardization. 
+
+# 1. Raw Metadata
+
+Note here are some resources:
+
+- [Codebook for these columns](https://www.notion.so/drexel-ccuh/228da34c473f44ac881b1e2f0efbad2d?v=aa6e48ec6e5149c2b015b433ab429d3a)
+- [Domains](https://www.notion.so/drexel-ccuh/14557008e885801cb6a2c9e332ffe6bd?v=6e7fbf678153460a87e35238d0c2a6c8)
+- [Subdomains](https://www.notion.so/drexel-ccuh/14557008e885805ea5e9ef40bfddda2a?v=14557008e885814c87e9000c9cde7650)
+
+## Metadata Entry
+
+Renovators mined metadata from excel sheets and word docs to fill out codebook templates to produce raw_codebooks. After they filled it out we can import it.
+
+TIP: You can copy codebooks and the tempalte and have AI fill it out. It works pretty well.
+
+```{r}
+if (file.exists('4.1-raw__codebook.xlsx')){ 
+  raw_codebook_object = import_salurbal_xslx_cdbk(local_context$raw_cdbk_path, local_context)
+  raw_codebook_object 
+}
+```
+
+## Validation to Intermediate standards
+
+We now have a function that validate of metadata in raw codebook (e.g. correct structure, no missing values for certain columns). If the metadata is valid then it will generate the next step of int_codebooks that are sent to DMC for review.
+
+```{r}
+ 
+## Validation + Processing
+valid_raw__cdbks = raw_codebook_object %>% 
+  process_raw_metadata_object(., local_context)
+
+
+## Snapshot
+snapshot_excel(path = '4.1-raw__codebook.xlsx')
+```
+
+Looks good we have also captured these changes in json diffs. A good time to commit!
+
+# 2. Reviewed Metadata
+
+So by this time DMC has review the int_codebook and made any changes. Let's now import it and doing final processing:
+
+- Validate: make sure its structurally correct and it passes additional metadata tests (e.g. no missing values and etc.)
+- Denormalize: turn the noramlized sheets into a metadata cube that can be easily joined with the data cube
+
+```{r}
+#| code-summary: 'Review'
+#| code-fold: true
+
+## Partition paths
+intermediate_codebook_object = import_salurbal_xslx_cdbk(
+  local_context$int_cdbk_path, 
+  local_context)
+
+## Process codebook object into metadata cube
+final_metadata_cube = intermediate_codebook_object %>% 
+  process_final_metadata_cube(.,local_context)
+
+## Preview
+final_metadata_cube %>% 
+  salurbal_renovation_reactable()
+ 
+```
+
+Okay. Things look good. Review by renovators, DMC and structurally valid. Time to wrap things up by loading it into our datawarehouse.
+
+
+# 3. Data warehouse Loading
+
+## Integrated Testing and loading
+
+We want to test the data and metadata together before it gets to DBT. Due to size limitations of many datasets we will do all integrated testing out-of-memory via Arrow. We do a few simple tests: consistency of the join and valid `public` value. After validation, the data and metadata are then loaded as DBT sources.
+
+Lets do the integration first. Note results are cached so just delete or run manually the chunk below to refresh.
+
+```{r}
+process_preliminary_admin_cube(local_context)
+```
+
+Now lets do the validatiaon 
+
+```{r}
+#| code-summary: 'Valid Admin Cube'
+
+## Validate Prelim OBT
+valid_prelim_admin_cube = local_context %>% 
+  validate_preliminary_admin_cube()
+ 
+```
+
+Cube is validate. Let's load into data warehouse with other cubes. This writes three types of files to the warehouse source folder:
+
+- `{id}_data.parquet`: the data cube
+- `{id}_metadata.parquet`: the metadata cube
+- `{id}_loading.parquet`: the renovation metadata
+
+```{r}
+## Loading to datawarehouse
+load_into_dbt_source(
+  local_context, 
+  valid_prelim_admin_cube,
+  training = T)
+```
+
+Examine the results in the data warehouse. Here we can use a database or orchestrator like DBT to compile data and manage transformations.
+
+
+ 
