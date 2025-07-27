@@ -1,0 +1,46 @@
+{
+  "by_dataset": [
+    {
+      "dataset_id": "3_area_level_medium",
+      "dataset_notes": "",
+      "strata_description": "",
+      "variable_origin": "",
+      "limitations": "",
+      "file_codebook": "",
+      "longitudinal": ""
+    }
+  ],
+  "by_iso2": [
+    {
+      "iso2": "BR",
+      "source": "",
+      "acknowledgements": "",
+      "public": ""
+    },
+    {
+      "iso2": "CO",
+      "source": "",
+      "acknowledgements": "",
+      "public": ""
+    },
+    {
+      "iso2": "MX",
+      "source": "",
+      "acknowledgements": "",
+      "public": ""
+    }
+  ],
+  "by_var": [
+    {
+      "var_name": "LEMEDIAN",
+      "var_name_raw": "LE_MEDIAN",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": ""
+    }
+  ]
+}

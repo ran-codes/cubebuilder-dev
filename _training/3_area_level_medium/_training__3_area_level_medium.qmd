@@ -267,21 +267,22 @@ Graet now this data cube is validated. Let's move on to the metadata.
 
 
 ## 2.1 Setup Metadata Template
+The complexity of cube building is that there are different types of relationships between data points and metadata fields. For the cube building process the first step of metadata is to clearly for each field define what composite keys are used to link the metadata to the data points.
 
-The complexity of SALURBAL is that there are different types of rleationships between data points and metadata fields. For the SALURBAL renovaiton the first step of metadata is to clearly for each field define what composite keys are used to link the metadata to the data points.
-
-Please open linkage.csv and enter this information. In our case this is a really simple dataset
-
+Please open linkage.csv and enter this information. In our case this is a **medium complexity** dataset:
+  
 - Most of the metadata exists at a dataset level
-- only a few fields are existing at a variable level:
-    - var_label
-    - var_def
-    - value_type
-    - units
-    - coding
-- Luckily metadata does not differ by any other composite keys either such as country, strata or year
+- A few fields exist at a variable level:
+  - var_label
+   - var_def
+   - value_type
+   - units
+   - coding
+- **KEY DIFFERENCE**: Some fields vary by country (iso2 level):
+  - source (different data sources per country)
+  - acknowledgements (country-specific acknowledgements)
 
-Once the linkage.csv is clearly defined. We can use the linkage.csv to generate a metadata template that is compatible with the data cube and is as noramlized as possible for ease of metadata entry. 
+This demonstrates **medium complexity** where metadata differs by geographic composite keys, requiring country-specific metadata management.
 
 ```{r}
 ## Process
