@@ -38,8 +38,7 @@ global_setup <- function(path_global_setup_function = NULL) {
                           recursive = TRUE, full.names = TRUE,
                           pattern = '\\.R$') %>%
       discard(~str_detect(.x, 'source_parent')) %>% 
-      discard(~.x %in% c('D:/GitHub/cubebuilder-dev/R/setup/global_setup.R',
-                         'D:/GitHub/cubebuilder-dev/R/setup/get_global_context.R'))
+      discard(~.x %in% c('D:/GitHub/cubebuilder-dev/R/setup/global_setup.R'))
     for (file in R_files) {
       tryCatch({
         source(file, local = sourced_objects)

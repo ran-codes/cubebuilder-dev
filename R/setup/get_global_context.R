@@ -11,6 +11,12 @@ get_global_context = function(root = here()){
   
   { # Setup -------------------------------------------------------------------
     
+    { # Notebook  ------------------------------------------------------------
+      notebooks = lst(
+        notebook =  '',
+        notebook_relative_root = here()
+      )
+    }
 
     {  # Secrets  ---------------------------------------------------------------------
       path_secrets = generate_relative_path(root,".env")
@@ -257,10 +263,10 @@ get_global_context = function(root = here()){
     {
       # Inventory  ---------------------------------------------------------------------
       inventory = lst(
-        df_var_details = arrow::read_parquet(generate_relative_path(root,'clean/inventory/df_var_details.parquet')),
-        df_primary_metadata = readRDS(generate_relative_path(root,'clean/inventory/df_primary_metadata.rds')),
-        df_domains = arrow::read_parquet(generate_relative_path(root,"clean/inventory/df_domains.parquet")),
-        df_subdomains = arrow::read_parquet(generate_relative_path(root,"clean/inventory/df_subdomains.parquet")),
+        df_var_details = arrow::read_parquet(file.path(paths$path_server_etl_seeds,'df_var_details.parquet')),
+        df_primary_metadata = readRDS(file.path(paths$path_server_etl_seeds,'df_primary_metadata.rds')),
+        df_domains = arrow::read_parquet(file.path(paths$path_server_etl_seeds,"df_domains.parquet")),
+        df_subdomains = arrow::read_parquet(file.path(paths$path_server_etl_seeds,"df_subdomains.parquet")),
       )
     }
     
@@ -328,10 +334,7 @@ get_global_context = function(root = here()){
       secrets,
       cube
     )
-    
-    ## Cache global context
-    saveRDS(global_context, file = generate_relative_path(root,"clean/global_context.rds"))
-    
+     
     ## Return
     cli_alert_success("Global Context Updated")
     return(global_context)    
