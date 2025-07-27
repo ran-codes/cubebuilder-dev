@@ -399,8 +399,7 @@ Cube is validate. Let's load into data warehouse with other cubes. This writes t
 ## Loading to datawarehouse
 load_into_dbt_source(
   context, 
-  valid_prelim_admin_cube,
-  training = T)
+  valid_prelim_admin_cube)
 ```
 
 Examine the results in the data warehouse. Here we can use a database or orchestrator like DBT to compile data and manage transformations.
