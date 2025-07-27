@@ -85,5 +85,5 @@ cubebuilder-dev/
 
 *Incoming*
 
-- *[Templating](https://salurbal-infrastructure.netlify.app/Data/templating/)*
+- *[Harmonized data sources jinja templating](https://salurbal-infrastructure.netlify.app/Data/templating/)*
 - *Edge cases*
