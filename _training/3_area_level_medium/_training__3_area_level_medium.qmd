@@ -108,7 +108,9 @@ Looks like a SALURBAL dataset. Let's start tidying.
 
 ## 1.2 Declare Variables
 
-Here we specify what variables are in the data set. Removing composite keys and redundant variables from other datasets (e.g. UNCNT). The final data structure is a table which is one row per original vairable name then a standanrdized variable name that removes things like L1 or L2 from the column names.
+Here we specify what variables are in the data set. Removing composite keys and redundant variables. For this dataset we only have one variable: LE_MEDIAN.
+
+The final data structure is a table which is one row per original variable name then a standardized variable name.
 
 Tip: AI is actually a great place to to this. If you want you can try copying the glimpse() results from above and ask AI to adopt the template code below. For example the code below was generated completely from the Renovations trained AI. But what ever works for you as long as the result is the same.
 
@@ -119,10 +121,9 @@ df_var_name = tibble(var_name_raw = context$raw_data %>%
                        select(-c(file_data, schema_version, dataset_version, dataset_id,
                                  observation_type, dataset_instance, geo,
                                  # Remove administrative columns
-                                 starts_with("SALID", ignore.case = FALSE), 
-                                 ISO2, YEAR, MONTH, DAY,
+                                 ISO2, SALID1, YEAR, MONTH, DAY,
                                  # Remove name columns
-                                 L1_NAME, L2_NAME)) %>% 
+                                 L1_NAME)) %>% 
                        names()) %>% 
   ## Variable sanitation
   rowwise() %>% 
@@ -141,6 +142,8 @@ df_var_name = tibble(var_name_raw = context$raw_data %>%
     all_of(context$vec__admin_variable_definition_table_columns)
   ) %>%
   distinct() 
+
+
 
 ## Preview
 salurbal_renovation_reactable(df_var_name)
