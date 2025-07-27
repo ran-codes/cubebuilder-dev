@@ -1,0 +1,39 @@
+[
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_version": "v1",
+    "dataset_instance": "2_record_level_simple_v1",
+    "observation_type": "record-level",
+    "path_dbt_source_data": "D:/GitHub/cubebuilder-dev/_shared_storage/4_standardized/2_record_level_simple_v1_schema-v2_data.parquet",
+    "path_dbt_source_metadata": "D:/GitHub/cubebuilder-dev/_shared_storage/4_standardized/2_record_level_simple_v1_schema-v2_metadata.parquet",
+    "schema_version": "v2",
+    "renovation_render_date": "07-27-2025",
+    "dataset_renovation_maintainer": "User",
+    "dataset_renovation_context_contributor": "",
+    "dataset_renovation_flags": "",
+    "raw_dataset_dir": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/2_dummy_dataset_simple_record",
+    "ingested_codebooks": "",
+    "vec__var_names_to_remove": "",
+    "dataset_instance_freeze_id": "2_record_level_simple_v1-schema-v2",
+    "dataset_instance_freeze_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/2_record_level_simple/2_record_level_simple_v1-schema-v2",
+    "frozen_compiled_raw_data": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/2_record_level_simple/2_record_level_simple_v1-schema-v2/_frozen_raw_data.parquet",
+    "ingested_data_files": [
+      {
+        "file": "dummy_MX_health_survey_2015.csv",
+        "path": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/2_dummy_dataset_simple_record/dummy_MX_health_survey_2015.csv",
+        "size": 1272,
+        "size_mb": 0.0013,
+        "file_name": "dummy_MX_health_survey_2015",
+        "freeze_parquet_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/2_record_level_simple/2_record_level_simple_v1-schema-v2/dummy_MX_health_survey_2015.parquet"
+      },
+      {
+        "file": "dummy_MX_health_survey_2019.csv",
+        "path": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/2_dummy_dataset_simple_record/dummy_MX_health_survey_2019.csv",
+        "size": 1275,
+        "size_mb": 0.0013,
+        "file_name": "dummy_MX_health_survey_2019",
+        "freeze_parquet_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/2_record_level_simple/2_record_level_simple_v1-schema-v2/dummy_MX_health_survey_2019.parquet"
+      }
+    ]
+  }
+]
