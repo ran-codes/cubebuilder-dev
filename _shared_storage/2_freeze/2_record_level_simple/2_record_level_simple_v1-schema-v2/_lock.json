@@ -1,0 +1,18 @@
+[
+  {
+    "file": "dummy_MX_health_survey_2015.csv",
+    "path": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/2_dummy_dataset_simple_record/dummy_MX_health_survey_2015.csv",
+    "size": 1272,
+    "size_mb": 0.0013,
+    "file_name": "dummy_MX_health_survey_2015",
+    "freeze_parquet_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/2_record_level_simple/2_record_level_simple_v1-schema-v2/dummy_MX_health_survey_2015.parquet"
+  },
+  {
+    "file": "dummy_MX_health_survey_2019.csv",
+    "path": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/2_dummy_dataset_simple_record/dummy_MX_health_survey_2019.csv",
+    "size": 1275,
+    "size_mb": 0.0013,
+    "file_name": "dummy_MX_health_survey_2019",
+    "freeze_parquet_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/2_record_level_simple/2_record_level_simple_v1-schema-v2/dummy_MX_health_survey_2019.parquet"
+  }
+]
