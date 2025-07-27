@@ -1,0 +1,31 @@
+[
+  {
+    "dataset_id": "3_area_level_medium",
+    "dataset_version": "v1",
+    "dataset_instance": "3_area_level_medium_v1",
+    "observation_type": "area-level",
+    "path_dbt_source_data": "D:/GitHub/cubebuilder-dev/_shared_storage/4_standardized/3_area_level_medium_v1_schema-v2_data.parquet",
+    "path_dbt_source_metadata": "D:/GitHub/cubebuilder-dev/_shared_storage/4_standardized/3_area_level_medium_v1_schema-v2_metadata.parquet",
+    "schema_version": "v2",
+    "renovation_render_date": "07-27-2025",
+    "dataset_renovation_maintainer": "User",
+    "dataset_renovation_context_contributor": "",
+    "dataset_renovation_flags": "",
+    "raw_dataset_dir": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/3_dummy_dataset_medium_area",
+    "ingested_codebooks": "",
+    "vec__var_names_to_remove": "",
+    "dataset_instance_freeze_id": "3_area_level_medium_v1-schema-v2",
+    "dataset_instance_freeze_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/3_area_level_medium/3_area_level_medium_v1-schema-v2",
+    "frozen_compiled_raw_data": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/3_area_level_medium/3_area_level_medium_v1-schema-v2/_frozen_raw_data.parquet",
+    "ingested_data_files": [
+      {
+        "file": "dummy_L1AD_LE_MEDIAN.csv",
+        "path": "D:/GitHub/cubebuilder-dev/_shared_storage/1_unstandardized/3_dummy_dataset_medium_area/dummy_L1AD_LE_MEDIAN.csv",
+        "size": 1484,
+        "size_mb": 0.0015,
+        "file_name": "dummy_L1AD_LE_MEDIAN",
+        "freeze_parquet_path": "D:/GitHub/cubebuilder-dev/_shared_storage/2_freeze/3_area_level_medium/3_area_level_medium_v1-schema-v2/dummy_L1AD_LE_MEDIAN.parquet"
+      }
+    ]
+  }
+]
