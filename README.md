@@ -54,57 +54,28 @@ cubebuilder-dev/
 ### Prerequisites
 - **R 4.0+** with packages: `tidyverse`, `arrow`, `here`
 - **RStudio** (recommended for .qmd notebook execution)
+- **GitHub Desktop** for evaluating code diffs
 - Access to shared storage (local or cloud)
 
 ### Training Path
 
-#### 1️⃣ **Module 1: Simple Area-Level Data** (`_training/1_area_level_simple/`)
+#### 1️⃣ **Module 1: Simple Area-Level Data** (`_training/1_area_level_simple/`) ✅ **SOLVED**
 **Learn**: Basic cube creation, variable standardization, metadata templates
 - **Dataset**: Dummy air pollution measurements (PM2.5, NO2, etc.)
-- **Complexity**: Single source, no stratification
+- **Complexity**: Single source, no stratification, dataset-level metadata
 - **Output**: Area-aggregated environmental data cube
+- **Status**: Complete example for reference and code rerunning
 
-#### 2️⃣ **Module 2: Simple Record-Level Data** (`_training/2_record_level_simple/`)
+#### 2️⃣ **Module 2: Simple Record-Level Data** (`_training/2_record_level_simple/`) ✅ **SOLVED**
 **Learn**: Individual-level processing, observation IDs, record-to-cube transformation
 - **Dataset**: Dummy health survey responses
-- **Complexity**: Individual records, basic demographics
+- **Complexity**: Individual records, basic demographics, dataset-level metadata
 - **Output**: Person-level health data cube
+- **Status**: Complete example for reference and code rerunning
 
-### Run a Training Module
-```r
-# Open training notebook
-setwd("_training/1_area_level_simple/")
-# Execute _training__1_area_level_simple.qmd in RStudio
-```
-
-## 🏗️ Framework Architecture
-
-### Data Processing Pipeline
-
-```mermaid
-graph TD
-    A[Raw Data Sources] --> B[Data Standardization]
-    B --> C[Variable Declaration]
-    C --> D[Strata Definition]
-    D --> E[Data Cube Creation]
-    E --> F[Metadata Standardization]
-    F --> G[Integration Testing]
-    G --> H[Data Warehouse Loading]
-    
-    style A fill:#ffebee
-    style H fill:#e8f5e9
-```
-
-t
-
-**Development Team**: SALURBAL Data Methods Core, Drexel University
-**Primary Contact**: [Contact Information]
-**Issues**: Use GitHub Issues for bug reports and feature requests
-
-## 📄 License
-
-MIT License - See [LICENSE](LICENSE) for details
-
----
-
-*CubeBuilder-Dev represents the evolution of data harmonization from project-specific solutions to generalizable, reusable frameworks. Built on lessons learned from managing complex, multi-national urban health data at scale.*
+#### 3️⃣ **Module 3: Medium Area-Level Data** (`_training/3_area_level_medium/`) 🎯 **READY TO SOLVE**
+**Learn**: Country-specific metadata, geographic variation in sources, medium complexity cube building
+- **Dataset**: Dummy life expectancy data (LE_MEDIAN)
+- **Complexity**: Single variable with **metadata varying by country** (sources, acknowledgements)
+- **Output**: Life expectancy cube with country-specific metadata integration
+- **Status**: Set up and ready for hands-on learning - solve this module to master medium complexity patterns
