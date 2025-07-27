@@ -14,35 +14,35 @@
 
 source_parent('denormalize_codebook_object')
 
-process_final_metadata_cube <- function(intermediate_codebook_object, local_context, intermediate_metadata_cube = NULL) {
+process_final_metadata_cube <- function(intermediate_codebook_object, context, intermediate_metadata_cube = NULL) {
   
-  cli_alert("Start processing intermediate codebooks -> final metadata cube{ifelse(is.null(local_context$partition_tmp),'', paste0(' (partition - ',local_context$partition_tmp, ')') )}")
+  cli_alert("Start processing intermediate codebooks -> final metadata cube{ifelse(is.null(context$partition_tmp),'', paste0(' (partition - ',context$partition_tmp, ')') )}")
  
   #  Denormalize -------------------------------------------------------------------------
-  if (is.null(intermediate_metadata_cube)) intermediate_metadata_cube = denormalize_codebook_object(intermediate_codebook_object, local_context) %>% select(-any_of(c('var_name_raw')))
+  if (is.null(intermediate_metadata_cube)) intermediate_metadata_cube = denormalize_codebook_object(intermediate_codebook_object, context) %>% select(-any_of(c('var_name_raw')))
   if (!is.null(intermediate_metadata_cube)) intermediate_metadata_cube = intermediate_metadata_cube %>% select(-any_of(c('var_name_raw')))
   cli_alert("1. Intermediate codebook_object denormalized into a metadata cube")
   
   # Final Processing -------------------------------------------------------------------------
   final_metadata_cube =  intermediate_metadata_cube %>% 
-    mutate_source_inherited_from_var_origin(., local_context) %>% 
-    left_join(arrow::read_parquet(local_context$path_strata_parquet) %>% 
+    mutate_source_inherited_from_var_origin(., context) %>% 
+    left_join(arrow::read_parquet(context$path_strata_parquet) %>% 
                 select(-var_name_raw) %>% 
                 distinct()) %>% 
-    verify(full_referential_integrity(., intermediate_metadata_cube, local_context))
+    verify(full_referential_integrity(., intermediate_metadata_cube, context))
   cli_alert("2. Final Processing done")
   
   # Validate -------------------------------------------------------------------------
-  validated_final_metadata_cube = validate_final_metadata_cube(final_metadata_cube, local_context)
+  validated_final_metadata_cube = validate_final_metadata_cube(final_metadata_cube, context)
   cli_alert("3. Intermediate metadata cube validated")
   
   # Return -------------------------------------------------------------------------
-  detect_compiled_partition = nrow(validated_final_metadata_cube) == nrow(local_context$metadata_cube_key_template)
-  if (any(local_context$is_not_partitioned, detect_compiled_partition)){
-    validated_final_metadata_cube %>% write_parquet(sink = local_context$path_cache_staged_metadata)
+  detect_compiled_partition = nrow(validated_final_metadata_cube) == nrow(context$metadata_cube_key_template)
+  if (any(context$is_not_partitioned, detect_compiled_partition)){
+    validated_final_metadata_cube %>% write_parquet(sink = context$path_cache_staged_metadata)
   } else {
-    partition_tmp = local_context$partition_tmp
-    partition_cache_path_tmp = glue(local_context$partitioned_metadata_config$int_metadata_cube_filename_format)
+    partition_tmp = context$partition_tmp
+    partition_cache_path_tmp = glue(context$partitioned_metadata_config$int_metadata_cube_filename_format)
     validated_final_metadata_cube %>% write_parquet(sink = partition_cache_path_tmp)
   }
   cli_alert_success("4. Final metadata cube validated and staged!")

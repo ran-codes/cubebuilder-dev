@@ -4,12 +4,11 @@
 #' 
 #'    codebook_object = templates; template = T; raw = F
 #'    codebook_object = raw_codebook_object; template = F; raw = T
-#'    codebook_object = intermediate_codebook_object; template = F; raw = F
 #'    codebook_object = templates[1:3]; template = T; raw = F
 #'    codebook_object = templates; template = T; raw = F
-#'    
-    
-denormalize_codebook_object = function(codebook_object, local_context, template = F, raw = F){
+#'    codebook_object = intermediate_codebook_object; template = F; raw = F
+
+denormalize_codebook_object = function(codebook_object, context, template = F, raw = F){
   
   { # Setup ------------------------------------------------------------------
     
@@ -18,7 +17,7 @@ denormalize_codebook_object = function(codebook_object, local_context, template 
     codebook_object$by_observation_id = NULL
 
     ## Variable subset
-    all_vars_in_data_cube = local_context$final_data_cube %>% 
+    all_vars_in_data_cube = context$final_data_cube %>% 
       select(var_name) %>% 
       distinct() %>% 
       collect() %>% 
@@ -40,12 +39,12 @@ denormalize_codebook_object = function(codebook_object, local_context, template 
         map(~{
           
           ## Setup up objects keys 
-          local_keys = c(local_context$vec__admin_metadata_composite_keys, 'original_linkage')
-          df_codebook_tmp =  unpack_string_column(.x,list(local_context$vec__admin_metadata_composite_keys))
+          local_keys = c(context$vec__admin_metadata_composite_keys, 'original_linkage')
+          df_codebook_tmp =  unpack_string_column(.x,list(context$vec__admin_metadata_composite_keys))
           keys_tmp = names(df_codebook_tmp) %>% keep(~.x%in%local_keys) %>% sort() %>% list()
           
           ## Denormalize
-          df_metadata_wide = local_context$metadata_cube_key_template %>% 
+          df_metadata_wide = context$metadata_cube_key_template %>% 
             collect() %>% 
             filter(var_name%in%all_vars_in_codebook_object) %>% 
             left_join(df_codebook_tmp) %>% 
@@ -60,7 +59,7 @@ denormalize_codebook_object = function(codebook_object, local_context, template 
         map(~{
           
           ## Setup up objects keys
-          local_keys = c(local_context$vec__admin_metadata_composite_keys, 'original_linkage','var_name')
+          local_keys = c(context$vec__admin_metadata_composite_keys, 'original_linkage','var_name')
           
           ## Tidy  metadata cube by  column
           df_metadata_tidy = .x %>% 
@@ -115,13 +114,13 @@ denormalize_codebook_object = function(codebook_object, local_context, template 
                   select(all_of(c('var_name',  'column', 'value', 'original_linkage', original_linkages_keys))) %>%
                   distinct() %>%
                   group_by(row_number()) %>%
-                  group_map(~ render_metadata_cell(.x, local_context)) %>%
+                  group_map(~ render_metadata_cell(.x, context)) %>%
                   bind_rows()
                 
                 ## Merging in rendered value_rendered + QC
                 render_results_tmp = to_render_tmp %>%
                   left_join(value_rendered_tmp) %>%
-                  verify(composite_key_uniqueness(., local_context))  
+                  verify(composite_key_uniqueness(., context))  
                 return(render_results_tmp)
                 
               })  %>%
@@ -129,7 +128,7 @@ denormalize_codebook_object = function(codebook_object, local_context, template 
             
             ## Validate
             rendered_results_validated = rendered_results %>%
-              verify(full_referential_integrity(., to_render, local_context))
+              verify(full_referential_integrity(., to_render, context))
             if (nrow(rendered_results) > 0) {
               df_qc = rendered_results %>% 
                 filter(value_rendered %>% str_detect("\\{\\{"))
@@ -171,8 +170,8 @@ denormalize_codebook_object = function(codebook_object, local_context, template 
       df_metadata_compiled = df_metadata_compiled_raw %>% 
         filter(column != 'var_name_raw') %>%  
         bind_rows(df_var_name_raw) %>%
-        verify(composite_key_uniqueness(., local_context)) %>% 
-        select(c(local_context$vec__admin_metadata_composite_keys,'column', 'value_rendered')) 
+        verify(composite_key_uniqueness(., context)) %>% 
+        select(c(context$vec__admin_metadata_composite_keys,'column', 'value_rendered')) 
       
     }
     
@@ -183,7 +182,7 @@ denormalize_codebook_object = function(codebook_object, local_context, template 
       
       
       ## Initialize any columns missing
-      new_columns <- setdiff(local_context$template__linkage$field, names(metadata_wide))
+      new_columns <- setdiff(context$template__linkage$field, names(metadata_wide))
       for (col in new_columns) {
         if (!(col %in% names(metadata_wide))) {
           metadata_wide[[col]] <- ''
@@ -213,8 +212,8 @@ denormalize_codebook_object = function(codebook_object, local_context, template 
       metadata_cube = metadata_wide %>% 
         left_join(xwalk_public_final) %>%
         select(-public_intermediate) %>% 
-        verify(full_referential_integrity(., metadata_wide, local_context)) %>% 
-        mutate(version = local_context$version_tmp) %>%
+        verify(full_referential_integrity(., metadata_wide, context)) %>% 
+        mutate(version = context$version_tmp) %>%
         mutate(across(everything(), as.character))
     }
     
