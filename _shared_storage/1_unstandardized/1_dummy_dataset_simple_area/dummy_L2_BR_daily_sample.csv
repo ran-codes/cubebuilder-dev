@@ -1,0 +1,11 @@
+ISO2,SALID1,L1_NAME,SALID2,L2_NAME,YEAR,MONTH,DAY,PM25_MEAN_L2,PM10_MEAN_L2,NO2_MEAN_L2,O3_MEAN_L2
+BR,BR001,São Paulo Metropolitan Area,10210312,Sorocaba,2019,1,1,10.8,17.5,24.2,52.8
+BR,BR001,São Paulo Metropolitan Area,10210312,Sorocaba,2019,1,2,11.2,18.1,24.8,52.1
+BR,BR001,São Paulo Metropolitan Area,10210312,Sorocaba,2019,1,3,10.5,17.2,23.9,53.2
+BR,BR001,São Paulo Metropolitan Area,10210310,Ribeirão Preto,2019,1,1,9.8,16.3,22.1,54.7
+BR,BR001,São Paulo Metropolitan Area,10210310,Ribeirão Preto,2019,1,2,10.3,16.9,22.6,54.2
+BR,BR001,São Paulo Metropolitan Area,10210310,Ribeirão Preto,2019,1,3,9.5,15.8,21.8,55.1
+BR,BR001,São Paulo Metropolitan Area,10210110,São José dos Campos,2019,1,1,11.9,19.2,26.3,50.4
+BR,BR001,São Paulo Metropolitan Area,10210110,São José dos Campos,2019,1,2,12.4,19.8,26.9,49.8
+BR,BR001,São Paulo Metropolitan Area,10210110,São José dos Campos,2019,1,3,11.6,18.7,25.7,51
+BR,BR001,São Paulo Metropolitan Area,10210210,Jundiaí,2019,1,1,10.2,16.8,23.5,53.6

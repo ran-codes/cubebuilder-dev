@@ -1,0 +1,11 @@
+ISO2,SALID1,L1_NAME,SALID2,L2_NAME,YEAR,MONTH,DAY,PM25_MEAN,PM10_MEAN,NO2_MEAN,O3_MEAN,geo
+MX,MX001,Mexico City Metropolitan Area,MX004,Puebla,2019,1,1,19.5,31.2,26.8,39.6,L2
+MX,MX001,Mexico City Metropolitan Area,MX004,Puebla,2019,1,2,20.1,32.0,27.4,39.1,L2
+MX,MX001,Mexico City Metropolitan Area,MX004,Puebla,2019,1,3,19.0,30.5,26.3,40.2,L2
+MX,MX001,Mexico City Metropolitan Area,MX005,Toluca,2019,1,1,17.2,27.8,23.9,42.3,L2
+MX,MX001,Mexico City Metropolitan Area,MX005,Toluca,2019,1,2,17.8,28.5,24.5,41.8,L2
+MX,MX001,Mexico City Metropolitan Area,MX005,Toluca,2019,1,3,16.7,27.1,23.4,42.9,L2
+MX,MX001,Mexico City Metropolitan Area,MX006,Cuernavaca,2019,1,1,15.8,25.4,21.7,44.8,L2
+MX,MX001,Mexico City Metropolitan Area,MX006,Cuernavaca,2019,1,2,16.3,26.1,22.2,44.3,L2
+MX,MX001,Mexico City Metropolitan Area,MX006,Cuernavaca,2019,1,3,15.4,24.9,21.3,45.2,L2
+MX,MX001,Mexico City Metropolitan Area,MX007,Pachuca,2019,1,1,14.6,23.7,20.1,46.7,L2
