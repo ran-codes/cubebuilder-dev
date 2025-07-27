@@ -1,0 +1,59 @@
+{
+  "by_dataset": [
+    {
+      "dataset_id": "1_area_level_simple",
+      "dataset_notes": "",
+      "domain": "",
+      "subdomain": "",
+      "variable_origin": "",
+      "source": "",
+      "limitations": "",
+      "acknowledgements": "",
+      "file_codebook": "",
+      "longitudinal": "",
+      "public": ""
+    }
+  ],
+  "by_var": [
+    {
+      "var_name": "NO2MEAN",
+      "var_name_raw": "NO2_MEAN_L1AD;NO2_MEAN_L2",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "O3MEAN",
+      "var_name_raw": "O3_MEAN_L1AD;O3_MEAN_L2",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "PM10MEAN",
+      "var_name_raw": "PM10_MEAN_L1AD;PM10_MEAN_L2",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "PM25MEAN",
+      "var_name_raw": "PM25_MEAN_L1AD;PM25_MEAN_L2",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    }
+  ]
+}
