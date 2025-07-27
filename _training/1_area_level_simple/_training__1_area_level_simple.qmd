@@ -56,12 +56,12 @@ We first fill out the configurations here.
   #### Configurations for each renovation (Change!)
   local_config = lst(
     ## Composite keys (Required)
-    dataset_id_tmp = "_training__1_area_level_simple", # Dataset ID name. Example: 'LE_L1'
+    dataset_id_tmp = "1_area_level_simple", # Dataset ID name. Example: 'LE_L1'
     dataset_version_tmp = 'v1', # Dataset version. Example: 'v1.0'
     observation_type_tmp = 'area-level',
     schema_version_tmp = 'v2', # Schema version. Example: 'v2'
     ## Processing info (Required)
-    raw_dataset_dir = file.path(record_path,'_raw'), # Unencrypted server data location. Example: 'Data/Mortality Data/Life Expectancy/'
+    raw_dataset_dir = file.path(global_context$path_shared_home,'1_unstandardized/1_dummy_dataset_simple_area'), # Unencrypted server data location. Example: 'Data/Mortality Data/Life Expectancy/'
     vec__var_names_to_remove = c(''), # Optional, leave empty if not needed. Variables to exclude from data operationalization.
     file_list_tmp = c("dummy_L1AD_daily_sample.csv",
                       "dummy_L2_MX_daily_sample.csv",
@@ -73,10 +73,10 @@ We first fill out the configurations here.
     dataset_renovation_flags = c("") # ?????
   )
   
-  ## Develop data freeze files (Create a frozen copy of data files)
-  file.path(global_context$path_server_dmc, local_config$raw_dataset_dir) %>%
-      list.files() %>% 
-      discard(~str_detect(.x, 'Codebook_')) # Specify the prefix for codebooks. This excludes codebook(s) from being frozen.
+  ## Get list of files to freeze (scratch code)
+  file.path(local_config$raw_dataset_dir) %>%
+    list.files() %>% 
+    discard(~str_detect(.x, 'Codebook_')) 
   
   #### Generic renovation notebook setup code (Do not change!)
   context = get_renovation_notebook_context(local_config, global_context) 
