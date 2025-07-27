@@ -1,5 +1,5 @@
 
-load_into_dbt_source = function(context, valid_prelim_admin_cube, training = F){
+load_into_dbt_source = function(context, valid_prelim_admin_cube){
 
   
   { # Setup -------------------------------------------------------------------
@@ -56,9 +56,7 @@ load_into_dbt_source = function(context, valid_prelim_admin_cube, training = F){
       { # Metadata Cube -----------------------------------------------------------
         file.copy(
           from = context$path_cache_staged_metadata,
-          to = ifelse(training,
-                      file.path("../_datawarehouse/_source/",basename(context$path_dbt_metadata)),
-                      context$path_dbt_metadata),
+          to = context$path_dbt_metadata,
           overwrite = TRUE
         )
       }
@@ -66,9 +64,7 @@ load_into_dbt_source = function(context, valid_prelim_admin_cube, training = F){
       { # Data Cube -----------------------------------------------------------
         file.copy(
           from = context$path_cache_staged_data,
-          to = ifelse(training,
-                      file.path("../_datawarehouse/_source/",basename(context$path_dbt_data)),
-                      context$path_dbt_data),
+          to = context$path_dbt_data,
           overwrite = TRUE
         )
       }
@@ -83,17 +79,8 @@ load_into_dbt_source = function(context, valid_prelim_admin_cube, training = F){
         
         ## Write to DBT Source
         df_renovation_metadata %>% 
-          arrow::write_parquet(
-            ifelse(training,
-                   file.path("../_datawarehouse/_source/",basename(context$path_dbt_loading_info_parquet)),
-                   context$path_dbt_loading_info_parquet),
-          )
-        
-        df_renovation_metadata %>% 
-          jsonlite::toJSON(auto_unbox = TRUE, pretty = T) %>% 
-          writeLines(con = ifelse(training,
-                                 file.path("../_datawarehouse/_source/",basename(context$path_dbt_loading_info_json)),
-                                 context$path_dbt_loading_info_json))
+          arrow::write_parquet(context$path_dbt_loading_info_parquet)
+      
       }
       
       
