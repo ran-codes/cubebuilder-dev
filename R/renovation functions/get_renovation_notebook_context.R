@@ -85,7 +85,7 @@ get_renovation_notebook_context = function(local_config, global_context){
       df_lock = tibble(file = local_config$file_list_tmp %>% unlist()) %>% 
         arrange(file) %>%
         mutate(
-          path = file.path(local_paths$raw_dataset_dir, file),
+          path = file.path(local_config$raw_dataset_dir, file),
           size = file.info(path)$size,
           size_mb = size / 10 ^ 6,
           file_name = str_remove(file, '.csv'),
