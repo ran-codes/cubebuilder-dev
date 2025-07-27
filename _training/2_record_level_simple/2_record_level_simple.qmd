@@ -127,32 +127,29 @@ Here we specify what variables are in the dataset, removing composite keys (incl
 - Survey timing (year/month/day) becomes part of the temporal composite keys
 - All health/demographic variables become standardized with dataset prefix
 
+
 ```{r}
 #| code-summary: 'Brain - Variables processing'
-## Declare the variables
+## Declare the variables (remove compist)
 df_var_name = tibble(var_name_raw = context$raw_data %>% 
-                       select(-c(file_data, schema_version, dataset_version, dataset_id,
-                                 observation_type, dataset_instance,
-                                 # Remove composite key columns
-                                 RESPONDENT_ID, SURVEY_YEAR, SURVEY_MONTH, SURVEY_DAY)) %>% 
-                       names()) %>% 
-  ## Variable sanitation
+                       select(-all_of(
+                         c('RESPONDENT_ID','SURVEY_YEAR','SURVEY_MONTH','SURVEY_DAY',
+                           'file_data','dataset_version',
+                           'schema_version','observation_type',
+                           'dataset_instance','dataset_id'))) %>% 
+                       names() ) %>% 
   rowwise() %>% 
-  mutate(var_name = sanitize_codebook_var(var_name_raw)) %>% 
-  ungroup() %>%
-  ## Re op. composite keys for variable table
   mutate(
+    var_name = paste0(context$dataset_id_tmp, '_', sanitize_codebook_var(var_name_raw)),
     dataset_id = context$dataset_id_tmp,
-    dataset_instance = context$dataset_instance_tmp,
     dataset_version = context$dataset_version_tmp,
+    dataset_instance = context$dataset_instance_tmp,
+    observation_type = context$observation_type_tmp,
     schema_version = context$schema_version_tmp
-  ) %>%
-  ## Standard arrange and select
-  arrange(var_name, var_name_raw, dataset_id) %>% 
-  select(
-    all_of(context$vec__admin_variable_definition_table_columns)
-  ) %>%
-  distinct() 
+  ) %>% 
+  ungroup() %>% 
+  select(all_of(context$vec__admin_variable_definition_table_columns)) %>% 
+  arrange(var_name)
 
 ## Preview
 salurbal_renovation_reactable(df_var_name)
@@ -198,10 +195,10 @@ if (!file.exists(context$path_cache_int_data)){
   df_data_raw = context$raw_data %>% collect() %>% as_tibble()
   glimpse(df_data_raw)
   
-  df_data_int = df_data_raw %>%
-    ## Operationalize observation_id
-    mutate(observation_id = RESPONDENT_ID) %>%
-    ## Standardize existing composite keys
+  df_data_int = df_data_raw %>%  
+    mutate_all(~as.character(.x)) %>% 
+    mutate(observation_id = RESPONDENT_ID) %>% 
+    ## Operational composite keys
     mutate(
       iso2 = str_sub(RESPONDENT_ID, 0, 1), 
       geo = '', ## geo is area-level only composite key - empty for record-level
@@ -209,24 +206,20 @@ if (!file.exists(context$path_cache_int_data)){
       month = SURVEY_MONTH, 
       day = SURVEY_DAY
     ) %>% 
-    ## Remove administrative columns
-    select(-RESPONDENT_ID, -SURVEY_YEAR, -SURVEY_MONTH, -SURVEY_DAY) %>%
-    ## Pivot longer to reshape health survey measurements
     pivot_longer(
-      cols = c(-file_data, -schema_version, -dataset_version, -dataset_id,
-               -observation_type, -dataset_instance, -observation_id,
-               -iso2, -geo, -year, -month, -day),
-      names_to = 'var_name_raw',
-      values_to = 'value'
-    ) %>%  
-    ## Filter out missing values and ensure we only process relevant variables
+      -c(
+        'observation_type','schema_version', 'observation_id', 
+        'dataset_id', 'dataset_version', 'dataset_instance',
+        'iso2','geo', 'day', 'year', 'month',
+        'file_data'),
+      names_to = 'var_name_raw') %>% 
     filter(!is.na(value),
-           var_name_raw %in% df_var_name$var_name_raw) %>% 
+           var_name_raw %in% df_var_name$var_name_raw) %>%
+    ## merges
+    left_join(df_var_name) %>% 
+    left_join(df_strata) %>% 
     mutate_all(~as.character(.x)) %>% 
-    ## merges with variable and strata definitions
-    left_join(df_var_name) %>%
-    left_join(df_strata) %>%
-    ## Standardize Selections
+    ## selections
     select(
       all_of(context$vec__admin_composite_keys_all),
       all_of(context$vec__admin_data_columns_never_empty),
@@ -244,7 +237,7 @@ if (!file.exists(context$path_cache_int_data)){
 
 ### Validation
 
-No we run through our validation function that checks for consistency and the correct structure.
+No we run through our validation funciton that checks for consistency and the correct structure.
 
 ```{r}
 if (file.exists(context$path_cache_staged_data)) {
@@ -268,13 +261,14 @@ if (file.exists(context$path_cache_staged_data)) {
 
 ```
 
-Great now this data cube is validated. Let's move on to the metadata.
+Graet now this data cube is validated. Let's move on to the metadata.
+
 
 # 2. Metadata Standardization
 
 ## 2.1 Setup Metadata Template
 
-The complexity of SALURBAL is that there are different types of relationships between data points and metadata fields. For the SALURBAL renovation the first step of metadata is to clearly for each field define what composite keys are used to link the metadata to the data points.
+The complexity of SALURBAL is that there are different types of rleationships between data points and metadata fields. For the SALURBAL renovaiton the first step of metadata is to clearly for each field define what composite keys are used to link the metadata to the data points.
 
 Please open linkage.csv and enter this information. In our case this is a really simple dataset
 
@@ -286,8 +280,10 @@ Please open linkage.csv and enter this information. In our case this is a really
     - units
     - coding
 - Luckily metadata does not differ by any other composite keys either such as country, strata or year
+   
+### Standard processing
 
-Once the linkage.csv is clearly defined. We can use the linkage.csv to generate a metadata template that is compatible with the data cube and is as normalized as possible for ease of metadata entry. 
+Once the linkage.csv is clearly defined. We can use the linkage.csv to generate a metadata template that is compatible with the data cube and is as noramlized as possible for ease of metadata entry. 
 
 ```{r}
 ## Process
@@ -297,14 +293,14 @@ template_metadata_cube = process_linkage_table(context)
 salurbal_renovation_reactable(template_metadata_cube)
 ```
 
-Great now our template is set up. We can see a few new files in our folder: 
+Great now our tempalte is set up. We can see a few new files in our folder: 
 
-- template__codebook files are the template for metadata entry. This is just a backup of the original template for reference.
-- raw__codebook. this is the template that renovators first fill out before it is processed and reviewed. 
+- template__codebook files are the tempalte for metadata entry. This is jsut a backup of the original tmeplate for reference.
+- raw__codebook. this is the template htat renovators first fill out before it is processed and reviewed. 
 
 Let's commit here to git so we can track changes to the metadata sheets as renovators fill things in. This is often the hand off between data standardization and metadata standardization. 
 
-## 2.2. Raw Metadata
+# 1. Raw Metadata
 
 Note here are some resources:
 
@@ -312,11 +308,11 @@ Note here are some resources:
 - [Domains](https://www.notion.so/drexel-ccuh/14557008e885801cb6a2c9e332ffe6bd?v=6e7fbf678153460a87e35238d0c2a6c8)
 - [Subdomains](https://www.notion.so/drexel-ccuh/14557008e885805ea5e9ef40bfddda2a?v=14557008e885814c87e9000c9cde7650)
 
-### Metadata Entry
+## Metadata Entry
 
 Renovators mined metadata from excel sheets and word docs to fill out codebook templates to produce raw_codebooks. After they filled it out we can import it.
 
-TIP: You can copy codebooks and the template and have AI fill it out. It works pretty well.
+TIP: You can copy codebooks and the tempalte and have AI fill it out. It works pretty well.
 
 ```{r}
 if (file.exists('4.1-raw__codebook.xlsx')){ 
@@ -325,7 +321,7 @@ if (file.exists('4.1-raw__codebook.xlsx')){
 }
 ```
 
-### Validation to Intermediate standards
+## Validation to Intermediate standards
 
 We now have a function that validate of metadata in raw codebook (e.g. correct structure, no missing values for certain columns). If the metadata is valid then it will generate the next step of int_codebooks that are sent to DMC for review.
 
@@ -342,12 +338,12 @@ snapshot_excel(path = '4.1-raw__codebook.xlsx')
 
 Looks good we have also captured these changes in json diffs. A good time to commit!
 
-## 2.3 Reviewed Metadata
+# 2. Reviewed Metadata
 
 So by this time DMC has review the int_codebook and made any changes. Let's now import it and doing final processing:
 
 - Validate: make sure its structurally correct and it passes additional metadata tests (e.g. no missing values and etc.)
-- Denormalize: turn the normalized sheets into a metadata cube that can be easily joined with the data cube
+- Denormalize: turn the noramlized sheets into a metadata cube that can be easily joined with the data cube
 
 ```{r}
 #| code-summary: 'Review'
@@ -370,7 +366,10 @@ final_metadata_cube %>%
 
 Okay. Things look good. Review by renovators, DMC and structurally valid. Time to wrap things up by loading it into our datawarehouse.
 
+
 # 3. Data warehouse Loading
+
+## Integrated Testing and loading
 
 We want to test the data and metadata together before it gets to DBT. Due to size limitations of many datasets we will do all integrated testing out-of-memory via Arrow. We do a few simple tests: consistency of the join and valid `public` value. After validation, the data and metadata are then loaded as DBT sources.
 
@@ -380,7 +379,7 @@ Lets do the integration first. Note results are cached so just delete or run man
 process_preliminary_admin_cube(context)
 ```
 
-Now lets do the validation 
+Now lets do the validatiaon 
 
 ```{r}
 #| code-summary: 'Valid Admin Cube'
@@ -401,7 +400,11 @@ Cube is validate. Let's load into data warehouse with other cubes. This writes t
 ## Loading to datawarehouse
 load_into_dbt_source(
   context, 
-  valid_prelim_admin_cube)
+  valid_prelim_admin_cube,
+  training = T)
 ```
 
 Examine the results in the data warehouse. Here we can use a database or orchestrator like DBT to compile data and manage transformations.
+
+
+ 

@@ -1,0 +1,82 @@
+[
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_AGE",
+    "var_name_raw": "AGE"
+  },
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_BMI",
+    "var_name_raw": "BMI"
+  },
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_EDUCATION",
+    "var_name_raw": "EDUCATION"
+  },
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_HEALTHSTATUS",
+    "var_name_raw": "HEALTH_STATUS"
+  },
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_INCOMELEVEL",
+    "var_name_raw": "INCOME_LEVEL"
+  },
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_PHYSICALACTIVITY",
+    "var_name_raw": "PHYSICAL_ACTIVITY"
+  },
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_SALID1",
+    "var_name_raw": "SALID1"
+  },
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_SALID2",
+    "var_name_raw": "SALID2"
+  },
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_SEX",
+    "var_name_raw": "SEX"
+  },
+  {
+    "dataset_id": "2_record_level_simple",
+    "dataset_instance": "2_record_level_simple_v1",
+    "dataset_version": "v1",
+    "schema_version": "v2",
+    "var_name": "2_record_level_simple_SMOKING",
+    "var_name_raw": "SMOKING"
+  }
+]
