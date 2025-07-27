@@ -13,8 +13,8 @@ get_global_context = function(root = here()){
     
     { # Notebook  ------------------------------------------------------------
       notebooks = lst(
-        notebook = notebook_relative_root == here(),
-        notebook_relative_root = notebook_relative_root
+        notebook =  '',
+        notebook_relative_root = here()
       )
     }
 

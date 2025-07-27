@@ -79,7 +79,7 @@ We first fill out the configurations here.
       discard(~str_detect(.x, 'Codebook_')) # Specify the prefix for codebooks. This excludes codebook(s) from being frozen.
   
   #### Generic renovation notebook setup code (Do not change!)
-  local_context = get_renovation_notebook_context(local_config, global_context) 
+  context = get_renovation_notebook_context(local_config, global_context) 
   
 }
 
