@@ -5,7 +5,7 @@
 #' Usage:
 #'     df = df_data_int %>% slice(1:1000); list__cols = list__expected_complete_columns
 #'     list__cols = list(c('var_name''))
-#'     list__cols = list(local_context$vec__admin_composite_keys_all)
+#'     list__cols = list(context$vec__admin_composite_keys_all)
 #'   
 #'    df %>%  
 #'       verify(columns_all_character(.), error_fun = assertr::error_report)

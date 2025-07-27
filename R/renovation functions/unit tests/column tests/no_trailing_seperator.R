@@ -7,11 +7,11 @@ no_trailing_seperator <- function(value) {
   }
 }
 
-valid_no_trailing_seperator <-  function(df, local_context){
+valid_no_trailing_seperator <-  function(df, context){
   
   ## Don't ened to test composite keys
   df_without_composite_keys = df %>% 
-    select(-any_of(local_context$vec__admin_composite_keys_all))
+    select(-any_of(context$vec__admin_composite_keys_all))
   
   ## For each column pull unique values and run no_trailing_seperators test
   pass = names(df_without_composite_keys) %>% 

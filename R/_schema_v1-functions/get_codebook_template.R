@@ -4,7 +4,7 @@
 #' 
 #' @param table_tmp: (string) label for the metadata table name. Acceptable values include `by_var`, `by_strata`, `by_var_year` ... etc
 #' @param schema: (list) schema object imported from linkage.csv
-#' @param local_context: (list) this is the dataset specific import object
+#' @param context: (list) this is the dataset specific import object
 #' 
 #'     table_tmp = 'by_dataset'
 #'     table_tmp = 'by_dataset_iso2'
@@ -15,7 +15,7 @@
 #'     table_tmp = 'ddfsdaf'
 #'     table_tmp = 'by_observation_id'
 
-get_codebook_template = function(table_tmp, schema, local_context){
+get_codebook_template = function(table_tmp, schema, context){
   
   { # Setup -------------------------------------------------------------------
     
@@ -24,7 +24,7 @@ get_codebook_template = function(table_tmp, schema, local_context){
       stop()
     }
     
-    df__primary_keys =  local_context$xwalk_keys %>%  filter(table == table_tmp)
+    df__primary_keys =  context$xwalk_keys %>%  filter(table == table_tmp)
     primary_keys =  df__primary_keys %>% pull(keys)
     primary_keys_minus_raw  = df__primary_keys  %>%  filter(keys !='var_name_raw') %>%  pull(keys)
     columns = schema$schema_fields[table_tmp] %>% unlist() %>% unname() %>% remove_primary_keys()
@@ -36,13 +36,13 @@ get_codebook_template = function(table_tmp, schema, local_context){
   
   { # Return template ------------------------------------------------------------------
     if (table_tmp == 'by_observation_id') {
-      template = local_context$df__observation_id_with_metadata %>% 
-        left_join(local_context$xwalk_area_level_observation_id_labels %>% select(-observation_pid)) %>% 
+      template = context$df__observation_id_with_metadata %>% 
+        left_join(context$xwalk_area_level_observation_id_labels %>% select(-observation_pid)) %>% 
         mutate(!!!setNames(rep(NA, length(columns)),columns)) %>% 
         mutate_all(~as.character(.x)) %>% 
         mutate_all(~replace_na(.x, replace = ''))
     } else if (!is__by_var_linkage){
-      template = local_context$metadata_cube_key_template %>% 
+      template = context$metadata_cube_key_template %>% 
         select(all_of(primary_keys_minus_raw)) %>% 
         distinct()  %>%
         collect() %>% 
@@ -50,7 +50,7 @@ get_codebook_template = function(table_tmp, schema, local_context){
         mutate_all(~as.character(.x)) %>% 
         mutate_all(~replace_na(.x, replace = ''))
     } else {
-      template = local_context$final_data_cube  %>%
+      template = context$final_data_cube  %>%
         select(all_of(primary_keys_minus_raw), var_name_raw) %>% 
         distinct() %>% 
         collect() %>% 

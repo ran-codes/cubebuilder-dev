@@ -2,13 +2,13 @@
 #' 
 #'  Usage:
 #'     df %>%
-#'         verify(left_referential_integrity(., final_data_cube, local_context),  error_fun = assertr::error_report) 
+#'         verify(left_referential_integrity(., final_data_cube, context),  error_fun = assertr::error_report) 
 #'
 #'  Examples
 #'     df1 = final_metadata_cube; df2 = final_data_cube
-#'     df1 = validated_final_metadata_cube; df2 = local_context$final_data_cube 
+#'     df1 = validated_final_metadata_cube; df2 = context$final_data_cube 
 
-left_referential_integrity <- function(df1, df2, local_context) {
+left_referential_integrity <- function(df1, df2, context) {
   
   ## Input validation
   valid_object_1 = any(c('data.frame', 'ArrowObject') %in% class(df1)) 
@@ -24,7 +24,7 @@ left_referential_integrity <- function(df1, df2, local_context) {
   }
   
   ## Input validation: Left Structural Integrity
-  if (!left_structural_integrity(df1, df2, local_context)){
+  if (!left_structural_integrity(df1, df2, context)){
     warning("Left is not structurally consistent with right")
     return(FALSE)
   }
@@ -35,7 +35,7 @@ left_referential_integrity <- function(df1, df2, local_context) {
   }
   
   ## Test Composite keys combinations
-  composite_keys <- local_context$vec__admin_composite_keys_all %>% keep(~.x%in%names(df1)) 
+  composite_keys <- context$vec__admin_composite_keys_all %>% keep(~.x%in%names(df1)) 
   df_key_combinations_left <- df1 %>% 
     select(all_of(composite_keys)) %>% 
     mutate(across(everything(), as.character)) %>%  # Convert all to character

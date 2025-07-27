@@ -77,7 +77,7 @@ We first fill out the configurations here.
       discard(~str_detect(.x, 'Codebook_')) # Specify the prefix for codebooks. This excludes codebook(s) from being frozen.
   
   #### Generic renovation notebook setup code (Do not change!)
-  local_context = get_renovation_notebook_context(local_config, global_context) 
+  context = get_renovation_notebook_context(local_config, global_context) 
   
 }
 
@@ -87,7 +87,7 @@ If all is well then get_renovation_notebook_context() will set things up the ren
 
 - Folder Setup: setups a server fodler for this renovation
 - Dependencies: imports all libraries and functions you will need
-- Raw data: freezes raw data into long term stable storage and compiles raw data into `local_context$raw_data`
+- Raw data: freezes raw data into long term stable storage and compiles raw data into `context$raw_data`
 - Logs: It has recorded all of the actions taken in JSON logs for version control (check you diff)
 
 Now we are ready to renovate. Let's first examine the raw data.
@@ -97,7 +97,7 @@ Now we are ready to renovate. Let's first examine the raw data.
 #| code-fold: true
 
 ## Preview raw data
-dfa = local_context$raw_data %>% 
+dfa = context$raw_data %>% 
   collect() %>% 
   as_tibble()
 
@@ -129,7 +129,7 @@ Here we specify what variables are in the dataset, removing composite keys (incl
 ```{r}
 #| code-summary: 'Brain - Variables processing'
 ## Declare the variables (remove compist)
-df_var_name = tibble(var_name_raw = local_context$raw_data %>% 
+df_var_name = tibble(var_name_raw = context$raw_data %>% 
                        select(-all_of(
                          c('RESPONDENT_ID','SURVEY_YEAR','SURVEY_MONTH','SURVEY_DAY',
                            'file_data','dataset_version',
@@ -138,15 +138,15 @@ df_var_name = tibble(var_name_raw = local_context$raw_data %>%
                        names() ) %>% 
   rowwise() %>% 
   mutate(
-    var_name = paste0(local_context$dataset_id_tmp, '_', sanitize_codebook_var(var_name_raw)),
-    dataset_id = local_context$dataset_id_tmp,
-    dataset_version = local_context$dataset_version_tmp,
-    dataset_instance = local_context$dataset_instance_tmp,
-    observation_type = local_context$observation_type_tmp,
-    schema_version = local_context$schema_version_tmp
+    var_name = paste0(context$dataset_id_tmp, '_', sanitize_codebook_var(var_name_raw)),
+    dataset_id = context$dataset_id_tmp,
+    dataset_version = context$dataset_version_tmp,
+    dataset_instance = context$dataset_instance_tmp,
+    observation_type = context$observation_type_tmp,
+    schema_version = context$schema_version_tmp
   ) %>% 
   ungroup() %>% 
-  select(all_of(local_context$vec__admin_variable_definition_table_columns)) %>% 
+  select(all_of(context$vec__admin_variable_definition_table_columns)) %>% 
   arrange(var_name)
 
 ## Preview
@@ -159,7 +159,7 @@ Here we have a validation function that checks the structure and will give you t
 #| code-summary: 'Automated - QC'
 
 # Check for UTF8 encoding, valid dataset variables, valid primary key, unique var_name, etc.
-process_variable_table(df_var_name, local_context)
+process_variable_table(df_var_name, context)
 ```
 
 Looks good. This also generate JSON logs so we can track changes in our git diffs; this is a good place to commit your work. 
@@ -171,7 +171,7 @@ For record-level renovations, df_strata is always empty because individual chara
 
 ```{r}
 #| code-summary: 'Brain - Strata processing'
-df_strata = generate_empty_df_strata(df_var_name, local_context)
+df_strata = generate_empty_df_strata(df_var_name, context)
 salurbal_renovation_reactable(df_strata)
 ```
 
@@ -179,7 +179,7 @@ Let's run validations on the strata table.
 
 ```{r}
 #| code-summary: 'Automated - QC'
-process_strata_table(df_strata, local_context)
+process_strata_table(df_strata, context)
 ```
 
 
@@ -190,9 +190,9 @@ process_strata_table(df_strata, local_context)
 Here we tidy the raw data into a data cube. This is one of the main steps of the renovations. Template code can be modified to tidy. Tip: if you are using AI provide: 1) code template below 2) var_name.json 3) strata.json 4) glimpse(df_data_raw) results; usually you get very good results. Tip2: use glimpse() throughout your pipeline!
 
 ```{r}
-if (!file.exists(local_context$path_cache_int_data)){
+if (!file.exists(context$path_cache_int_data)){
   
-  df_data_raw = local_context$raw_data %>% collect() %>% as_tibble()
+  df_data_raw = context$raw_data %>% collect() %>% as_tibble()
   glimpse(df_data_raw)
   
   df_data_int = df_data_raw %>%  
@@ -221,13 +221,13 @@ if (!file.exists(local_context$path_cache_int_data)){
     mutate_all(~as.character(.x)) %>% 
     ## selections
     select(
-      all_of(local_context$vec__admin_composite_keys_all),
-      all_of(local_context$vec__admin_data_columns_never_empty),
-      any_of(local_context$vec__admin_data_columns_all)
+      all_of(context$vec__admin_composite_keys_all),
+      all_of(context$vec__admin_data_columns_never_empty),
+      any_of(context$vec__admin_data_columns_all)
     )
   
   ## Cache preliminary results to enable out-of-memory work
-  df_data_int %>% write_parquet(local_context$path_cache_int_data)
+  df_data_int %>% write_parquet(context$path_cache_int_data)
   rm(df_data_int)
   gc()
   
@@ -240,21 +240,21 @@ if (!file.exists(local_context$path_cache_int_data)){
 No we run through our validation funciton that checks for consistency and the correct structure.
 
 ```{r}
-if (file.exists(local_context$path_cache_staged_data)) {
-  final_data_cube = open_dataset(local_context$path_cache_staged_data)
+if (file.exists(context$path_cache_staged_data)) {
+  final_data_cube = open_dataset(context$path_cache_staged_data)
 } else {
   
   ## Validate
-  df_data_int = local_context$path_cache_int_data %>% 
+  df_data_int = context$path_cache_int_data %>% 
     open_dataset() %>% 
     collect()
   validated_int_data_cube = df_data_int %>% 
-    validate_final_admin_data_cube(., local_context)
+    validate_final_admin_data_cube(., context)
   gc()
   
   ## Process 
   final_data_cube = validated_int_data_cube %>% 
-    process_final_admin_data_cube(., local_context)
+    process_final_admin_data_cube(., context)
   gc()
     
 }
@@ -284,7 +284,7 @@ Once the linkage.csv is clearly defined. We can use the linkage.csv to generate 
 
 ```{r}
 ## Process
-template_metadata_cube = process_linkage_table(local_context)
+template_metadata_cube = process_linkage_table(context)
 
 ## Preview
 salurbal_renovation_reactable(template_metadata_cube)
@@ -313,7 +313,7 @@ TIP: You can copy codebooks and the tempalte and have AI fill it out. It works p
 
 ```{r}
 if (file.exists('4.1-raw__codebook.xlsx')){ 
-  raw_codebook_object = import_salurbal_xslx_cdbk(local_context$raw_cdbk_path, local_context)
+  raw_codebook_object = import_salurbal_xslx_cdbk(context$raw_cdbk_path, context)
   raw_codebook_object 
 }
 ```
@@ -326,7 +326,7 @@ We now have a function that validate of metadata in raw codebook (e.g. correct s
  
 ## Validation + Processing
 valid_raw__cdbks = raw_codebook_object %>% 
-  process_raw_metadata_object(., local_context)
+  process_raw_metadata_object(., context)
 
 
 ## Snapshot
@@ -348,12 +348,12 @@ So by this time DMC has review the int_codebook and made any changes. Let's now 
 
 ## Partition paths
 intermediate_codebook_object = import_salurbal_xslx_cdbk(
-  local_context$int_cdbk_path, 
-  local_context)
+  context$int_cdbk_path, 
+  context)
 
 ## Process codebook object into metadata cube
 final_metadata_cube = intermediate_codebook_object %>% 
-  process_final_metadata_cube(.,local_context)
+  process_final_metadata_cube(.,context)
 
 ## Preview
 final_metadata_cube %>% 
@@ -373,7 +373,7 @@ We want to test the data and metadata together before it gets to DBT. Due to siz
 Lets do the integration first. Note results are cached so just delete or run manually the chunk below to refresh.
 
 ```{r}
-process_preliminary_admin_cube(local_context)
+process_preliminary_admin_cube(context)
 ```
 
 Now lets do the validatiaon 
@@ -382,7 +382,7 @@ Now lets do the validatiaon
 #| code-summary: 'Valid Admin Cube'
 
 ## Validate Prelim OBT
-valid_prelim_admin_cube = local_context %>% 
+valid_prelim_admin_cube = context %>% 
   validate_preliminary_admin_cube()
  
 ```
@@ -396,7 +396,7 @@ Cube is validate. Let's load into data warehouse with other cubes. This writes t
 ```{r}
 ## Loading to datawarehouse
 load_into_dbt_source(
-  local_context, 
+  context, 
   valid_prelim_admin_cube,
   training = T)
 ```

@@ -5,17 +5,17 @@
 #' @param xlsx_path: (string) the path to the .xslx codebook you are checking. 
 #' 
 #' Example:
-#'   list_cdbk = template_sheets; xlsx_path = local_context$template_cdbk_path
+#'   list_cdbk = template_sheets; xlsx_path = context$template_cdbk_path
 #'   list_cdbk = list_current; xlsx_path = summary_file_path
 #'
 
 
-identical_cdbk_vs_xslx = function(list_cdbk, xlsx_path, local_context){
+identical_cdbk_vs_xslx = function(list_cdbk, xlsx_path, context){
   
   
   { # setup -------------------------------------------------------------------
     if (!file.exists(xlsx_path)) return(F)
-    current_content = import_salurbal_xslx_cdbk(xlsx_path, local_context)
+    current_content = import_salurbal_xslx_cdbk(xlsx_path, context)
   }
   
   { # macro checks -------------------------------------------------------------

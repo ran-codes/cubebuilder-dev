@@ -18,7 +18,7 @@
 #' 4. Renders the value by replacing the key strings with their corresponding values from the dictionary.
 #' 5. If a key is not found in the dictionary, it's replaced with a 'MISSING_TEMPLATING_DATA' placeholder.
 #'
-#' @note This function relies on a global variable 'local_context$templating_dictionary'
+#' @note This function relies on a global variable 'context$templating_dictionary'
 #'   which should be a named list containing the templating key-value pairs.
 #'
 #' @importFrom stringr str_extract_all str_remove_all str_replace_all
@@ -26,18 +26,18 @@
 #' @importFrom whisker whisker.render
 #'
 #' @examples
-#' # Assuming local_context$templating_dictionary is properly set up
+#' # Assuming context$templating_dictionary is properly set up
 # row <- data.frame(
 #   dataset_id = "DS1", geo = "L1AD", iso2 = "AR", strata_id = "", year = "2010",
 #   column = "source", value = "Data from {{source}} for {{country}}",
 #   original_linkage = I(list(c("dataset_id", "iso2")))
 # )
-# rendered_row <- render_metadata_cell(row, local_context)
-# rendered_row <- render_metadata_cell_optimized(row, local_context)
+# rendered_row <- render_metadata_cell(row, context)
+# rendered_row <- render_metadata_cell_optimized(row, context)
 #'
 #' @export
 
-render_metadata_cell = function(row, local_context){ 
+render_metadata_cell = function(row, context){ 
   # row = to_render %>%  slice(6)
   ## Get list of keys to process
   key_strings = row$value %>% 
@@ -68,7 +68,7 @@ render_metadata_cell = function(row, local_context){
         ## Flexible render value
         key_raw = .y
         composite_key_tmp = .x
-        if (composite_key_tmp %in% names(local_context$templating_dictionary) ) {
+        if (composite_key_tmp %in% names(context$templating_dictionary) ) {
           ## Case 1: direct match
           composite_key_available_tmp = composite_key_tmp
         } else {
@@ -76,7 +76,7 @@ render_metadata_cell = function(row, local_context){
           composite_key_tmp_without_geo = composite_key_tmp %>%
             str_remove_all('L1AD|L1UX|L1MA|L1XS|L2_5|L3') %>%
             str_remove_all('L2')
-          if (composite_key_tmp_without_geo %in% names(local_context$templating_dictionary)) {
+          if (composite_key_tmp_without_geo %in% names(context$templating_dictionary)) {
             ## Case 2: match after removing GEO
             composite_key_available_tmp = composite_key_tmp_without_geo
           } else {
@@ -84,14 +84,14 @@ render_metadata_cell = function(row, local_context){
               str_remove_all('L1AD|L1UX|L1MA|L1XS|L2_5|L3') %>%
               str_remove_all('L2') %>%
               str_replace_all('_AR_|_BR_|_CL_|_CO_|_CR_|_GT_|_MX_|_NI_|_PA_|_PE_|_SV_',"__")  
-            if (composite_key_tmp_without_geo_iso2 %in% names(local_context$templating_dictionary)) {
+            if (composite_key_tmp_without_geo_iso2 %in% names(context$templating_dictionary)) {
               ## Case 3: match after removing GEO and ISO2
               composite_key_available_tmp = composite_key_tmp_without_geo_iso2
             } else {
               
               
               composite_key_tmp_minimal = paste0(key_raw,"____________", str_replace(composite_key_tmp, ".*__", ""))
-              if (composite_key_tmp_minimal %in% names(local_context$templating_dictionary)) {
+              if (composite_key_tmp_minimal %in% names(context$templating_dictionary)) {
                 composite_key_available_tmp = composite_key_tmp_minimal
               } else {
                 composite_key_available_tmp = NA
@@ -104,7 +104,7 @@ render_metadata_cell = function(row, local_context){
         ## Return
         render_value = ifelse(is.na(composite_key_available_tmp), 
                               glue("{{{{{composite_key_tmp}-MISSING_TEMPLATING_DATA}}}"), 
-                              local_context$templating_dictionary[[composite_key_available_tmp]])
+                              context$templating_dictionary[[composite_key_available_tmp]])
 
         dictionary_inner = list(render_value) %>% set_names(key_raw)
         dictionary_inner
@@ -126,7 +126,7 @@ render_metadata_cell = function(row, local_context){
 }
 
 
-render_metadata_cell_optimized <- function(row, local_context) {
+render_metadata_cell_optimized <- function(row, context) {
   # Extract key strings once
   key_strings <- unique(unlist(str_extract_all(row$value, '\\{\\{([a-zA-Z-]+)\\}\\}')))
   key_strings <- sub("\\{\\{(.*)\\}\\}", "\\1", key_strings)
@@ -158,8 +158,8 @@ render_metadata_cell_optimized <- function(row, local_context) {
       )
       
       for (variant in composite_key_variants) {
-        if (variant %in% names(local_context$templating_dictionary)) {
-          return(local_context$templating_dictionary[[variant]])
+        if (variant %in% names(context$templating_dictionary)) {
+          return(context$templating_dictionary[[variant]])
         }
       }
       

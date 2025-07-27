@@ -20,7 +20,7 @@ non_missing_value <- function(value) {
 
 
 
-valid_non_missing_value <-  function(df, list_columns, local_context){
+valid_non_missing_value <-  function(df, list_columns, context){
   
   ## Setup
   vec_columns_to_test = unlist(list_columns)

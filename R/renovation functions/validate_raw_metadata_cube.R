@@ -4,31 +4,31 @@
 #' 
 #' 
 
-validate_raw_metadata_cube <- function(raw_metadata_cube, local_context) {
+validate_raw_metadata_cube <- function(raw_metadata_cube, context) {
   
   raw_metadata_cube_validated = raw_metadata_cube   %>%
     ## Composite key Integrity
-    verify(composite_key_integrity(., local_context, cube_type = 'metadata')) %>% 
+    verify(composite_key_integrity(., context, cube_type = 'metadata')) %>% 
     ## All Columns 
-    verify(valid_column_names(., local_context, cube_type = 'metadata'))   %>% 
+    verify(valid_column_names(., context, cube_type = 'metadata'))   %>% 
     ## Others
-    verify(full_referential_integrity(., local_context$metadata_cube_key_template, local_context)) %>%
-    verify(composite_key_uniqueness(., local_context))
+    verify(full_referential_integrity(., context$metadata_cube_key_template, context)) %>%
+    verify(composite_key_uniqueness(., context))
   
   return(raw_metadata_cube_validated)
   
 }
 
-process_raw_metadata_object <- function(raw_codebook_object, local_context) {
+process_raw_metadata_object <- function(raw_codebook_object, context) {
   
   ## Validate raw codebooks
-  raw_metadata_cube = denormalize_codebook_object(raw_codebook_object, local_context, raw = T) %>% select(-var_name_raw)
-  valid_raw_metadata_cube = validate_raw_metadata_cube(raw_metadata_cube, local_context)
+  raw_metadata_cube = denormalize_codebook_object(raw_codebook_object, context, raw = T) %>% select(-var_name_raw)
+  valid_raw_metadata_cube = validate_raw_metadata_cube(raw_metadata_cube, context)
   
   ## Initialize int codebooks for review if raw pass validation
-  if (!file.exists(local_context$int_cdbk_path)) {
-    write_salurbal_xlsx(raw_codebook_object, local_context$int_cdbk_path, local_context)
-    snapshot_excel(path = local_context$int_cdbk_path)
+  if (!file.exists(context$int_cdbk_path)) {
+    write_salurbal_xlsx(raw_codebook_object, context$int_cdbk_path, context)
+    snapshot_excel(path = context$int_cdbk_path)
   }
  
   cli_alert_success("Raw Metadata Cube Validated!")

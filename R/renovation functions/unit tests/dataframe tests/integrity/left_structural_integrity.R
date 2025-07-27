@@ -8,7 +8,7 @@
 #' 
 #'     df1 = final_metadata_cube; df2 = final_data_cube
 
-left_structural_integrity <- function(df1, df2, local_context) {
+left_structural_integrity <- function(df1, df2, context) {
   
   ## Input validation
   valid_object_1 = any(c('data.frame', 'ArrowObject') %in% class(df1)) 
@@ -18,8 +18,8 @@ left_structural_integrity <- function(df1, df2, local_context) {
   }
   
   ## Test
-  vec__keys_in_left = names(df1) %>% keep(~.x%in%local_context$vec__admin_composite_keys_all)
-  vec__keys_in_right = names(df2) %>% keep(~.x%in%local_context$vec__admin_composite_keys_all)
+  vec__keys_in_left = names(df1) %>% keep(~.x%in%context$vec__admin_composite_keys_all)
+  vec__keys_in_right = names(df2) %>% keep(~.x%in%context$vec__admin_composite_keys_all)
   extra_keys_in_left = vec__keys_in_left %>% keep(~! .x%in%vec__keys_in_right)
   is_consistent_left = length(extra_keys_in_left) == 0
  

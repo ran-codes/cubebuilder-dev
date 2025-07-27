@@ -1,5 +1,5 @@
 
-load_into_dbt_source = function(local_context, valid_prelim_admin_cube, training = F){
+load_into_dbt_source = function(context, valid_prelim_admin_cube, training = F){
 
   
   { # Setup -------------------------------------------------------------------
@@ -15,7 +15,7 @@ load_into_dbt_source = function(local_context, valid_prelim_admin_cube, training
   { #  Get renovation metadata --------------------------------------------
     
     ## Get file_codebook from data
-    list_file_codebooks = local_context$final_metadata_cube %>% 
+    list_file_codebooks = context$final_metadata_cube %>% 
       select(file_codebook) %>%
       distinct() %>% 
       collect() %>% 
@@ -24,23 +24,23 @@ load_into_dbt_source = function(local_context, valid_prelim_admin_cube, training
 
     ## Compile
     df_renovation_metadata = tibble(
-      dataset_id = local_context$dataset_id_tmp,
-      dataset_version = local_context$dataset_version_tmp,
-      dataset_instance = local_context$dataset_instance_tmp,
-      observation_type = local_context$observation_type_tmp,
-      path_dbt_source_data = local_context$path_dbt_data,
-      path_dbt_source_metadata = local_context$path_dbt_metadata,
-      schema_version = local_context$schema_version_tmp,
-      renovation_render_date = local_context$local_config$renovation_render_date,
-      dataset_renovation_maintainer = local_context$local_config$dataset_renovation_maintainer,
-      dataset_renovation_context_contributor = local_context$local_config$dataset_renovation_context_contributor,
-      dataset_renovation_flags = ifelse(is.null(local_context$local_config$dataset_renovation_flags),'',local_config$dataset_renovation_flags),
-      raw_dataset_dir = local_context$local_config$raw_dataset_dir,
+      dataset_id = context$dataset_id_tmp,
+      dataset_version = context$dataset_version_tmp,
+      dataset_instance = context$dataset_instance_tmp,
+      observation_type = context$observation_type_tmp,
+      path_dbt_source_data = context$path_dbt_data,
+      path_dbt_source_metadata = context$path_dbt_metadata,
+      schema_version = context$schema_version_tmp,
+      renovation_render_date = context$local_config$renovation_render_date,
+      dataset_renovation_maintainer = context$local_config$dataset_renovation_maintainer,
+      dataset_renovation_context_contributor = context$local_config$dataset_renovation_context_contributor,
+      dataset_renovation_flags = ifelse(is.null(context$local_config$dataset_renovation_flags),'',local_config$dataset_renovation_flags),
+      raw_dataset_dir = context$local_config$raw_dataset_dir,
       ingested_codebooks = list_file_codebooks,
-      vec__var_names_to_remove = list(local_context$local_config$vec__var_names_to_remove),
-      dataset_instance_freeze_id = local_context$local_config$dataset_instance_freeze_id,
-      dataset_instance_freeze_path = local_context$local_config$dataset_instance_freeze_path,
-      frozen_compiled_raw_data = local_context$local_config$frozen_compiled_raw_data,
+      vec__var_names_to_remove = list(context$local_config$vec__var_names_to_remove),
+      dataset_instance_freeze_id = context$local_config$dataset_instance_freeze_id,
+      dataset_instance_freeze_path = context$local_config$dataset_instance_freeze_path,
+      frozen_compiled_raw_data = context$local_config$frozen_compiled_raw_data,
       ingested_data_files = list(arrow::read_parquet("_lock.parquet"))
     ) %>% 
       assert(is_uniq, dataset_instance)
@@ -55,20 +55,20 @@ load_into_dbt_source = function(local_context, valid_prelim_admin_cube, training
       
       { # Metadata Cube -----------------------------------------------------------
         file.copy(
-          from = local_context$path_cache_staged_metadata,
+          from = context$path_cache_staged_metadata,
           to = ifelse(training,
-                      file.path("../_datawarehouse/_source/",basename(local_context$path_dbt_metadata)),
-                      local_context$path_dbt_metadata),
+                      file.path("../_datawarehouse/_source/",basename(context$path_dbt_metadata)),
+                      context$path_dbt_metadata),
           overwrite = TRUE
         )
       }
       
       { # Data Cube -----------------------------------------------------------
         file.copy(
-          from = local_context$path_cache_staged_data,
+          from = context$path_cache_staged_data,
           to = ifelse(training,
-                      file.path("../_datawarehouse/_source/",basename(local_context$path_dbt_data)),
-                      local_context$path_dbt_data),
+                      file.path("../_datawarehouse/_source/",basename(context$path_dbt_data)),
+                      context$path_dbt_data),
           overwrite = TRUE
         )
       }
@@ -85,15 +85,15 @@ load_into_dbt_source = function(local_context, valid_prelim_admin_cube, training
         df_renovation_metadata %>% 
           arrow::write_parquet(
             ifelse(training,
-                   file.path("../_datawarehouse/_source/",basename(local_context$path_dbt_loading_info_parquet)),
-                   local_context$path_dbt_loading_info_parquet),
+                   file.path("../_datawarehouse/_source/",basename(context$path_dbt_loading_info_parquet)),
+                   context$path_dbt_loading_info_parquet),
           )
         
         df_renovation_metadata %>% 
           jsonlite::toJSON(auto_unbox = TRUE, pretty = T) %>% 
           writeLines(con = ifelse(training,
-                                 file.path("../_datawarehouse/_source/",basename(local_context$path_dbt_loading_info_json)),
-                                 local_context$path_dbt_loading_info_json))
+                                 file.path("../_datawarehouse/_source/",basename(context$path_dbt_loading_info_json)),
+                                 context$path_dbt_loading_info_json))
       }
       
       

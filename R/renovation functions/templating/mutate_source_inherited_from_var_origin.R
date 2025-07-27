@@ -1,9 +1,9 @@
 ## Utility: Checks if a `var_name` is in production either in current codebook or in datawarehouse
-is_salurbal_production_variable = function(var_name, metadata_cube, local_context){
+is_salurbal_production_variable = function(var_name, metadata_cube, context){
 
   boolean__is_production_variable = any(
     var_name%in%metadata_cube$var_name,   ## Case 1: in current active codebook 
-    var_name%in%local_context$df__prod_variables$var_name  ## Case 2: in previous codebooks
+    var_name%in%context$df__prod_variables$var_name  ## Case 2: in previous codebooks
   ) 
   
   if (!boolean__is_production_variable){
@@ -14,12 +14,12 @@ is_salurbal_production_variable = function(var_name, metadata_cube, local_contex
 }
 
 ## Utility: Takes a `var_name` and returns the `var_label` from the metadata cube (optionall to inlucde Portal URL)
-get_var_label = function(var_name_tmp, metadata_cube, local_context, with_portal_url = F){
+get_var_label = function(var_name_tmp, metadata_cube, context, with_portal_url = F){
 
   ## Diagnose where to pull metadata from
   case = case_when(
     var_name_tmp%in%metadata_cube$var_name ~ 'In Current',  
-    var_name_tmp%in%local_context$df__prod_variables$var_name ~ 'In Datawarehouse',
+    var_name_tmp%in%context$df__prod_variables$var_name ~ 'In Datawarehouse',
     TRUE ~ "ERROR"
   ) 
   if (case == "ERROR") cli_abort("Specified variable is not in production - please verify upstream logic!")
@@ -35,7 +35,7 @@ get_var_label = function(var_name_tmp, metadata_cube, local_context, with_portal
   
   ## Case 2: in previous codebooks
   if (case == 'In Datawarehouse'){
-    var_label_tmp = local_context$df__prod_variables %>% 
+    var_label_tmp = context$df__prod_variables %>% 
       filter(var_name == var_name_tmp) %>% 
       pull(var_label) %>% 
       unique() %>% 
@@ -52,7 +52,7 @@ get_var_label = function(var_name_tmp, metadata_cube, local_context, with_portal
 }
 
 ## Utility. Takes a metadata cube row and creates a source link from the origin variables if possible. returns a mutated row.
-create_source_links_from_origin_vars = function(row, metadata_cube, local_context){
+create_source_links_from_origin_vars = function(row, metadata_cube, context){
   # row = df_qualify_for_inheritance %>% slice(1)
   
   ### Stop if already has a source
@@ -67,12 +67,12 @@ create_source_links_from_origin_vars = function(row, metadata_cube, local_contex
   
   ### Verify origin variables are valid
   valid_origin_vars = vec__origin_vars %>% 
-    map_lgl(~is_salurbal_production_variable(.x, metadata_cube, local_context)) %>% 
+    map_lgl(~is_salurbal_production_variable(.x, metadata_cube, context)) %>% 
     all()
   
   ### Operationalize links to portal
   result_origin_links = vec__origin_vars %>% 
-    map_chr(~.x %>%  get_var_label(metadata_cube, local_context, with_portal_url = T)) %>% 
+    map_chr(~.x %>%  get_var_label(metadata_cube, context, with_portal_url = T)) %>% 
     paste(collapse = "; ")
   
   ## Operationalize inherited source. 
@@ -89,7 +89,7 @@ create_source_links_from_origin_vars = function(row, metadata_cube, local_contex
 ##' Primary function: takes a metadata cube and applies source inheritance logic to rowise to appropriate rows. Returns the a consistent mutate metadata cube
 ##'  Example
 ##'     metadata_cube = intermediate_metadata_cube
-mutate_source_inherited_from_var_origin = function(metadata_cube, local_context){
+mutate_source_inherited_from_var_origin = function(metadata_cube, context){
   
   ## Subset dataframe to those that meet inheritance criteria
   df_qualify_for_inheritance = metadata_cube %>% 
@@ -109,13 +109,13 @@ mutate_source_inherited_from_var_origin = function(metadata_cube, local_context)
     ## Process Inheritance
     df_source_inheritance = df_qualify_for_inheritance %>% 
       group_by(row_number()) %>% 
-      group_map(~create_source_links_from_origin_vars(.x, metadata_cube, local_context)) %>% 
+      group_map(~create_source_links_from_origin_vars(.x, metadata_cube, context)) %>% 
       bind_rows() %>% 
-      verify(full_referential_integrity(., df_qualify_for_inheritance, local_context))
+      verify(full_referential_integrity(., df_qualify_for_inheritance, context))
     
     ## Bind back to original dataframe
     result = bind_rows(df_source_inheritance, df_unselected_for_inheritance) %>% 
-      verify(full_referential_integrity(., metadata_cube, local_context))
+      verify(full_referential_integrity(., metadata_cube, context))
     return(result)
   }
       

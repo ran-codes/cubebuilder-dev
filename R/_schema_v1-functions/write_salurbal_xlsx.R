@@ -8,10 +8,10 @@
 
 source_parent("identical_cdbk_vs_xslx")
 
-write_salurbal_xlsx = function(list_cdbk, path, local_context){
+write_salurbal_xlsx = function(list_cdbk, path, context){
   
   
-  if (!identical_cdbk_vs_xslx(list_cdbk,path, local_context)){
+  if (!identical_cdbk_vs_xslx(list_cdbk,path, context)){
     wb = xlsx::createWorkbook()
     cs_text_bold <- xlsx::CellStyle(wb) +  xlsx::Font(wb, isBold=TRUE)
     map2(names(list_cdbk),list_cdbk, 

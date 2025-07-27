@@ -1,14 +1,14 @@
 #'functional_referential_integrity
 #'
 #'
-#'   df1 =  local_context$path_cache_staged_obt %>% arrow::open_dataset(); df2 = local_context$final_data_cube
+#'   df1 =  context$path_cache_staged_obt %>% arrow::open_dataset(); df2 = context$final_data_cube
 #'  
 #'
 #'   Dev
-#'   df1 = validated_final_metadata_cube; df2 = local_context$final_data_cube; list_composite_keys <- list(c("dataset_id", "dataset_instance", "day", "geo", "iso2", "month","observation_type", "strata_id", "var_name", "version", "year"))
+#'   df1 = validated_final_metadata_cube; df2 = context$final_data_cube; list_composite_keys <- list(c("dataset_id", "dataset_instance", "day", "geo", "iso2", "month","observation_type", "strata_id", "var_name", "version", "year"))
 #'        
 
-composite_referential_integrity <- function(df1, df2, local_context, list_composite_keys) {
+composite_referential_integrity <- function(df1, df2, context, list_composite_keys) {
   
   
   # Setup  ----------------------------------------------------------------
@@ -20,12 +20,12 @@ composite_referential_integrity <- function(df1, df2, local_context, list_compos
     data_scale = ifelse(any(nrow(df1)>10^6, nrow(df2)>10^6),'big','small')
     
     ## Input validation: utility cahce paths must be valid
-    if (is.null(local_context$path_cache_utility_1)) cli_abort("Error in composite_referential_integrity(): local_context$path_cache_utility_1 is NULL - please consider add a local cache path for this notebook.")
-    if (is.null(local_context$path_cache_utility_2)) cli_abort("Error in composite_referential_integrity(): local_context$path_cache_utility_2 is NULL - please consider add a local cache path for this notebook.")
-    if (!dir.exists(dirname(local_context$path_cache_utility_1))) cli_abort("Error in composite_referential_integrity(): local_context$path_cache_utility_1 directory fodler doesn't exist - please create a cache folder for this cache file.")
-    if (!dir.exists(dirname(local_context$path_cache_utility_2))) cli_abort("Error in composite_referential_integrity(): local_context$path_cache_utility_2 directory fodler doesn't exist - please create a cache folder for this cache file.")
-    unlink(local_context$path_cache_utility_1)
-    unlink(local_context$path_cache_utility_2)
+    if (is.null(context$path_cache_utility_1)) cli_abort("Error in composite_referential_integrity(): context$path_cache_utility_1 is NULL - please consider add a local cache path for this notebook.")
+    if (is.null(context$path_cache_utility_2)) cli_abort("Error in composite_referential_integrity(): context$path_cache_utility_2 is NULL - please consider add a local cache path for this notebook.")
+    if (!dir.exists(dirname(context$path_cache_utility_1))) cli_abort("Error in composite_referential_integrity(): context$path_cache_utility_1 directory fodler doesn't exist - please create a cache folder for this cache file.")
+    if (!dir.exists(dirname(context$path_cache_utility_2))) cli_abort("Error in composite_referential_integrity(): context$path_cache_utility_2 directory fodler doesn't exist - please create a cache folder for this cache file.")
+    unlink(context$path_cache_utility_1)
+    unlink(context$path_cache_utility_2)
     
     ## Input validation: Must be dataframes or dataframe abstractions
     valid_object_1 = any(c('data.frame', 'ArrowObject') %in% class(df1)) 
@@ -74,14 +74,14 @@ composite_referential_integrity <- function(df1, df2, local_context, list_compos
 
         ### Cache parquet if needed
         if (df1_class == 'data.frame') {
-          arrow::write_parquet(df1, local_context$path_cache_utility_1)
-          df1_parquet = local_context$path_cache_utility_1
+          arrow::write_parquet(df1, context$path_cache_utility_1)
+          df1_parquet = context$path_cache_utility_1
         } else {
           df1_parquet = df1$files
         }
         if (df2_class == 'data.frame') {
-          arrow::write_parquet(df2, local_context$path_cache_utility_2)
-          df2_parquet = local_context$path_cache_utility_2
+          arrow::write_parquet(df2, context$path_cache_utility_2)
+          df2_parquet = context$path_cache_utility_2
         } else {
           df2_parquet = df2$files
         }
@@ -131,8 +131,8 @@ composite_referential_integrity <- function(df1, df2, local_context, list_compos
         consistent = nrow(df_inconsistent_rows) == 0
         
         ### Reset
-        unlink(local_context$path_cache_utility_1)
-        unlink(local_context$path_cache_utility_2)
+        unlink(context$path_cache_utility_1)
+        unlink(context$path_cache_utility_2)
         dbDisconnect(con, shutdown = TRUE)
       }
     }

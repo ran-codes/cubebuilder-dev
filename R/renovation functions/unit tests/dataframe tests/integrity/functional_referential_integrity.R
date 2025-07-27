@@ -17,9 +17,9 @@
 #' 
 #' Example
 #'   df1 = raw_metadata_cube; df2 = template_metadata_cube
-#'   df1 = validated_final_metadata_cube; df2 = local_context$final_data_cube
+#'   df1 = validated_final_metadata_cube; df2 = context$final_data_cube
 
-functional_referential_integrity <- function(df1, df2, local_context) {
+functional_referential_integrity <- function(df1, df2, context) {
   
   { # Setup -------------------------------------------------------------------
     
@@ -47,11 +47,11 @@ functional_referential_integrity <- function(df1, df2, local_context) {
   { # Tests -------------------------------------------------------------------
     
     ##  Get Left composite Keys (1-way Structural test - All Keys in left are in right)  -------------------------------------------------------------------
-    { if (!left_structural_integrity(df1, df2, local_context)){
+    { if (!left_structural_integrity(df1, df2, context)){
         warning("Left is not structurally consistent with right")
         return(FALSE)
       }  
-      df1_composite_keys = local_context$vec__admin_composite_keys_all %>% keep(~.x%in%names(df1))
+      df1_composite_keys = context$vec__admin_composite_keys_all %>% keep(~.x%in%names(df1))
       cli_alert_info("1-way left-sided structural test passed")
     }
     
@@ -59,7 +59,7 @@ functional_referential_integrity <- function(df1, df2, local_context) {
     ## Full composite key consistency test (based keys in left side keys )  -------------------------------------------------------------------
     {
       list_composite_keys = list(df1_composite_keys)
-      if (!composite_referential_integrity(df1, df2, local_context, list_composite_keys)){
+      if (!composite_referential_integrity(df1, df2, context, list_composite_keys)){
         warning("Data points are not consistent between the two tables based on the provided list of composite keys.")
         return(FALSE)
       } 

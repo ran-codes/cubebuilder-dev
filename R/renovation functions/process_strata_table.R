@@ -14,7 +14,7 @@
 source_parent('validate_df_utf8') 
 
 
-process_strata_table = function(df_strata, local_context){
+process_strata_table = function(df_strata, context){
   
   
   
@@ -24,7 +24,7 @@ process_strata_table = function(df_strata, local_context){
     
     df_strata_long  = df_strata %>% 
       mutate_all(~as.character(.x)) %>% 
-      pivot_longer(cols = -c(any_of(local_context$vec__admin_composite_keys_all),
+      pivot_longer(cols = -c(any_of(context$vec__admin_composite_keys_all),
                              var_name_raw)) 
     df_strata_summary = df_strata_long  %>%
       group_by(var_name, var_name_raw) %>% 
@@ -116,7 +116,7 @@ process_strata_table = function(df_strata, local_context){
         verify(has_all_character_column_types(.)) %>% 
         verify(has_columns(
           .,
-          list(local_context$vec__admin_strata_definition_table_columns),
+          list(context$vec__admin_strata_definition_table_columns),
           message = 'all strata table columns'))  %>%
         verify(columns_must_not_have_NA_NULL_cells(
           .,
@@ -132,19 +132,19 @@ process_strata_table = function(df_strata, local_context){
     { # Write ------------------------------------------------------------------
       
       ## Casual visibility
-      validated_df_strata  %>% fwrite(local_context$path_strata_csv)
+      validated_df_strata  %>% fwrite(context$path_strata_csv)
       
       ## Standard storage format
-      validated_df_strata  %>% arrow::write_parquet(local_context$path_strata_parquet)
+      validated_df_strata  %>% arrow::write_parquet(context$path_strata_parquet)
       
       ## Version control diff
-      validated_df_strata %>% write_json(local_context$path_strata_json, pretty = TRUE, auto_unbox = TRUE)
+      validated_df_strata %>% write_json(context$path_strata_json, pretty = TRUE, auto_unbox = TRUE)
        
     } 
     
     { # Log ------------------------------------------------------------------
       cli_alert("df_strata validated.")
-      cli_alert(glue("Wrote strata.csv for {local_context$dataset_id_tmp}"))
+      cli_alert(glue("Wrote strata.csv for {context$dataset_id_tmp}"))
       cli_alert_success(paste("Success"))
     }
   } 

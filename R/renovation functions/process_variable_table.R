@@ -16,7 +16,7 @@
 source_parent('validate_df_utf8') 
 
 
-process_variable_table = function(df_var_name, local_context){
+process_variable_table = function(df_var_name, context){
   
   { # Setup -------------------------------------------------------------------
     cli_alert_info( style_bold("Step 1 (Variable list)"))
@@ -39,7 +39,7 @@ process_variable_table = function(df_var_name, local_context){
     }
     
     { ## `valid_non_primary_keys` -------------------------------------------------------------
-      non_var_names = c(local_context$xwalk_keys %>% pull(keys) %>% unique(),'filedata') %>% str_to_upper()
+      non_var_names = c(context$xwalk_keys %>% pull(keys) %>% unique(),'filedata') %>% str_to_upper()
       invalid_var_names = str_to_upper(df_var_name$var_name) %>% keep(~.x%in%non_var_names)
       valid_non_primary_keys = length(invalid_var_names) == 0
       if (!valid_non_primary_keys){
@@ -52,9 +52,9 @@ process_variable_table = function(df_var_name, local_context){
     { ## valid_unique_identifier -------------------------------------------------
       ## So this test will check if proposed var_name is does not exist in other datasets
       vec__proposed_var_names =  df_var_name %>%  pull(var_name)
-      api_metadata = local_context$path_server_api_metata %>% arrow::open_dataset()
+      api_metadata = context$path_server_api_metata %>% arrow::open_dataset()
       vec__existing_var_names = api_metadata %>% 
-        filter(dataset_id != local_context$dataset_id_tmp)%>% 
+        filter(dataset_id != context$dataset_id_tmp)%>% 
         count(var_name) %>% 
         collect()  %>%
         pull(var_name)
@@ -80,7 +80,7 @@ process_variable_table = function(df_var_name, local_context){
       { # Assertion tests ------------------------------------------------------------------
         
         validated_df_var_name = df_var_name  %>%
-          verify(has_only_names(local_context$vec__admin_variable_definition_table_columns)) %>% 
+          verify(has_only_names(context$vec__admin_variable_definition_table_columns)) %>% 
           assert(is_uniq, var_name_raw) %>%
           arrange(var_name, var_name_raw) %>% 
           pack_string_column('var_name_raw') 
@@ -90,20 +90,20 @@ process_variable_table = function(df_var_name, local_context){
       { # Write ------------------------------------------------------------------
         
         ## Casual visibility
-        validated_df_var_name  %>% fwrite(local_context$path_variable_csv)
+        validated_df_var_name  %>% fwrite(context$path_variable_csv)
         
         ## Standard storage format
-        validated_df_var_name  %>% arrow::write_parquet(local_context$path_variable_parquet)
+        validated_df_var_name  %>% arrow::write_parquet(context$path_variable_parquet)
         
         ## Version control diff
-        validated_df_var_name %>% write_json(local_context$path_variable_json, pretty = TRUE, auto_unbox = TRUE)
+        validated_df_var_name %>% write_json(context$path_variable_json, pretty = TRUE, auto_unbox = TRUE)
         
       } 
       
       
       { # Log ------------------------------------------------------------------
         cli_alert("df_var_name validated")
-        cli_alert(glue("Wrote variable table for {local_context$dataset_instance_tmp}"))
+        cli_alert(glue("Wrote variable table for {context$dataset_instance_tmp}"))
         cli_alert_success(paste("Success"))
       }
     }

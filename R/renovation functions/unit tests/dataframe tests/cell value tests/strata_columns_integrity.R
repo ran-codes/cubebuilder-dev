@@ -3,7 +3,7 @@
 #' legacy edge case bugs  such as `_NA_NA` present in strings. 
 
 
-strata_columns_integrity <- function(df, local_context) {
+strata_columns_integrity <- function(df, context) {
   
   
   { # Setup -------------------------------------------------------------------
@@ -11,7 +11,7 @@ strata_columns_integrity <- function(df, local_context) {
     cli_alert("Start Strata Content Integrity Test")
     
     df_strata_tmp = df %>% 
-      select(any_of(local_context$vec__admin_strata_definition_table_columns)) %>% 
+      select(any_of(context$vec__admin_strata_definition_table_columns)) %>% 
       distinct() %>%  
       collect() 
     

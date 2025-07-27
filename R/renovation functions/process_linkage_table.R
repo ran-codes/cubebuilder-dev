@@ -12,7 +12,7 @@
 source_parent('validate_df_utf8') 
 
 
-process_linkage_table = function(local_context){
+process_linkage_table = function(context){
   
   { # Setup -------------------------------------------------------------------
     
@@ -30,7 +30,7 @@ process_linkage_table = function(local_context){
     if (fail) cli_abort("process_linkage_table() Input validation failed: dataset composite key configurations should be minimal and only by_dataset. Everything else is assumed to be by_dataset. E.g. please recode your `by_dataset_var` to `by_var` or `by_dataset_iso2` to just `by_iso2`")
     
     ## Input validation: Observation_id level metadta should only apply to area-level records
-    fail = 'by_observation_id'%in%vec__composite_key_configs & local_context$observation_type_tmp != 'area-level'
+    fail = 'by_observation_id'%in%vec__composite_key_configs & context$observation_type_tmp != 'area-level'
     if (fail) cli_abort("process_linkage_table() Input validation failed: Observation_id level metadata is configured but this is only allowed for `area-level` observation_types of data. Please check your configurations.")
   }
   
@@ -54,7 +54,7 @@ process_linkage_table = function(local_context){
         select(sort(setdiff(names(.), "by_observation_id")), any_of("by_observation_id")) %>% 
         names(),
       schema_fields = schema_tables%>% 
-        map(~ get_table_columns_from_schema(.x,df_schema_tidy, local_context$xwalk_keys)) %>% 
+        map(~ get_table_columns_from_schema(.x,df_schema_tidy, context$xwalk_keys)) %>% 
         set_names(schema_tables)
     ) 
   }
@@ -64,7 +64,7 @@ process_linkage_table = function(local_context){
     {  # `valid_df_observation_id` -------------------------------------------------------------
       ## Input Validation: If linkage.csv specifies observation_id level metadata then `df__observation_id_with_metadata` must exist in local context
       metadata_by_observation_id = 'by_observation_id'%in%names(read_csv("3-linkage.csv", show_col_types = F))
-      if (metadata_by_observation_id & is.null(local_context$df__observation_id_with_metadata)){
+      if (metadata_by_observation_id & is.null(context$df__observation_id_with_metadata)){
         cli_abort("process_linkage_table() Input validation failed: linkage.csv specifies metadata by observation_id but `df__observation_id_with_metadata` is not in local context. Please make sure you have a df__observation_id_with_metadata in local context before running process_linkage_table().")
       }
     }
@@ -76,7 +76,7 @@ process_linkage_table = function(local_context){
     
     { # `valid_follows_template` -------------------------------------------------------------
       schema_fields  = schema$df_schema %>% pull(field) 
-      template_fields = local_context$template__linkage %>% pull(field) 
+      template_fields = context$template__linkage %>% pull(field) 
       
       extra_fields = setdiff(schema_fields,template_fields)
       missing_fields = setdiff(template_fields,schema_fields)
@@ -92,7 +92,7 @@ process_linkage_table = function(local_context){
     { # `valid_linkage` ------------------------------------------------------
       # Only run for non-hierachical lnkages (most of the cases) (legacy)
       # v2 - only run for non-by_observation_id linkages
-      if (is.null(local_context$df__observation_id_with_metadata)){
+      if (is.null(context$df__observation_id_with_metadata)){
         df_linkage_count = schema$df_schema_tidy %>% 
           count(column) %>% 
           filter(n > 1) 
@@ -102,7 +102,7 @@ process_linkage_table = function(local_context){
     } 
     
     { # `valid_values` ------------------------------------------------------
-      if (is.null(local_context$df__observation_id_with_metadata)){
+      if (is.null(context$df__observation_id_with_metadata)){
         df_invalid_values =    schema$df_schema  %>% 
           pivot_longer(-field, names_to = 'table') %>% 
           group_by(field) %>% 
@@ -120,8 +120,8 @@ process_linkage_table = function(local_context){
     # { # valid_complex_linkage_info -------------------------------------------------
     #   DEPRECATE: FOr LE_POSTAMP Medta link use obeeservation_id not custom salid1
     #   # if flagged as hierarchical linkage then must have which sheets
-    #   missing_hierachical_linkage_details = length(local_context$hierachical_linkage_sheets) == 0
-    #   if (local_context$is__hierarchical_linkages & missing_hierachical_linkage_details) {
+    #   missing_hierachical_linkage_details = length(context$hierachical_linkage_sheets) == 0
+    #   if (context$is__hierarchical_linkages & missing_hierachical_linkage_details) {
     #     cli_abort('valid_salid1_in_df_data ERROR: salid1 is a key in linkages but not present in data! Please add salid1 into data see LE_POSTAMP as example.')
     #   }
     # }
@@ -134,24 +134,24 @@ process_linkage_table = function(local_context){
     
     { ## Update status ------------------------------------------------------------------
       cli_alert("Valid linkage.csv")
-      if (!is.null(local_context$df__observation_id_with_metadata)){
+      if (!is.null(context$df__observation_id_with_metadata)){
         cat_bullet("Metadata by `observation_id` detected")
       }
     }
     
     { ## Write schema -------------------------------------------------------------
-      # draw_schema_from_linkage(schema$df_schema_tidy, dataset_id_tmp, local_context)
+      # draw_schema_from_linkage(schema$df_schema_tidy, dataset_id_tmp, context)
     }
     
     { ## Write codebook templates -----------------------------------------------
       
       ## Generate template sheets
       template_sheets = schema$schema_tables %>%
-        map(~get_codebook_template(.x, schema, local_context)) %>% 
+        map(~get_codebook_template(.x, schema, context)) %>% 
         set_names(schema$schema_tables)
       
       ## Write .xlsx
-      if (!identical_cdbk_vs_xslx(template_sheets,local_context$template_cdbk_path, local_context)){
+      if (!identical_cdbk_vs_xslx(template_sheets,context$template_cdbk_path, context)){
         wb = createWorkbook()
         cs_text_bold <- CellStyle(wb) +  Font(wb, isBold=TRUE)
         map(names(template_sheets),
@@ -161,9 +161,9 @@ process_linkage_table = function(local_context){
                            sheet,
                            colnamesStyle = cs_text_bold,
                            row.names = F)  })
-        saveWorkbook(wb,local_context$template_cdbk_path)
-        cli_alert(glue("Generate __codebook.xslx template for {local_context$dataset_id_tmp}" ))
-        if (!file.exists(local_context$raw_cdbk_path)) file.copy(local_context$template_cdbk_path,local_context$raw_cdbk_path)
+        saveWorkbook(wb,context$template_cdbk_path)
+        cli_alert(glue("Generate __codebook.xslx template for {context$dataset_id_tmp}" ))
+        if (!file.exists(context$raw_cdbk_path)) file.copy(context$template_cdbk_path,context$raw_cdbk_path)
         
       }
       
@@ -171,23 +171,23 @@ process_linkage_table = function(local_context){
     
     { # Snapshot   -----------------------------------------------
       cli_alert_success("Shema validated and template generated!")
-      snapshot_excel(path = local_context$template_cdbk_path)
-      snapshot_excel(path = local_context$raw_cdbk_path)
+      snapshot_excel(path = context$template_cdbk_path)
+      snapshot_excel(path = context$raw_cdbk_path)
     }
   } 
   
   { # Template Metadata Cube -----------------------------------------------------------
     
     ## Generate Cube
-    templates = import_salurbal_xslx_cdbk(local_context$template_cdbk_path, local_context)
+    templates = import_salurbal_xslx_cdbk(context$template_cdbk_path, context)
     template_metadata_cube = denormalize_codebook_object(
       codebook_object = templates, 
-      local_context, 
+      context, 
       template = T,
       raw = F)
      
     ## Cache Metadata
-    template_metadata_cube %>% arrow::write_parquet(local_context$path_cache_metadata_cube_template)
+    template_metadata_cube %>% arrow::write_parquet(context$path_cache_metadata_cube_template)
   }
  
   

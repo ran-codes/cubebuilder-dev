@@ -5,11 +5,11 @@
 #'  
 
 
-generate_empty_df_strata = function(df_var_name, local_context){
+generate_empty_df_strata = function(df_var_name, context){
   
-  df_strata =  local_context$template__strata %>% 
+  df_strata =  context$template__strata %>% 
     bind_rows(df_var_name) %>% 
-    select(all_of(local_context$vec__admin_strata_definition_table_columns)) %>% 
+    select(all_of(context$vec__admin_strata_definition_table_columns)) %>% 
     mutate(across(everything(), ~replace_na(., "")))
   
   return(df_strata)

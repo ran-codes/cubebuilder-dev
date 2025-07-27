@@ -12,11 +12,11 @@
 #'     df = df_data_int
 #'     df = df_cube_data_precensor %>% collect
 
-composite_key_uniqueness = function(df, local_context, message = NULL){
+composite_key_uniqueness = function(df, context, message = NULL){
   
   { # Setup -------------------------------------------------------------------
     potential_intermediate_columns = c('column', 'salid', 'value_iteration')
-    keys_to_check = c(local_context$vec__admin_composite_keys_all, 
+    keys_to_check = c(context$vec__admin_composite_keys_all, 
                       potential_intermediate_columns)
     existing_cols <- keys_to_check[keys_to_check %in% names(df)]
     table_type = case_when(

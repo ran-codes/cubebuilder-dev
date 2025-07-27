@@ -14,7 +14,7 @@
 
 #' This test complements
       
-valid_column_names = function(df, local_context, cube_type = 'all'){
+valid_column_names = function(df, context, cube_type = 'all'){
   
   { # Input Validation --------------------------------------------------------
     
@@ -26,13 +26,13 @@ valid_column_names = function(df, local_context, cube_type = 'all'){
     
     ## Get acceptable columns for cube type
     vec__valid_columns = case_when(
-      cube_type == 'data' ~ list(c(local_context$vec__admin_data_composite_keys, 
-                                   local_context$vec__admin_data_columns_all)),
-      cube_type == 'metadata' ~ list(c(local_context$vec__admin_final_metata_cube_required_columns,
-                                       local_context$vec__admin_metadata_columns_all,
-                                       local_context$vec__admin_metadata_composite_keys) %>% 
+      cube_type == 'data' ~ list(c(context$vec__admin_data_composite_keys, 
+                                   context$vec__admin_data_columns_all)),
+      cube_type == 'metadata' ~ list(c(context$vec__admin_final_metata_cube_required_columns,
+                                       context$vec__admin_metadata_columns_all,
+                                       context$vec__admin_metadata_composite_keys) %>% 
                                        unique()),
-      cube_type == 'all' ~ list(c(local_context$df_admin_layer_schema$name))
+      cube_type == 'all' ~ list(c(context$df_admin_layer_schema$name))
     ) %>% 
       unlist()
     

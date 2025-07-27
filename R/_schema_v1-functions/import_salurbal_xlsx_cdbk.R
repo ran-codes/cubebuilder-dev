@@ -3,23 +3,23 @@
 #' 
 #' 
 #' Example: 
-#'      xlsx_path = local_context$raw_cdbk_path
+#'      xlsx_path = context$raw_cdbk_path
 #'      xlsx_path = xlsx_path
-#'      xlsx_path = local_context$base_cdbk_path
-#'      xlsx_path = local_context$template_cdbk_path
+#'      xlsx_path = context$base_cdbk_path
+#'      xlsx_path = context$template_cdbk_path
 #'      xlsx_path = 'datasets//APS/intermediate/0-template__codebook.xlsx'
 #'      xlsx_path =  '_shared_storage/0_schema/src.xlsx'
 #'      xlsx_path = '_shared_storage/0_schema/src.xlsx'
 #'      xlsx_path = raw_int
 
 
-import_salurbal_xslx_cdbk = function(xlsx_path, local_context = NULL, src = F){
+import_salurbal_xslx_cdbk = function(xlsx_path, context = NULL, src = F){
   
   ## Operationalize paths conditioned on notebook
-  if (is.null(local_context) && src == T) {
+  if (is.null(context) && src == T) {
     xlsx_path_clean = xlsx_path
   } else {
-    # xlsx_path_clean = file.path(local_context$notebook_relative_root, xlsx_path)
+    # xlsx_path_clean = file.path(context$notebook_relative_root, xlsx_path)
     xlsx_path_clean = xlsx_path
   }
   
@@ -82,14 +82,14 @@ import_salurbal_xslx_cdbk = function(xlsx_path, local_context = NULL, src = F){
         sheet_content = sheet_import %>% 
           select(source_key, source_value) %>% 
           filter(source_key!='')
-      } else if (is.null(local_context)){
+      } else if (is.null(context)){
         sheet_content = sheet_import  
       } else {
         vec__other_accepted_columns = c('salid1','l1_label')
         vec__other_accepted_columns = c('salid1','l1_label','source_URL', 'source_terms_of_use_URL')
         sheet_content = sheet_import  %>% 
           select( names(sheet_import) %>%
-                    keep(~.x%in%c(local_context$df_admin_layer_schema$name,vec__other_accepted_columns)) )
+                    keep(~.x%in%c(context$df_admin_layer_schema$name,vec__other_accepted_columns)) )
         
       }
       

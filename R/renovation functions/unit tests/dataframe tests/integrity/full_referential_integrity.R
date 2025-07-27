@@ -15,16 +15,16 @@
 #'    the same keys and the same number of rows then the composite keys are matched.
 #'    
 #'  Examples
-#'   df1 = raw_metadata_cube; df2 = local_context$metadata_cube_template
+#'   df1 = raw_metadata_cube; df2 = context$metadata_cube_template
 #'   df1 = raw_metadata_cube; df2 = final_data_cube
 #'   df1 = rendered_results; df2 = to_render
-#'   df1 = local_context$final_obt; df2 = local_context$final_data_cube
-#'   df1 =  local_context$path_cache_staged_obt %>% arrow::open_dataset(); df2 = local_context$final_data_cube
-#'   df1 = staged_obt; df2 =  local_context$final_data_cube
+#'   df1 = context$final_obt; df2 = context$final_data_cube
+#'   df1 =  context$path_cache_staged_obt %>% arrow::open_dataset(); df2 = context$final_data_cube
+#'   df1 = staged_obt; df2 =  context$final_data_cube
 
 
 
-full_referential_integrity <- function(df1, df2, local_context) {
+full_referential_integrity <- function(df1, df2, context) {
   
   { # Setup -------------------------------------------------------------------
     
@@ -53,17 +53,17 @@ full_referential_integrity <- function(df1, df2, local_context) {
     
     ## Get Composite Keys (2-way Structural test) -------------------------------------------------------------------
     {
-      if (!left_structural_integrity(df1, df2, local_context)){
+      if (!left_structural_integrity(df1, df2, context)){
         warning("Left is not structurally consistent with right")
         return(FALSE)
       }
-      if (!left_structural_integrity(df2, df1, local_context)){
+      if (!left_structural_integrity(df2, df1, context)){
         warning("Right is not structurally consistent with left")
         return(FALSE)
       }
       
       ## Because we have 2 side strucatural consistency the keys in on will be the keys in the other
-      fully_consistent_composite_keys = local_context$vec__admin_composite_keys_all %>% keep(~.x%in%names(df1))
+      fully_consistent_composite_keys = context$vec__admin_composite_keys_all %>% keep(~.x%in%names(df1))
       cli_alert_info("2-way Structural test passed")
       
     }
@@ -81,7 +81,7 @@ full_referential_integrity <- function(df1, df2, local_context) {
     ## Full composite key consistency test (based keys in both sides)  -------------------------------------------------------------------
     {
       list_composite_keys = list(fully_consistent_composite_keys)
-      if (!composite_referential_integrity(df1, df2, local_context, list_composite_keys)){
+      if (!composite_referential_integrity(df1, df2, context, list_composite_keys)){
         warning("Data points are not consistent between the two tables based on the provided list of composite keys.")
         return(FALSE)
       } 

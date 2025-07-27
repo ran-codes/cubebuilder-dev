@@ -25,7 +25,7 @@
 #' @import assertr
 #' @export
 
-validate_production_admin_data_cube <- function(production_data_cube, local_context ) {
+validate_production_admin_data_cube <- function(production_data_cube, context ) {
   # # Input validation
   # if (!is.data.frame(production_data_cube)) {
   #   stop("Input must be a dataframe")
@@ -40,13 +40,13 @@ validate_production_admin_data_cube <- function(production_data_cube, local_cont
   # production_data_cube_validated <- production_data_cube %>%
   #   # verify(valid_utf8_df(.), , error_fun = assertr::error_report)  %>%
   #   verify(valid_values_public(.), error_fun = assertr::error_report)  
-  #   verify(valid_column_names(., local_context), error_fun = assertr::error_report) %>%
+  #   verify(valid_column_names(., context), error_fun = assertr::error_report) %>%
   #   verify(valid_unpacking(.), error_fun = assertr::error_report) %>%
   #   assert(non_missing_value,
   #          dataset_id, observation_id, observation_type, dataset_instance, version,
   #          var_name, iso2, geo,  value, public,
   #          error_fun = assertr::error_report) %>%
-  #   verify(composite_key_uniqueness(., local_context),error_fun = assertr::error_report)
+  #   verify(composite_key_uniqueness(., context),error_fun = assertr::error_report)
   # 
   # 
   # return(production_data_cube_validated)

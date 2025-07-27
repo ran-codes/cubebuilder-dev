@@ -10,7 +10,7 @@
 #'     df = df_data_int
 
 
-composite_key_integrity <- function(df, local_context, cube_type) {
+composite_key_integrity <- function(df, context, cube_type) {
   
   
   { # Setup -------------------------------------------------------------------
@@ -25,15 +25,15 @@ composite_key_integrity <- function(df, local_context, cube_type) {
       pull(observation_type)  
     
     ## Expected keys present
-    if (cube_type == 'data') vec__expected_composite_keys = local_context$vec__admin_data_composite_keys
-    if (cube_type == 'metadata') vec__expected_composite_keys = local_context$vec__admin_metadata_composite_keys
+    if (cube_type == 'data') vec__expected_composite_keys = context$vec__admin_data_composite_keys
+    if (cube_type == 'metadata') vec__expected_composite_keys = context$vec__admin_metadata_composite_keys
     
     ## Unexpected keys present
-    vec__unexpected_composite_keys = local_context$vec__admin_composite_keys_all %>% discard(~.x%in%vec__expected_composite_keys)
+    vec__unexpected_composite_keys = context$vec__admin_composite_keys_all %>% discard(~.x%in%vec__expected_composite_keys)
     
     ## List of all never_empty composite keys (Content)
-    if (cube_type == 'data') vec__never_empty_composite_keys = local_context$vec__admin_data_composite_keys_never_empty
-    if (cube_type == 'metadata') vec__never_empty_composite_keys = local_context$vec__admin_metadata_composite_keys_never_empty
+    if (cube_type == 'data') vec__never_empty_composite_keys = context$vec__admin_data_composite_keys_never_empty
+    if (cube_type == 'metadata') vec__never_empty_composite_keys = context$vec__admin_metadata_composite_keys_never_empty
     if (observation_type_tmp == 'record-level') vec__never_empty_composite_keys = vec__never_empty_composite_keys %>% discard(~.x=='geo')
     
     ## List of compoiste keys that must be empty (Content)

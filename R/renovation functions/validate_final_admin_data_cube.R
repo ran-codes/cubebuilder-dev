@@ -9,17 +9,17 @@
 ##'       - we will need to figuoure out how to pass thsi into downstream vlaidatioan wihtou updateing context   
 ##'    
 ##'    Examples
-##'        df_data_int = arrow::open_dataset(local_context$path_cache_int_data)
+##'        df_data_int = arrow::open_dataset(context$path_cache_int_data)
 
-validate_final_admin_data_cube <- function(df_data_int, local_context) {
+validate_final_admin_data_cube <- function(df_data_int, context) {
 
   ## Validation (pace ~ 40 million rows per minute)
   final_data_cube = df_data_int %>%
     ## Composite key Integrity
-    verify(composite_key_integrity(., local_context, cube_type = 'data')) %>% 
-    verify(composite_key_uniqueness(., local_context)) %>% 
+    verify(composite_key_integrity(., context, cube_type = 'data')) %>% 
+    verify(composite_key_uniqueness(., context)) %>% 
     ## All Columns
-    verify(valid_column_names(., local_context, cube_type = 'data')) %>% 
+    verify(valid_column_names(., context, cube_type = 'data')) %>% 
     ## Renovations
     verify(valid_utf8_df(.)) %>%
     verify(valid_salid_geo(.)) %>% 
@@ -32,7 +32,7 @@ validate_final_admin_data_cube <- function(df_data_int, local_context) {
 
 
 ## Verify
-# verify(successful_import_of_ci_attributes(., local_context)) %>% ## Quarentine for now will get to updating CI stuff for v2 when we get there
+# verify(successful_import_of_ci_attributes(., context)) %>% ## Quarentine for now will get to updating CI stuff for v2 when we get there
 
 
 ## Update local context - Add a flag for confidence intervals ## Quarentine for now will get to updating CI stuff for v2 when we get there
@@ -46,4 +46,4 @@ validate_final_admin_data_cube <- function(df_data_int, local_context) {
 #     arrange(var_name) %>% 
 #     pull(var_name) %>% 
 #     unique()  }
-# local_context$vec__var_ci = vec__var_ci
+# context$vec__var_ci = vec__var_ci

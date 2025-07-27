@@ -372,7 +372,7 @@ get_renovation_notebook_context = function(local_config, global_context){
   
   { # Return Local Context object ---------------------------------------------
 
-    local_context = c(
+    context = c(
       global_context, 
       renovation_context,
       cache_paths, 
@@ -385,7 +385,7 @@ get_renovation_notebook_context = function(local_config, global_context){
     )
 
     cli_h1(glue("Start Renovation {renovation_context$dataset_instance_tmp}"))
-    return(local_context)
+    return(context)
   }
 
 }
