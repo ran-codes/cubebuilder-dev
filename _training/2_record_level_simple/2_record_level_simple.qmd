@@ -300,7 +300,7 @@ Great now our tempalte is set up. We can see a few new files in our folder:
 
 Let's commit here to git so we can track changes to the metadata sheets as renovators fill things in. This is often the hand off between data standardization and metadata standardization. 
 
-# 1. Raw Metadata
+## 2.2. Raw Metadata
 
 Note here are some resources:
 
@@ -308,7 +308,7 @@ Note here are some resources:
 - [Domains](https://www.notion.so/drexel-ccuh/14557008e885801cb6a2c9e332ffe6bd?v=6e7fbf678153460a87e35238d0c2a6c8)
 - [Subdomains](https://www.notion.so/drexel-ccuh/14557008e885805ea5e9ef40bfddda2a?v=14557008e885814c87e9000c9cde7650)
 
-## Metadata Entry
+### Metadata Entry
 
 Renovators mined metadata from excel sheets and word docs to fill out codebook templates to produce raw_codebooks. After they filled it out we can import it.
 
@@ -321,7 +321,7 @@ if (file.exists('4.1-raw__codebook.xlsx')){
 }
 ```
 
-## Validation to Intermediate standards
+### Validation to Intermediate standards
 
 We now have a function that validate of metadata in raw codebook (e.g. correct structure, no missing values for certain columns). If the metadata is valid then it will generate the next step of int_codebooks that are sent to DMC for review.
 
@@ -331,14 +331,13 @@ We now have a function that validate of metadata in raw codebook (e.g. correct s
 valid_raw__cdbks = raw_codebook_object %>% 
   process_raw_metadata_object(., context)
 
-
 ## Snapshot
 snapshot_excel(path = '4.1-raw__codebook.xlsx')
 ```
 
 Looks good we have also captured these changes in json diffs. A good time to commit!
 
-# 2. Reviewed Metadata
+## 2.3 Reviewed Metadata
 
 So by this time DMC has review the int_codebook and made any changes. Let's now import it and doing final processing:
 

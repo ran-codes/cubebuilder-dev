@@ -1,0 +1,137 @@
+{
+  "by_dataset": [
+    {
+      "dataset_id": "2_record_level_simple",
+      "dataset_notes": "",
+      "variable_origin": "",
+      "source": "",
+      "limitations": "",
+      "acknowledgements": "",
+      "file_codebook": "",
+      "longitudinal": "",
+      "public": ""
+    }
+  ],
+  "by_var": [
+    {
+      "var_name": "2_record_level_simple_AGE",
+      "var_name_raw": "AGE",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "2_record_level_simple_BMI",
+      "var_name_raw": "BMI",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "2_record_level_simple_EDUCATION",
+      "var_name_raw": "EDUCATION",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "2_record_level_simple_HEALTHSTATUS",
+      "var_name_raw": "HEALTH_STATUS",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "2_record_level_simple_INCOMELEVEL",
+      "var_name_raw": "INCOME_LEVEL",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "2_record_level_simple_PHYSICALACTIVITY",
+      "var_name_raw": "PHYSICAL_ACTIVITY",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "2_record_level_simple_SALID1",
+      "var_name_raw": "SALID1",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "2_record_level_simple_SALID2",
+      "var_name_raw": "SALID2",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "2_record_level_simple_SEX",
+      "var_name_raw": "SEX",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    },
+    {
+      "var_name": "2_record_level_simple_SMOKING",
+      "var_name_raw": "SMOKING",
+      "domain": "",
+      "subdomain": "",
+      "var_label": "",
+      "var_def": "",
+      "value_type": "",
+      "units": "",
+      "coding": "",
+      "strata_description": ""
+    }
+  ]
+}
