@@ -79,3 +79,11 @@ cubebuilder-dev/
 - **Complexity**: Single variable with **metadata varying by country** (sources, acknowledgements)
 - **Output**: Life expectancy cube with country-specific metadata integration
 - **Status**: Set up and ready for hands-on learning - solve this module to master medium complexity patterns
+
+
+---
+
+*Incoming*
+
+- *[Templating](https://salurbal-infrastructure.netlify.app/Data/templating/)*
+- *Edge cases*
