@@ -188,36 +188,31 @@ Here we tidy the raw data into a data cube. This is one of the main steps of the
 ```{r}
 if (!file.exists(context$path_cache_int_data)){
   
+  
   df_data_raw = context$raw_data %>% collect() %>% as_tibble()
   glimpse(df_data_raw)
   
   df_data_int = df_data_raw %>%
-    ## Operatioanlzie observation_id
-    mutate(
-      observation_id = case_when(
-        geo == "L1AD" ~ SALID1, 
-        geo == "L2" ~ SALID2,
-        TRUE ~ SALID1  # default to L1AD if geo is not specified
-      )
-    ) %>%
-    select(-SALID1, -SALID2)%>% 
+    ## Operationalize observation_id
+    mutate(observation_id = SALID1) %>%
+    select(-SALID1) %>% 
     ## Remove non-composite-key and non-variable columns
-    select(-L1_NAME,-L2_NAME) %>% 
+    select(-L1_NAME) %>% 
     ## Standardize existing composite keys
     rename(
       iso2 = ISO2,
       year = YEAR,
       month = MONTH, 
       day = DAY) %>% 
-    ## Pivot longer to reshape pollution measurements
+    ## Pivot longer to reshape life expectancy measurement
     pivot_longer(
-      cols = c(PM25_MEAN_L1AD, PM10_MEAN_L1AD, NO2_MEAN_L1AD, O3_MEAN_L1AD,
-               PM25_MEAN_L2, PM10_MEAN_L2, NO2_MEAN_L2, O3_MEAN_L2),
+      cols = c(LE_MEDIAN),
       names_to = 'var_name_raw',
       values_to = 'value'
     ) %>%  
     ## Filter out missing values and ensure we only process relevant variables
-    filter(!is.na(value)) %>% 
+    filter(!is.na(value),
+           var_name_raw %in% df_var_name$var_name_raw) %>% 
     mutate_all(~as.character(.x)) %>% 
     ## merges with variable and strata definitions
     left_join(df_var_name) %>%
@@ -229,6 +224,7 @@ if (!file.exists(context$path_cache_int_data)){
       any_of(context$vec__admin_data_columns_all)
     )
   
+
   ## Cache preliminary results to enable out-of-memory work
   df_data_int %>% write_parquet(context$path_cache_int_data)
   rm(df_data_int)
