@@ -8,7 +8,7 @@ This training section walks you through the cube building process using a series
 
 - **Module 1** (Simple Area-Level): A solved example with environmental data and no stratification
 - **Module 2** (Simple Record-Level): A solved example with individual survey data and basic demographics  
-- **Module 3** (Medium Area-Level): Your first hands-on challenge with health indicators and age/sex stratification
+- **Module 3** (Medium Area-Level): Your first hands-on challenge and also to handle metadata that varies by composite key other than dataset or variable which in this is by country. 
 
 **Learning approach:** Modules 1 and 2 are already solved - simply open the QMD file and run through the code either chunk by chunk or click "Render" to see the complete workflow. Module 3 is the first unsolved module where you'll write your own logic. The solution is available in the `module-3-solution` branch and documented in [issue #2](https://github.com/ran-codes/cubebuilder-dev/issues/2).
 
