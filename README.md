@@ -1,8 +1,5 @@
 # CubeBuilder-Dev: A Project-Agnostic Data Harmonization Framework
 
-[![Development Status](https://img.shields.io/badge/status-development-yellow.svg)](https://github.com/your-org/cubebuilder-dev)
-[![Framework](https://img.shields.io/badge/framework-R-blue.svg)](https://www.r-project.org/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 CubeBuilder-Dev is a development repository for building data harmonization and cube-building capabilities. This repository focuses on creating unified data structures that integrate both data and metadata into queryable cubes for efficient reporting and analysis.
 
