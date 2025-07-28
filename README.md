@@ -30,6 +30,8 @@ The cube structure eliminates the complexity of managing relationships between d
 
 ## 📁 Repository Structure
 
+Note that for this training most of storage is on GitHub/local but this workflow is designed so that storage can be on shared drives, encrypted drives or the cloud. Its just changing the path in the configurations.
+
 ```
 cubebuilder-dev/
 ├── `_training/`                        # 🎓 Self-contained learning modules
