@@ -6,6 +6,17 @@
 
 CubeBuilder-Dev is a development repository for building data harmonization and cube-building capabilities. This repository focuses on creating unified data structures that integrate both data and metadata into queryable cubes for efficient reporting and analysis.
 
+## 🚀 Quick Start: Training Modules
+
+1. Clone this repository
+2. Read the root README for context on what a cube is
+3. Read the `_training/README` for context on training
+4. Navigate into the individual training modules
+   - Read Module README for context on the goal of the training module
+   - Run code if already available (e.g. Module 1 and 2)
+   - Write code if an exercise (e.g. Module 3)
+   - Check against solutions see branches 
+
 ## 🎯 What is a Data/Metadata Cube?
 
 A **data/metadata cube** is a unified data structure that combines raw data with its descriptive metadata into a single, queryable format. This approach enables:
@@ -50,37 +61,6 @@ cubebuilder-dev/
 │   └── metadata/                      # → Metadata management utilities
 └── README.md                          # 📖 This file
 ```
-
-## 🚀 Quick Start: Training Modules
-
-### Prerequisites
-- **R 4.0+** with packages: `tidyverse`, `arrow`, `here`
-- **RStudio** (recommended for .qmd notebook execution)
-- **GitHub Desktop** for evaluating code diffs
-- Access to shared storage (local or cloud)
-
-### Training Path
-
-#### 1️⃣ **Module 1: Simple Area-Level Data** (`_training/1_area_level_simple/`) ✅ **SOLVED**
-**Learn**: Basic cube creation, variable standardization, metadata templates
-- **Dataset**: Dummy air pollution measurements (PM2.5, NO2, etc.)
-- **Complexity**: Single source, no stratification, dataset-level metadata
-- **Output**: Area-aggregated environmental data cube
-- **Status**: Complete example for reference and code rerunning
-
-#### 2️⃣ **Module 2: Simple Record-Level Data** (`_training/2_record_level_simple/`) ✅ **SOLVED**
-**Learn**: Individual-level processing, observation IDs, record-to-cube transformation
-- **Dataset**: Dummy health survey responses
-- **Complexity**: Individual records, basic demographics, dataset-level metadata
-- **Output**: Person-level health data cube
-- **Status**: Complete example for reference and code rerunning
-
-#### 3️⃣ **Module 3: Medium Area-Level Data** (`_training/3_area_level_medium/`) 🎯 **READY TO SOLVE**
-**Learn**: Country-specific metadata, geographic variation in sources, medium complexity cube building
-- **Dataset**: Dummy life expectancy data (LE_MEDIAN)
-- **Complexity**: Single variable with **metadata varying by country** (sources, acknowledgements)
-- **Output**: Life expectancy cube with country-specific metadata integration
-- **Status**: Set up and ready for hands-on learning - solve this module to master medium complexity patterns
 
 
 ---
